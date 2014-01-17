@@ -1,0 +1,14 @@
+<% provide(:title,'register-page')%>
+<h1><%=t(:register)%></h1>
+<form action="register" method="post">
+  <%=t(:username)%><input name="username" type="text"/><br/>
+  <%=t(:password)%><input name="password" type="password"/><br/>
+  <input type="radio" name="gender" value="male" /> <%=t(:male)%>
+  <input type="radio" name="gender" value="female" /><%=t(:female)%> <br/>
+  <%=t(:number)%><input type="text" name="no"/><br/>
+  <%=t(:projectId)%><input type="text" name="projectId"/><br/>
+  <%=t(:departmentId)%><input type="text" name="departmentId"/><br/>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+  <input type="reset" value="<%=t('reset')%>">
+  <input type="submit" value="<%=t('submit')%>"/>
+</form>

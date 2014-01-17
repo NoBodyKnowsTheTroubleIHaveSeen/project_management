@@ -1,0 +1,9 @@
+<% provide(:title,'login-page')%>
+<h1><%=t(:login) %></h1>
+<form method="post" action="login">
+  <%=t('username')%><input name="username" type="text"/><br>
+  <%=t('password')%> <input name="password" type="password"/><br>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+  <input type="reset" value="<%=t('reset')%>">
+  <input type="submit" value="<%=t('submit')%>"/>
+</form>
