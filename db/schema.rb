@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112070249) do
+ActiveRecord::Schema.define(version: 20140117114130) do
 
   create_table "people", force: true do |t|
     t.integer "no"
-    t.string  "name",                   null: false
+    t.string  "name",                    null: false
     t.string  "gender",       limit: 10, null: false
     t.integer "departmentId"
-    t.integer "projectId",              null: false
-    t.string  "password",               null: false
+    t.integer "projectId",               null: false
+    t.string  "password",                null: false
+    t.string  "email",                   null: false
   end
 
   create_table "person_projects", force: true do |t|

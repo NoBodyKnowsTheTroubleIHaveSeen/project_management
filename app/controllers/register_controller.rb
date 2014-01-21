@@ -1,4 +1,5 @@
 class RegisterController < ApplicationController
+  layout false
   def index
   end
 
@@ -9,6 +10,7 @@ class RegisterController < ApplicationController
     no = params[:no]
     projectId = params[:projectId]
     departmentId = params[:departmentId]
+    email = params[:email]
     person = Person.new
     person.name = username
     person.password = password
@@ -16,6 +18,7 @@ class RegisterController < ApplicationController
     person.no = no
     person.projectId = projectId
     person.departmentId = departmentId
+    person.email = email
     person.save
   end
 end

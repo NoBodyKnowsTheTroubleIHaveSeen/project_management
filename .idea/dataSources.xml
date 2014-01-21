@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4272191894">
-    <data-source source="LOCAL" name="Rails project_management: development" uuid="b69e1724-e420-49c6-8a1d-88e68a9ad654">
+  <component name="DataSourceManagerImpl" format="xml" hash="2660031182">
+    <data-source source="LOCAL" name="Rails project_management: development" uuid="d41fadc9-853b-41f6-935a-17e7fad4f5b9">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/project_management</jdbc-url>
@@ -9,13 +9,13 @@
       <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails project_management: test" uuid="3e65d5f6-d955-4eab-b731-22e19c947ead">
+    <data-source source="LOCAL" name="Rails project_management: test" uuid="8b91ba48-1743-4129-8b45-d5ac6e126b1a">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/db/test.mysql</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails project_management: production" uuid="e0188d1b-9bd0-4962-9ba5-a6439823e866">
+    <data-source source="LOCAL" name="Rails project_management: production" uuid="5d4c3054-256f-42a4-a349-bd2f24f6679c">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/db/production.mysql</jdbc-url>

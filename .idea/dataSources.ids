@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails project_management: development" uuid="b69e1724-e420-49c6-8a1d-88e68a9ad654">
+  <data-source source="LOCAL" name="Rails project_management: development" uuid="d41fadc9-853b-41f6-935a-17e7fad4f5b9">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails project_management: test" uuid="3e65d5f6-d955-4eab-b731-22e19c947ead">
+  <data-source source="LOCAL" name="Rails project_management: test" uuid="8b91ba48-1743-4129-8b45-d5ac6e126b1a">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails project_management: production" uuid="e0188d1b-9bd0-4962-9ba5-a6439823e866">
+  <data-source source="LOCAL" name="Rails project_management: production" uuid="5d4c3054-256f-42a4-a349-bd2f24f6679c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

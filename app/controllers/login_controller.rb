@@ -1,6 +1,8 @@
 class LoginController < ApplicationController
-  def index
 
+  layout false
+
+  def index
   end
 
   def login
