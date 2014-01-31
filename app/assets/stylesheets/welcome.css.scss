@@ -3,9 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .leftPanel{
   float: left;
-  width: 300px;
+  width: 500px;
 }
 .rightPanel{
   float: right;
-  width: 500px;
+  width: 300px;
+}
+li{
+  list-style-type:none
 }

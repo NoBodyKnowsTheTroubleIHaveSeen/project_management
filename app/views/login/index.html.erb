@@ -1,9 +1,17 @@
-<% provide(:title,'login-page')%>
-<h1><%=t(:login) %></h1>
+<head>
+  <title>login-page</title>
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css"/>
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"/>
+</head>
+<h1><%= t(:login) %></h1>
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
 <form method="post" action="login">
-  <%=t('username')%><input name="username" type="text"/><br>
-  <%=t('password')%> <input name="password" type="password"/><br>
+  <%= t('username') %>
+  <input name="username" type="text"/><br>
+  <%= t('password') %> <input name="password" type="password"/><br>
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-  <input type="reset" value="<%=t('reset')%>">
-  <input type="submit" value="<%=t('submit')%>"/>
+  <input type="reset" value="<%= t('reset') %>">
+  <input type="submit" value="<%= t('submit') %>"/>
 </form>

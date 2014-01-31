@@ -8,13 +8,18 @@ class LoginController < ApplicationController
   def login
     username = params[:username]
     password = params[:password]
-    user = Person.find_by(name: username)
-    password2 = user.password if user
-    if password==password2
-      redirect_to :action => 'index',controller: 'welcome'
-    else
-      redirect_to :action => 'index'
+    if username
+      user = Person.find_by(name: username)
+      if user
+        passwordFromDataBase = user.password
+        if password==passwordFromDataBase
+          session[:username] = username
+          redirect_to :action => 'index', controller: 'welcome'
+          return
+        end
+      end
     end
-
-    end
+    flash[:notice] = "your username or password is wrong!"
+    redirect_to :action => 'index'
   end
+end

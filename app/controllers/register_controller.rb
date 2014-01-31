@@ -1,11 +1,23 @@
 class RegisterController < ApplicationController
   layout false
+
   def index
   end
 
   def register
     username = params[:username]
+    if !username
+      flash[:notice] = I18n.t('usernameNil')
+      redirect_to index
+      return
+    end
     password = params[:password]
+    repassword = params[:repassword]
+    if password != repassword
+      flash[:notice] = I18n.t('passwordUnequal')
+      redirect_to index
+      return
+    end
     gender = params[:gender]
     no = params[:no]
     projectId = params[:projectId]
@@ -19,6 +31,6 @@ class RegisterController < ApplicationController
     person.projectId = projectId
     person.departmentId = departmentId
     person.email = email
-    person.save
+    person.save if person.valid?
   end
 end
