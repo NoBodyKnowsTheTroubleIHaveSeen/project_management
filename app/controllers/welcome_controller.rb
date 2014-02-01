@@ -1,5 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-    @username = session[:username]
+    if session[:username]
+      @username = session[:username]
+    else
+      redirect_to :action => 'index', controller: 'login'
+    end
   end
 end

@@ -2,13 +2,12 @@
 <html>
 <head>
   <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "loadPage" %>
-      <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" />
-
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css"/>
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"/>
 </head>
 <body>
 <div class="container">
@@ -16,5 +15,10 @@
   <%= yield %>
   <%= render "layouts/footer" %>
 </div>
+<div class="jumpImage">
+  <div class="toTop"><a class="topImage" href="#"></a></div>
+  <div class="toBottom"><a class="bottomImage" href="#bottom"></a></div>
+</div>
+<a name="bottom"></a>
 </body>
 </html>

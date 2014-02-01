@@ -1,1 +1,19 @@
-<div><%=t('welcome')%><%=@username%></div>
+<div class="header">
+  <span class="leftSpan">
+        &nbsp;&nbsp;&nbsp;
+    <span><a href="index"><%= t('index') %></a></span>
+        &nbsp;&nbsp;&nbsp;
+  <span id="time" class="time"></span></span>
+  <span class="rightSpan">
+  <%= t('system') %>
+    &nbsp;&nbsp;&nbsp;
+  <span class="username"><%= t('welcome') %>:  <%= @username %></span>
+    &nbsp;&nbsp;&nbsp;
+  <span><a class="logout" href="logout"><%= t('logout') %></a></span>
+        &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+<script>
+    document.all.time.innerHTML = new Date().toLocaleString();
+    setInterval("document.all.time.innerHTML=new Date().toLocaleString()", 1000);
+</script>

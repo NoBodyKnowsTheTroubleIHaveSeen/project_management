@@ -11,6 +11,54 @@
  *= require_self
  *= require_tree .
  */
-.footer{
+body {
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+}
+.footer {
     clear: both;
+    background-color: black;
+    font-size: 15px;
+}
+
+.jumpImage {
+    position: fixed;
+    width: 65px;
+    height: 104px;
+    right: 2%;
+    bottom: 45%;
+}
+
+.toTop, .toBottom {
+    width: 65px;
+    height: 52px;
+}
+
+.topImage {
+    background: url(up.jpg);
+    /*opacity:0.5;*/
+    display: block;
+    width: 65px;
+    height: 52px;
+}
+
+.bottomImage {
+    background: url(down.jpg);
+    /*opacity:0.5;*/
+    display: block;
+    width: 65px;
+    height: 52px;
+}
+
+.topImage:hover {
+    background: url(up1.jpg);
+    opacity: 1;
+}
+
+.bottomImage:hover {
+    background: url(down1.jpg);
+    opacity: 1;
+}
+
+.emptyFooter {
+    height: 20px;
 }
