@@ -1,5 +1,4 @@
 ProjectManagement::Application.routes.draw do
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,10 +9,15 @@ ProjectManagement::Application.routes.draw do
   get 'register' =>'register#index'
   get 'login' =>'login#index'
 
-  #get 'test/output' => 'test#output'
+  get 'notice' =>'actions#notice'
+  get 'relation' =>'actions#relation'
+  get 'submit' =>'actions#submit'
+  get 'share' =>'actions#share'
+  get 'question' =>'actions#question'
 
   post 'login' =>'login#login'
   post 'register' =>'register#register'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

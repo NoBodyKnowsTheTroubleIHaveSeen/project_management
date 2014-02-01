@@ -1,14 +1,16 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.leftPanel{
+.leftPanel {
   float: left;
   width: 500px;
 }
-.rightPanel{
-  float: right;
+
+.rightPanel {
+  float: left;
   width: 300px;
 }
-li{
-  list-style-type:none
+
+li {
+  list-style-type: none
 }
