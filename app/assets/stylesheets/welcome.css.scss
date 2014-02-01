@@ -7,19 +7,16 @@
   font-size: 20px;
 }
 
-.panel {
-
-}
-
 .leftPanelDiv {
   font-size: 18px;
+  color:darkslategrey;
   float: left;
   width: 20%;
   background-color: lightgray;
 }
 
 .rightPanelDiv {
-//  border-left: 2px solid darkslategray;
+  border-left: 2px solid darkslategray;
   float: left;
   width: 80%;
   background-color: skyblue;
@@ -27,6 +24,13 @@
 
 li {
   list-style-type: none;
+  text-align: center;
+}
+.leftUl li:nth-child(odd){background-color:#000s; }
+.leftUl li:nth-child(even){background-color:darkgrey; }
+.leftUl{
+  margin: 0 auto;
+  padding:0;
 }
 
 .username {

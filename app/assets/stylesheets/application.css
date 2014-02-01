@@ -16,8 +16,9 @@ body {
 }
 .footer {
     clear: both;
-    background-color: black;
-    font-size: 15px;
+    background-color: darkslategray;
+    font-size: 20px;
+    color: black;
 }
 
 .jumpImage {
