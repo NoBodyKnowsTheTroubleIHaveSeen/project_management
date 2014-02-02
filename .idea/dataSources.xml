@@ -12,13 +12,17 @@
     <data-source source="LOCAL" name="Rails project_management: test" uuid="8b91ba48-1743-4129-8b45-d5ac6e126b1a">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/db/test.mysql</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1/project_management</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails project_management: production" uuid="5d4c3054-256f-42a4-a349-bd2f24f6679c">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/db/production.mysql</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1/project_management</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
   </component>

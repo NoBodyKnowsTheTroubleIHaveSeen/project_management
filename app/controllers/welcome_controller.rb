@@ -6,4 +6,9 @@ class WelcomeController < ApplicationController
       redirect_to :action => 'index', controller: 'login'
     end
   end
+
+  def logout
+    session[:username] = nil
+    redirect_to :action => 'index', controller: 'login'
+  end
 end

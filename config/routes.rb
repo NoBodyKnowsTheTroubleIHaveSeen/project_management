@@ -14,6 +14,7 @@ ProjectManagement::Application.routes.draw do
   get 'submit' =>'actions#submit'
   get 'share' =>'actions#share'
   get 'question' =>'actions#question'
+  get 'logout'=>'welcome#logout'
 
   post 'login' =>'login#login'
   post 'register' =>'register#register'

@@ -1,8 +1,14 @@
 <head>
+  <link rel="Shortcut Icon" href="assets/web.ico">
   <title>login-page</title>
   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css"/>
   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"/>
+  <%= javascript_include_tag "jquery-1.11.0"%>
+  <%= javascript_include_tag "language"%>
+  <%= stylesheet_link_tag "login"%>
 </head>
+<body>
+<div class="loginDiv">
 <h1><%= t(:login) %></h1>
 <% if flash[:notice] %>
     <%= flash[:notice] %>
@@ -12,6 +18,11 @@
   <input name="username" type="text"/><br>
   <%= t('password') %> <input name="password" type="password"/><br>
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+  <%= t('language') %>:
+  <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
+  <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
   <input type="reset" value="<%= t('reset') %>">
   <input type="submit" value="<%= t('submit') %>"/>
 </form>
+</div>
+</body>
