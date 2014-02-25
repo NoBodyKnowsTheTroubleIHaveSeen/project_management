@@ -33,7 +33,7 @@
     <splitter split-orientation="vertical" split-proportion="0.67642">
       <split-first>
         <leaf>
-          <file leaf-file-name="_left_panel.html.erb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="_left_panel.html.erb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/welcome/_left_panel.html.erb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="4" column="25" selection-start="106" selection-end="106" vertical-scroll-proportion="0.18630137" vertical-offset="0" max-vertical-offset="510">
@@ -100,7 +100,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="leftMenu.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="leftMenu.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/leftMenu.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="8" column="24" selection-start="270" selection-end="270" vertical-scroll-proportion="0.75555557" vertical-offset="0" max-vertical-offset="289">
@@ -445,7 +445,11 @@
       <created>1393335261805</created>
       <updated>1393335261805</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update at 2.25 (add leftMenu js   and style)&#10;">
+      <created>1393335272338</created>
+      <updated>1393335272338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -531,7 +535,8 @@
     <MESSAGE value="last update at 2014.2.1&#10;" />
     <MESSAGE value="last update at 2014.2.1 22.12&#10;" />
     <MESSAGE value="update at 2.25 (add leftMenu js   and style)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update at 2.25 (add leftMenu js   and style)" />
+    <MESSAGE value="update at 2.25 (add leftMenu js   and style)&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update at 2.25 (add leftMenu js   and style)&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -818,16 +823,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/leftMenu.js">
+    <entry file="file://$PROJECT_DIR$/app/views/welcome/_left_panel.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+        <state line="4" column="25" selection-start="106" selection-end="106" vertical-scroll-proportion="0.18630137" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/welcome/_left_panel.html.erb">
+    <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/leftMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="106" selection-end="106" vertical-scroll-proportion="0.18630137" vertical-offset="0" max-vertical-offset="510">
+        <state line="8" column="24" selection-start="270" selection-end="270" vertical-scroll-proportion="0.75555557" vertical-offset="0" max-vertical-offset="289">
           <folding />
         </state>
       </provider>
