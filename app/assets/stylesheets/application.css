@@ -14,6 +14,20 @@
 body {
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 }
+.button{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: .2em .5em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border-radius: .5em;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.text{
+
+}
 .footer {
     clear: both;
     background-color: darkslategray;

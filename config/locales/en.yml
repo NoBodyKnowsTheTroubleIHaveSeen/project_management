@@ -39,5 +39,6 @@ en:
   usernameNil: "username couldn't be null."
   logout: "logout"
   index: "index"
-  chooseFile: "choose a file"
+  browse: "browse..."
   language: "language"
+  upload: "upload"

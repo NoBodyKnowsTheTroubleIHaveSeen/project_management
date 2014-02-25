@@ -3,21 +3,27 @@ ProjectManagement::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  #index page.
   root 'welcome#index'
 
   # Example of regular route:
-  get 'register' =>'register#index'
-  get 'login' =>'login#index'
+  #register page.
+  get 'register' => 'register#index'
+  post 'register' => 'register#register'
+  #logout
+  get 'logout' => 'welcome#logout'
 
-  get 'notice' =>'actions#notice'
-  get 'relation' =>'actions#relation'
-  get 'submit' =>'actions#submit'
-  get 'share' =>'actions#share'
-  get 'question' =>'actions#question'
-  get 'logout'=>'welcome#logout'
+  #login page.
+  get 'login' => 'login#index'
+  post 'login' => 'login#login'
 
-  post 'login' =>'login#login'
-  post 'register' =>'register#register'
+  #action controller page.
+  get 'notice' => 'actions#notice'
+  get 'relation' => 'actions#relation'
+  get 'submit' => 'actions#submit'
+  get 'share' => 'actions#share'
+  get 'question' => 'actions#question'
+  post 'upload' =>'actions#upload'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

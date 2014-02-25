@@ -22,5 +22,6 @@ zh:
   usernameNil: "用户名不能为空."
   logout: "退出"
   index: "首页"
-  chooseFile: "选择文件"
+  browse: "浏览..."
   language: "语言"
+  upload: "上传"
