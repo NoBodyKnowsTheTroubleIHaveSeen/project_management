@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.header {
-  background-color: darkslategray;
-  font-size: 20px;
-}
 
 .leftPanelDiv {
   font-size: 18px;
@@ -13,13 +9,17 @@
   float: left;
   width: 20%;
   background-color: lightgray;
+  margin-bottom: -100000px;
+  padding-bottom: 100000px;
 }
 
 .rightPanelDiv {
-  border-left: 2px solid darkslategray;
-  float: left;
+  float: right;
   width: 80%;
+  margin-bottom: -100000px;
+  padding-bottom: 100000px;
   background-color: skyblue;
+  background-image: url("4.jpg");
 }
 
 ul {
