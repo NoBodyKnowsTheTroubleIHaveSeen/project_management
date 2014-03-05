@@ -1,6 +1,7 @@
-$().ready(
-    function () {
-        $("li").click(function () {
+$(function () {
+        $("li:not(.headerLi)").click(function () {
+            $(".selected").removeClass("selected");
+            $(this).addClass("selected");
             var url = $(this).attr("data-url");
             $(".rightPanelDiv").load(url, function () {
 //              页面完成后将左右两边的div高度统一
@@ -14,11 +15,9 @@ $().ready(
                 }
             });
         });
-
         function init() {
             $(".selected").click();
         }
-
         init();
     }
 )

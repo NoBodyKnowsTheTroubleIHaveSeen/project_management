@@ -1,4 +1,13 @@
 ProjectManagement::Application.routes.draw do
+  get "share/file_share"
+  get "share/question_answer"
+  get "base_information/notice"
+  get "base_information/relation"
+  get "management/project_management"
+  get "management/plan"
+  get "management/task_distribute"
+  get "management/schedule_submit"
+  get "management/schedule_summary"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -18,12 +27,6 @@ ProjectManagement::Application.routes.draw do
   post 'login' => 'login#login'
 
   #action controller page.
-  get 'notice' => 'actions#notice'
-  get 'relation' => 'actions#relation'
-  get 'submit' => 'actions#submit'
-  get 'share' => 'actions#share'
-  get 'question' => 'actions#question'
-  post 'upload' =>'actions#upload'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

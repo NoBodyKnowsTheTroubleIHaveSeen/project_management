@@ -1,9 +1,12 @@
 <head>
   <title>register-page</title>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css"/>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"/>
+  <%= javascript_include_tag "jquery-1.11.0"%>
+  <%= javascript_include_tag "login.js"%>
+  <%= stylesheet_link_tag "register"%>
 </head>
 </head>
+<body>
+<div class="registerDiv">
 <h1><%= t(:register) %></h1>
 <form action="register" method="post">
   <%= t('username') %>
@@ -27,3 +30,6 @@
   <input type="reset" value="<%= t('reset') %>">
   <input type="submit" value="<%= t('submit') %>"/>
 </form>
+</div>
+<input type="button"  class="closeButton"  >
+</body>
