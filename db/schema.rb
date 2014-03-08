@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306135451) do
+ActiveRecord::Schema.define(version: 20140308094210) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20140306135451) do
   end
 
   add_index "answers", ["people_id"], name: "fk1", using: :btree
+
+  create_table "notices", force: true do |t|
+    t.date     "date",       null: false
+    t.integer  "people_id",  null: false
+    t.string   "title",      null: false
+    t.string   "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", force: true do |t|
     t.integer "no"
