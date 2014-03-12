@@ -1,1 +1,8 @@
 <h1><%= t(:notice)%></h1>
+<body>
+    <% @notices.each do|value|%>
+        <%= value.title%></br>
+        <%= value.content%>
+    <% end%>
+
+</body>

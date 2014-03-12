@@ -1,2 +1,47 @@
-<h1>Management#plan</h1>
-<p>Find me in app/views/management/plan.html.erb</p>
+<%= javascript_include_tag "plan.js" %>
+<h1><%= t('plan') %></h1>
+<div class="addPlan">
+  <form action="addPlan" method="post" id="addPlanForm">
+    <%= t('plan_name') %>:<input name="name" placeholder="<%= t('input_plan') %>"/>
+    <%= t('start_date') %>:<input type="date" name="start_date"/>
+    <%= t('finish_date') %>:<input type="date" name="finish_date"/><br>
+    <%= t('realte_task') %>:<input name="task_id" placeholder="<%= t('input_task') %>"/>
+    <%= t('hard_level') %>:
+    <select name="hard_level">
+      <option value="1"><%= t('easy') %></option>
+      <option value="2"><%= t('common') %></option>
+      <option value="3"><%= t('hard') %></option>
+    </select><br>
+    <%= t('description') %>:
+    <textarea rows="3" cols="20" name="description">
+    </textarea>
+    <!--<input type="textarea" name="description"/>-->
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+    <input type="submit" value="<%= t('add plan') %>">
+  </form>
+  <div id="result" class="hide message"></div>
+</div>
+<div class="showPlan">
+  <%= t('show_plan_history') %>
+  <br>
+  <table>
+    <thead>
+    <td><%= t('plan_name') %></td>
+    <td><%= t('start_date') %></td>
+    <td><%= t('finish_date') %></td>
+    <td><%= t('hard_level') %></td>
+    <td><%= t('realte_task') %></td>
+    <td><%= t('description') %></td>
+    </thead>
+    <% @list.each do |value| %>
+        <tr>
+          <td> <%= value.name %></td>
+          <td> <%= value.start_date %></td>
+          <td> <%= value.finish_date %></td>
+          <td> <%= value.hard_level %></td>
+          <td> <%= value.task_id %></td>
+          <td> <%= value.description %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>

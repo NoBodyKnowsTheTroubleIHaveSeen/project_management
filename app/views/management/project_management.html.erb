@@ -1,2 +1,68 @@
-<h1>Management#project_management</h1>
-<p>Find me in app/views/management/project_management.html.erb</p>
+<%= javascript_include_tag "project.js" %>
+<h1><%= t('project_management') %></h1>
+<div class="addProject">
+  <form action="addProject" method="post" id="addProjectForm">
+    <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>"/>
+    <%= t('start_date') %>:<input type="date" name="start_date"/>
+    <%= t('finish_date') %>:<input type="date" name="finish_date"/><br>
+    <br>
+    <%= t('description') %>:
+    <textarea rows="5" cols="90" name="description">
+    </textarea>
+    <br>
+    <!--<input type="textarea" name="description"/>-->
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+
+    <div class="choosePeople">
+      <div class="leftPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="headerDiv"><%= t('employ_name') %></div>
+        <% i = 0 %>
+        <% @people.each do |value| %>
+            <div draggable="true" ondragstart="drag(event)" id="l<%= i %>"><%= value.name %></div>
+            <% i+=1 %>
+        <% end %>
+      </div>
+      <div class="centerChoose">
+        --->
+      </div>
+      <div class="rightPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="headerDiv"><%= t('project_people') %></div>
+      </div>
+    </div>
+    <input type="submit" value="<%= t('add project') %>">
+  </form>
+  <div id="result" class="hide message"></div>
+</div>
+<br>
+<div class="showProject">
+  <%= t('show_project') %>
+  <br>
+  <table>
+    <thead>
+    <td><%= t('project_name') %></td>
+    <td><%= t('start_date') %></td>
+    <td><%= t('finish_date') %></td>
+    <td><%= t('manager_id') %></td>
+    <td><%= t('description') %></td>
+    <td><%= t('finish_percentage') %></td>
+    <td><%= t('is_doned') %></td>
+    </thead>
+    <% @projects.each do |value| %>
+        <tr>
+          <td> <%= value.name %></td>
+          <td> <%= value.start_date %></td>
+          <td> <%= value.finish_date %></td>
+          <td> <%= value.manager_id %></td>
+          <td> <%= value.description %></td>
+          <td> <%= value.finish_percentage %></td>
+          <td>
+            <% if value.is_doned.eql?(1) %>
+                <%= t('doned') %>
+            <% else %>
+                <%= t('undoned') %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

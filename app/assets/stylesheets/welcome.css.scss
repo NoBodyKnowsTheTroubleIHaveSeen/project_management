@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .leftPanelDiv {
   font-size: 18px;
   color: darkslategrey;
@@ -19,14 +18,14 @@
   margin-bottom: -100000px;
   padding-bottom: 100000px;
   background-color: skyblue;
-  background-image: url("4.jpg");
+  //  background-image: url("4.jpg");
 }
 
 ul {
   list-style-type: none;
   text-align: center;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -34,23 +33,17 @@ li {
   height: 40px;
   line-height: 40px
 }
-li:hover{
+
+li:hover {
   background-color: greenyellow;
 }
-.selected{
+
+.selected {
   background-color: greenyellow;
 }
+
 .headerLi {
   background-color: darkkhaki;
-}
-
-.username {
-  width: 200px;
-}
-
-.rightSpan {
-  float: right;
-  color: burlywood;
 }
 
 .emptySpan {
@@ -61,6 +54,3 @@ li:hover{
   text-align: center;
 }
 
-.time {
-  color: antiquewhite;
-}

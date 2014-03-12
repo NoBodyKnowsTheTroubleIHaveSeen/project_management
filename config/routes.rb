@@ -27,7 +27,8 @@ ProjectManagement::Application.routes.draw do
   post 'login' => 'login#login'
 
   #action controller page.
-
+  post 'addProject' => 'management#add_project'
+  post 'addPlan' => 'management#add_plan'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

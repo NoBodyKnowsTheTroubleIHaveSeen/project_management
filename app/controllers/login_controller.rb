@@ -14,6 +14,8 @@ class LoginController < ApplicationController
         passwordFromDataBase = user.password
         if password==passwordFromDataBase
           session[:username] = username
+          id = user.id
+          session[:people_id] = id
           redirect_to :action => 'index', controller: 'welcome'
           return
         end
