@@ -14,8 +14,18 @@ class ManagementController < ApplicationController
     project.finish_date = params[:finish_date]
     project.description = params[:description]
     project.manager_id = session[:id]
+    array = params[:idList]
     if project.valid?
       project.save
+      id = project.id
+      array.each do |value|
+        person_project = PersonProject.new
+        person_project.project_id = id
+        person_project.role = 1
+        person_project.role_name = 'developer'
+        person_project.people_id = value
+        person_project.save
+      end
       @message = I18n.t("add_success")
       return
     end

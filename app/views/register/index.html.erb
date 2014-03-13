@@ -20,8 +20,6 @@
   <input type="radio" name="gender" value="female"/><%= t('female') %><br/>
   <%= t(:number) %>
   <input type="text" name="no"/><br/>
-  <%= t(:projectId) %>
-  <input type="text" name="projectId"/><br/>
   <%= t(:departmentId) %>
   <input type="text" name="departmentId"/><br/>
   <%= t('email') %>
@@ -30,6 +28,9 @@
   <input type="reset" value="<%= t('reset') %>">
   <input type="submit" value="<%= t('submit') %>"/>
 </form>
+  <% if flash[:notice] %>
+      <%= flash[:notice] %>
+  <% end %>
 </div>
 <input type="button"  class="closeButton"  >
 </body>

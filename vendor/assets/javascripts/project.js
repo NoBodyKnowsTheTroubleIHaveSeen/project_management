@@ -1,3 +1,12 @@
+function getIdList(){
+    var array = new  Array();
+    var i = 0;
+    $("#rightPeople").find(".data").each(function(){
+        array[i] = $(this).attr("data-id");
+        i++;
+    });
+    return array
+}
 $("#addProjectForm").on("submit", function (event) {
     //相当于return false的效果
     event.preventDefault();
@@ -9,9 +18,10 @@ $("#addProjectForm").on("submit", function (event) {
         authenticity_token = $form.find("input[name='authenticity_token']").val(),
         description = $form.find("textarea[name='description']").val(),
         url = $form.attr("action");
+        var array = getIdList();
     var posting = $.post(url, { name: name, manager_id: manager_id,
         start_date: start_date, finish_date: finish_date,
-        description: description,
+        description: description,idList:array,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
         $("#result").empty().append(data);
@@ -19,6 +29,8 @@ $("#addProjectForm").on("submit", function (event) {
         $("#result").fadeOut(5000);
     });
 });
+
+
 function allowDrop(ev) {
     ev.preventDefault();
 }

@@ -6,21 +6,20 @@ class RegisterController < ApplicationController
 
   def register
     username = params[:username]
-    if !username
+    if username==""
       flash[:notice] = I18n.t('usernameNil')
-      redirect_to index
+      redirect_to :action => 'index'
       return
     end
     password = params[:password]
     repassword = params[:repassword]
     if password != repassword
       flash[:notice] = I18n.t('passwordUnequal')
-      redirect_to index
+      render :action => 'index'
       return
     end
     gender = params[:gender]
     no = params[:no]
-    projectId = params[:projectId]
     departmentId = params[:departmentId]
     email = params[:email]
     person = Person.new
@@ -28,9 +27,17 @@ class RegisterController < ApplicationController
     person.password = password
     person.gender = gender
     person.no = no
-    person.projectId = projectId
-    person.departmentId = departmentId
+    person.department_id = departmentId
     person.email = email
-    person.save if person.valid?
+    if person.valid?
+      person.save
+      session[:username] = username
+      p = Person.find_by_name username
+      session[:id] = p.id
+      redirect_to :action => 'index', controller: 'welcome'
+      return
+    else
+      redirect_to :action => 'index'
+    end
   end
 end

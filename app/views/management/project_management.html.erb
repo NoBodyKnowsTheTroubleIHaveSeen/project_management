@@ -18,14 +18,14 @@
         <div class="headerDiv"><%= t('employ_name') %></div>
         <% i = 0 %>
         <% @people.each do |value| %>
-            <div draggable="true" ondragstart="drag(event)" id="l<%= i %>"><%= value.name %></div>
+            <div  class="data" draggable="true" ondragstart="drag(event)" id="l<%= i %>" data-id="<%= value.id %>" ><%= value.name %></div>
             <% i+=1 %>
         <% end %>
       </div>
       <div class="centerChoose">
         --->
       </div>
-      <div class="rightPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="rightPeople" id="rightPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="headerDiv"><%= t('project_people') %></div>
       </div>
     </div>
