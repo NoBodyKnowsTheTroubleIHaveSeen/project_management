@@ -1,0 +1,41 @@
+<%= javascript_include_tag "project.js" %>
+<h1><%= t('project_management') %></h1>
+<div class="addProject">
+  <form action="updateProject" method="post" id="updateProjectForm">
+    <input type="hidden" value="<%= @project_id %>" name="project_id">
+    <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>" value="<%= @project.name %>"/>
+    <%= t('start_date') %>:<input type="date" name="start_date" value="<%= @project.start_date %>"/>
+    <%= t('finish_date') %>:<input type="date" name="finish_date" value="<%= @project.finish_date %>"/><br>
+    <br>
+    <%= t('description') %>:
+    <textarea rows="5" cols="90" name="description">
+      <%= @project.description %>
+    </textarea>
+    <br>
+    <!--<input type="textarea" name="description"/>-->
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+
+    <div class="choosePeople">
+      <div class="leftPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="headerDiv"><%= t('employ_name') %></div>
+        <% @others.each do |value| %>
+            <div class="data" draggable="true" ondragstart="drag(event)" id="id_<%= value.id %>" data-id="<%= value.id %>"><%= value.name %></div>
+        <% end %>
+      </div>
+      <div class="centerChoose">
+        --->
+      </div>
+      <div class="rightPeople" id="rightPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="headerDiv"><%= t('project_people') %></div>
+        <% i = 0 %>
+        <% while i<@people.size/2 do %>
+            <div class="data" draggable="true" ondragstart="drag(event)" id="<%= @people[2*i] %>" data-id="<%= @people[2*i] %>"><%= @people[2*i+1] %></div>
+            <% i+=1 %>
+        <% end %>
+      </div>
+    </div>
+    <input type="submit" value="<%= t('update_project') %>">
+    <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
+  </form>
+  <div id="result" class="hide message"></div>
+</div>
