@@ -18,7 +18,7 @@
         <div class="headerDiv"><%= t('employ_name') %></div>
         <% i = 0 %>
         <% @people.each do |value| %>
-            <div  class="data" draggable="true" ondragstart="drag(event)" id="l<%= i %>" data-id="<%= value.id %>" ><%= value.name %></div>
+            <div class="data" draggable="true" ondragstart="drag(event)" id="l<%= i %>" data-id="<%= value.id %>"><%= value.name %></div>
             <% i+=1 %>
         <% end %>
       </div>
@@ -29,7 +29,7 @@
         <div class="headerDiv"><%= t('project_people') %></div>
       </div>
     </div>
-    <input type="submit" value="<%= t('add project') %>">
+    <input type="submit" value="<%= t('add_project') %>">
   </form>
   <div id="result" class="hide message"></div>
 </div>
@@ -42,17 +42,19 @@
     <td><%= t('project_name') %></td>
     <td><%= t('start_date') %></td>
     <td><%= t('finish_date') %></td>
-    <td><%= t('manager_id') %></td>
+    <td><%= t('manager') %></td>
     <td><%= t('description') %></td>
     <td><%= t('finish_percentage') %></td>
     <td><%= t('is_doned') %></td>
     </thead>
     <% @projects.each do |value| %>
         <tr>
-          <td> <%= value.name %></td>
+          <td><a href="gotoUpdateProject?project_id=<%= value.id%>" class="ajaxHref"> <%= value.name %></a></td>
           <td> <%= value.start_date %></td>
           <td> <%= value.finish_date %></td>
-          <td> <%= value.manager_id %></td>
+          <td>
+            <% person = Person.find value.manager_id %>
+            <%= person.name %></td>
           <td> <%= value.description %></td>
           <td> <%= value.finish_percentage %></td>
           <td>

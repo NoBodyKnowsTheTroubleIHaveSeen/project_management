@@ -13,11 +13,11 @@ class ManagementController < ApplicationController
     project.start_date = params[:start_date]
     project.finish_date = params[:finish_date]
     project.description = params[:description]
-    project.manager_id = session[:id]
-    array = params[:idList]
+    project.manager_id = session[:people_id]
     if project.valid?
       project.save
       id = project.id
+      array = params[:idList]
       array.each do |value|
         person_project = PersonProject.new
         person_project.project_id = id
@@ -32,8 +32,49 @@ class ManagementController < ApplicationController
     @message = I18n.t("input_error")
   end
 
+  def goto_update_project
+    @project_id = params[:project_id]
+    @project = Project.find @project_id
+    personProject = PersonProject.where("project_id = ?", @project_id)
+    @others = Person.all
+    @people = Array.new
+    personProject.each do |value|
+      p = Person.find value.people_id
+      @people.append p.id
+      @people.append p.name
+    end
+  end
+
+  def update_project
+    project = Project.find params[:project_id]
+    project.name = params[:name]
+    project.description= params[:description]
+    project.start_date = params[:start_date]
+    project.finish_date = params[:finish_date]
+    if project.valid?
+      project.save
+      array = params[:idList]
+      array.each do |value|
+        person_project = PersonProject.where("project_id = ? and people_id = ?", params[:project_id],value)
+        if person_project.blank?
+          person_project = PersonProject.new
+          person_project.project_id = params[:project_id]
+          person_project.role = 1
+          person_project.role_name = 'developer'
+          person_project.people_id = value
+          person_project.save
+        end
+      end
+      @message = I18n.t("update_success")
+      render :add_project
+      return
+    end
+    @message = I18n.t("input_error")
+    render :add_project
+  end
+
   def plan
-    @list = Plan.find_all_by_people_id session[:id]
+    @list = Plan.find_by(people_id: session[:id])
   end
 
 

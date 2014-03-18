@@ -11,5 +11,9 @@ $(function () {
             $(".selected").click();
         }
         init();
+        $("#rightPanelDiv").on("click",".ajaxRequest",function(){
+            var url = $(this).attr("data-url");
+            $(".rightPanelDiv").load(url);
+        })
     }
 )
