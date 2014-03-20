@@ -1,0 +1,42 @@
+<div class="showProject">
+  <div id="result" class="hide message"><%= @message %></div>
+  <%= t('show_project') %>
+  <br>
+  <table>
+    <thead>
+    <th><%= t('project_name') %></th>
+    <th><%= t('start_date') %></th>
+    <th><%= t('finish_date') %></th>
+    <th><%= t('manager') %></th>
+    <th><%= t('description') %></th>
+    <th><%= t('finish_percentage') %></th>
+    <th><%= t('is_doned') %></th>
+    </thead>
+    <% if @projects.size==0 %>
+        <tr><td colspan="7"><%= t('no_project') %></td></tr>
+    <% else %>
+        <% @projects.each do |value| %>
+            <tr>
+              <td>
+                <a data-url="gotoUpdateProject?project_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
+              </td>
+              <td> <%= value.start_date %></td>
+              <td> <%= value.finish_date %></td>
+              <td>
+                <% person = Person.find value.manager_id %>
+                <%= person.name %></td>
+              <td> <%= value.description %></td>
+              <td> <%= value.finish_percentage %></td>
+              <td>
+                <% if value.is_doned.eql?(1) %>
+                    <%= t('doned') %>
+                <% else %>
+                    <%= t('undoned') %>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+    <% end %>
+
+  </table>
+</div>

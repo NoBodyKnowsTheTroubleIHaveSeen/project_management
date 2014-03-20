@@ -14,6 +14,7 @@ class ManagementController < ApplicationController
     project.finish_date = params[:finish_date]
     project.description = params[:description]
     project.manager_id = session[:people_id]
+    @projects = Project.all
     if project.valid?
       project.save
       id = project.id
@@ -27,9 +28,11 @@ class ManagementController < ApplicationController
         person_project.save
       end
       @message = I18n.t("add_success")
+      render partial: 'show_project'
       return
     end
     @message = I18n.t("input_error")
+    render partial: 'show_project'
   end
 
   def goto_update_project
@@ -55,7 +58,7 @@ class ManagementController < ApplicationController
       project.save
       array = params[:idList]
       array.each do |value|
-        person_project = PersonProject.where("project_id = ? and people_id = ?", params[:project_id],value)
+        person_project = PersonProject.where("project_id = ? and people_id = ?", params[:project_id], value)
         if person_project.blank?
           person_project = PersonProject.new
           person_project.project_id = params[:project_id]
@@ -71,6 +74,15 @@ class ManagementController < ApplicationController
     end
     @message = I18n.t("input_error")
     render :add_project
+  end
+
+  def delete_project
+    project = Project.find params[:project_id]
+    project.delete
+    @people = Person.all
+    @projects = Project.all
+    @message = I18n.t("delete_success")
+    render :project_management
   end
 
   def plan

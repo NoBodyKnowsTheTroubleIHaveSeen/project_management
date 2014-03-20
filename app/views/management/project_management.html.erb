@@ -31,40 +31,6 @@
     </div>
     <input type="submit" value="<%= t('add_project') %>">
   </form>
-  <div id="result" class="hide message"></div>
 </div>
 <br>
-<div class="showProject">
-  <%= t('show_project') %>
-  <br>
-  <table>
-    <thead>
-    <td><%= t('project_name') %></td>
-    <td><%= t('start_date') %></td>
-    <td><%= t('finish_date') %></td>
-    <td><%= t('manager') %></td>
-    <td><%= t('description') %></td>
-    <td><%= t('finish_percentage') %></td>
-    <td><%= t('is_doned') %></td>
-    </thead>
-    <% @projects.each do |value| %>
-        <tr>
-          <td><a href="gotoUpdateProject?project_id=<%= value.id%>" class="ajaxHref"> <%= value.name %></a></td>
-          <td> <%= value.start_date %></td>
-          <td> <%= value.finish_date %></td>
-          <td>
-            <% person = Person.find value.manager_id %>
-            <%= person.name %></td>
-          <td> <%= value.description %></td>
-          <td> <%= value.finish_percentage %></td>
-          <td>
-            <% if value.is_doned.eql?(1) %>
-                <%= t('doned') %>
-            <% else %>
-                <%= t('undoned') %>
-            <% end %>
-          </td>
-        </tr>
-    <% end %>
-  </table>
-</div>
+<%= render  partial: 'show_project' %>

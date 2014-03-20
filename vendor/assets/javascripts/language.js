@@ -1,6 +1,6 @@
 $(function(){
     var url = window.location.search
-    if(url=="?locale=zh")
+    if(url=="?locale=zh"||url=="")
     {
          $("#chinese").attr("checked","checked");
     }

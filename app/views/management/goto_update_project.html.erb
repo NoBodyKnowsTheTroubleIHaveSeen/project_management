@@ -37,5 +37,9 @@
     <input type="submit" value="<%= t('update_project') %>">
     <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
   </form>
+  <form  class="ajaxForm" data-url="deleteProject">
+    <input value="<%= @project_id %>" name="project_id" name="project_id" type="hidden">
+    <input type="submit" value="<%= t('delete_project') %>">
+  </form>
   <div id="result" class="hide message"></div>
 </div>

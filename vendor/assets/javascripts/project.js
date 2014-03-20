@@ -30,7 +30,7 @@ $("#addProjectForm").on("submit", function (event) {
         description: description, idList: array,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
-        $("#result").empty().append(data);
+        $(".showProject").empty().append(data);
         $("#result").fadeIn();
         $("#result").fadeOut(5000);
     });
@@ -52,36 +52,17 @@ $("#updateProjectForm").on("submit", function (event) {
         description: description, idList: array,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
-        $("#result").empty().append(data);
+        $(".showProject").empty().append(data);
         $("#result").fadeIn();
         $("#result").fadeOut(5000);
     });
 });
-$(".ajaxHref").click(function () {
-    var url = $(this).attr("href");
-    $.get(url, function (data) {
-        $('#rightPanelDiv').html(data);
-    });
-    return false;
-});
-$("#backButton").click(function(){
-    var url = $(this).attr("data-url");
-    $(".rightPanelDiv").load(url, function () {
-
-    });
-
-})
-
-
-
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drag(ev) {
     ev.dataTransfer.setData("Text", ev.target.id);
 }
-
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");

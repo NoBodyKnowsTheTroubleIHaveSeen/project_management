@@ -29,8 +29,9 @@ ProjectManagement::Application.routes.draw do
 
   #action controller page.
   post 'addProject' => 'management#add_project'
-  get 'gotoUpdateProject' =>'management#goto_update_project'
-  post 'updateProject' =>'management#update_project'
+  get 'gotoUpdateProject' => 'management#goto_update_project'
+  post 'updateProject' => 'management#update_project'
+  post 'deleteProject' => 'management#delete_project'
   post 'addPlan' => 'management#add_plan'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

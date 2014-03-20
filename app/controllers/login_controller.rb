@@ -21,7 +21,8 @@ class LoginController < ApplicationController
         end
       end
     end
-    flash[:notice] = "your username or password is wrong!"
-    redirect_to :action => 'index'
+    flash[:notice] = I18n.t("login_fail")
+    render 'login/index'
+    #redirect_to :action => 'index'
   end
 end

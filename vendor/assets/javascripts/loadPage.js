@@ -11,9 +11,20 @@ $(function () {
             $(".selected").click();
         }
         init();
-        $("#rightPanelDiv").on("click",".ajaxRequest",function(){
+        $(document).on("click",".ajaxRequest",function(event){
             var url = $(this).attr("data-url");
+            event.preventDefault();
             $(".rightPanelDiv").load(url);
-        })
+            return false;
+        });
+        $(document).on("submit",".ajaxForm",function(event){
+            var url = $(this).attr("data-url");
+            var data = $(this).serialize();
+            event.preventDefault();
+            var posting = $.post(url, data);
+            posting.done(function (data) {
+                $(".rightPanelDiv").empty().append(data);
+            });
+        });
     }
 )
