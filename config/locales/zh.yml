@@ -65,3 +65,7 @@ zh:
   employ_name: '员工姓名'
   project_people: "项目人员"
   back: "返回"
+  login_fail: "用户名或密码错误"
+  delete_project: "删除该项目"
+  delete_success: "成功删除该项目"
+  no_project: "当前没有任何项目"
