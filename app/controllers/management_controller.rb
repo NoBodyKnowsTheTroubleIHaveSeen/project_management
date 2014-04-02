@@ -36,16 +36,8 @@ class ManagementController < ApplicationController
   end
 
   def goto_update_project
-    @project_id = params[:project_id]
-    @project = Project.find @project_id
-    personProject = PersonProject.where("project_id = ?", @project_id)
     @others = Person.all
-    @people = Array.new
-    personProject.each do |value|
-      p = Person.find value.people_id
-      @people.append p.id
-      @people.append p.name
-    end
+    get_peopple_by_project_id
   end
 
   def update_project
@@ -114,7 +106,6 @@ class ManagementController < ApplicationController
     puts params[:hard_level]
     puts session[:people_id]
     puts session[:username]
-    puts '---------------'
     puts date
     if plan.valid?
       plan.save
@@ -129,9 +120,25 @@ class ManagementController < ApplicationController
     @people = Person.all
   end
 
+  def get_project_people
+    get_peopple_by_project_id
+  end
+
   def schedule_submit
   end
 
   def schedule_summary
+  end
+  private
+  def get_peopple_by_project_id
+    @project_id = params[:project_id]
+    @project = Project.find @project_id
+    personProject = PersonProject.where("project_id = ?", @project_id)
+    @people = Array.new
+    personProject.each do |value|
+      p = Person.find value.people_id
+      @people.append p.id
+      @people.append p.name
+    end
   end
 end

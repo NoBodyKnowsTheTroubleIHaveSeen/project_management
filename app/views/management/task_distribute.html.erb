@@ -1,11 +1,11 @@
-<%= javascript_include_tag 'task.js' %>
+<%= javascript_include_tag 'task' %>
 <%= stylesheet_link_tag 'management'%>
 <h1><%= t('task_distribute') %></h1>
 <div class="addTask">
   <form action="addTask" method="post" id="addProjectForm">
     <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
     <%= t('project_name') %>:
-    <select name="project_id">
+    <select name="project_id" id="options" data-url="getProjectPeople">
       <% @projects.each do |value| %>
           <option value="<%= value.id %>"><%= value.name %></option>
       <% end %>
@@ -21,19 +21,16 @@
     <%= t('add_people') %>:
     <br>
     <div class="choosePeople">
-      <div class="leftPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="leftPeople">
         <div class="headerDiv"><%= t('project_people') %></div>
-        <% i = 0 %>s
-        <% @people.each do |value| %>
-            <div class="data" draggable="true" ondragstart="drag(event)" id="l<%= i %>" data-id="<%= value.id %>"><%= value.name %></div>
-            <% i+=1 %>
-        <% end %>
+        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
       <div class="centerChoose">
         --->
       </div>
-      <div class="rightPeople" id="rightPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="rightPeople" id="rightPeople">
         <div class="headerDiv"><%= t('task_people') %></div>
+        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
     </div>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
