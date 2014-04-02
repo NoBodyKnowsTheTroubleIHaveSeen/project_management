@@ -15,7 +15,5 @@ $(function () {
     getProjectPeople();
     $("#options").change(function () {
         getProjectPeople();
-        alert("Asdf");
-        asdfasdfasdfasdfasfdasdf
     });
 })
