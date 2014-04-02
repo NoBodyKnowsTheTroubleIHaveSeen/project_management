@@ -2,7 +2,7 @@
   text-align: center;
   margin:0 auto;
 }
-.registerIframeDiv{
+.registerDiv{
   background-image: url("1.jpg");
   width: 600px;
   height: 500px;
@@ -10,9 +10,8 @@
   left:50%;
   margin:-210px 0 0 -300px;
   display: none;
+  z-index: 10;
 }
-iframe{
-  width: 600px;
-  height: 500px;
-  border: none;
+#message{
+  color: red;
 }

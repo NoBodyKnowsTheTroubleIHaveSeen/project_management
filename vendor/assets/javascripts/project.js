@@ -1,6 +1,6 @@
 $(function () {
     $("#rightPeople").find(".data").each(function () {
-        var data_id = "#id_" + $(this).attr("data-id");
+        var data_id = "#id_flag_" + $(this).attr("data-id");
         $(".leftPeople").find(data_id).hide();
     });
 })
@@ -11,7 +11,16 @@ function getIdList() {
         array[i] = $(this).attr("data-id");
         i++;
     });
-    return array
+    return array;
+}
+function getRemoveIdList(){
+    var array = new Array();
+    var i = 0;
+    $(".leftPeople").find("[id^=flag_]").each(function(){
+        array[i] = $(this).attr("data-id");
+        i++;
+    })
+    return array;
 }
 $("#addProjectForm").on("submit", function (event) {
     //相当于return false的效果
@@ -47,12 +56,13 @@ $("#updateProjectForm").on("submit", function (event) {
         description = $form.find("textarea[name='description']").val(),
         url = $form.attr("action");
     var array = getIdList();
+    var removeIdList = getRemoveIdList();
     var posting = $.post(url, { project_id:project_id,name: name, manager_id: manager_id,
         start_date: start_date, finish_date: finish_date,
-        description: description, idList: array,
+        description: description, idList: array,removeIdList:removeIdList,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
-        $(".showProject").empty().append(data);
+        $("#result").empty().append(data);
         $("#result").fadeIn();
         $("#result").fadeOut(5000);
     });

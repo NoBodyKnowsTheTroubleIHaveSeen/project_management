@@ -1,30 +1,30 @@
 <head>
   <link rel="Shortcut Icon" href="assets/web.ico">
   <title>login-page</title>
-  <%= javascript_include_tag "jquery-1.11.0"%>
-  <%= javascript_include_tag "language"%>
-  <%= javascript_include_tag "login.js"%>
-  <%= stylesheet_link_tag "login"%>
+  <%= javascript_include_tag "jquery-1.11.0" %>
+  <%= javascript_include_tag "language" %>
+  <%= javascript_include_tag "login.js" %>
+  <%= stylesheet_link_tag "login" %>
 </head>
 <body>
 <div class="loginDiv">
-<h1><%= t(:login) %></h1>
-<% if flash[:notice] %>
-    <%= flash[:notice] %>
-<% end %>
-<form method="post" action="login">
-  <%= t('username') %>
-  <input name="username" type="text"/><br>
-  <%= t('password') %> <input name="password" type="password"/><br>
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-  <%= t('language') %>:
-  <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
-  <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
-  <input type="reset" value="<%= t('reset') %>">
-  <input type="submit" value="<%= t('submit') %>"/>
-</form>
-<input type="button" value="还没有账号？" class="registerButton" id="close"></div>
-<div class="registerIframeDiv">
-<iframe src="register" id="register"></iframe>
+  <h1><%= t(:login) %></h1>
+  <% if flash[:notice] %>
+      <%= flash[:notice] %>
+  <% end %>
+  <form method="post" action="login">
+    <%= t('username') %>
+    <input name="username" type="text"/><br>
+    <%= t('password') %> <input name="password" type="password"/><br>
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+    <%= t('language') %>:
+    <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
+    <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
+    <input type="reset" value="<%= t('reset') %>">
+    <input type="submit" value="<%= t('submit') %>"/>
+  </form>
+  <input type="button" value="还没有账号？" class="registerButton" id="close"></div>
+<div class="registerDiv">
+  <%= render :template => "register/index" %>
 </div>
 </body>

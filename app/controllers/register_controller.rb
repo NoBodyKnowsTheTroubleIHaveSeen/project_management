@@ -6,16 +6,23 @@ class RegisterController < ApplicationController
 
   def register
     username = params[:username]
-    if username==""
-      flash[:notice] = I18n.t('usernameNil')
-      redirect_to :action => 'index'
+    if username==''
+      render :text => I18n.t('username_can_not_be_null')
+      return
+    end
+    person = Person.find_by(name: username)
+    if !person.blank?
+      render :text => I18n.t('username_has_been_register')
       return
     end
     password = params[:password]
-    repassword = params[:repassword]
-    if password != repassword
-      flash[:notice] = I18n.t('passwordUnequal')
-      render :action => 'index'
+    if password==''
+      render :text => I18n.t('password_can_be_null')
+      return
+    end
+    rePassword = params[:repassword]
+    if password != rePassword
+      render :text => I18n.t('passwordUnequal')
       return
     end
     gender = params[:gender]
@@ -34,10 +41,10 @@ class RegisterController < ApplicationController
       session[:username] = username
       p = Person.find_by_name username
       session[:id] = p.id
-      redirect_to :action => 'index', controller: 'welcome'
-      return
+      render :text => 'success'
     else
-      redirect_to :action => 'index'
+      render :text => I18n.t('please_check_no_department_id_and_email')
+      #redirect_to :action => 'index'
     end
   end
 end

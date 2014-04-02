@@ -1,14 +1,6 @@
-<head>
-  <title>register-page</title>
-  <%= javascript_include_tag "jquery-1.11.0"%>
-  <%= javascript_include_tag "login.js"%>
-  <%= stylesheet_link_tag "register"%>
-</head>
-</head>
-<body>
+<%= stylesheet_link_tag "register" %>
 <h1><%= t(:register) %></h1>
-<div class="registerDiv">
-<form action="register" method="post">
+<form action="register" method="post" id="registerForm">
   <%= t('username') %>
   <input name="username" type="text"/><br/>
   <%= t('password') %>
@@ -16,8 +8,9 @@
   <%= t('repassword') %>
   <input name="repassword" type="password"/><br/>
   <%= t('gender') %>
-  <input type="radio" name="gender" value="male"/> <%= t('male') %>
-  <input type="radio" name="gender" value="female"/><%= t('female') %><br/>
+  <input type="radio" name="gender" value="male" checked/> <%= t('male') %>
+  <input type="radio" name="gender" value="female"/><%= t('female') %>
+  <br/>
   <%= t(:number) %>
   <input type="text" name="no"/><br/>
   <%= t(:departmentId) %>
@@ -28,9 +21,5 @@
   <input type="reset" value="<%= t('reset') %>">
   <input type="submit" value="<%= t('submit') %>"/>
 </form>
-  <% if flash[:notice] %>
-      <%= flash[:notice] %>
-  <% end %>
-</div>
-<input type="button"  class="closeButton"  >
-</body>
+<div id="message"></div>
+<input type="button" class="closeButton">

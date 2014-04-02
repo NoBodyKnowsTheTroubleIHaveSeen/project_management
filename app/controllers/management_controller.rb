@@ -52,12 +52,13 @@ class ManagementController < ApplicationController
     project = Project.find params[:project_id]
     project.name = params[:name]
     project.description= params[:description]
+    puts params[:description]
     project.start_date = params[:start_date]
     project.finish_date = params[:finish_date]
     if project.valid?
       project.save
-      array = params[:idList]
-      array.each do |value|
+      idList = params[:idList]
+      idList.each do |value|
         person_project = PersonProject.where("project_id = ? and people_id = ?", params[:project_id], value)
         if person_project.blank?
           person_project = PersonProject.new
@@ -66,6 +67,13 @@ class ManagementController < ApplicationController
           person_project.role_name = 'developer'
           person_project.people_id = value
           person_project.save
+        end
+      end
+      removeIdList = params[:removeIdList]
+      if !removeIdList.blank?
+        removeIdList.each do |value|
+          person_project = PersonProject.find_by(project_id: params[:project_id], people_id: value)
+          person_project.destroy
         end
       end
       @message = I18n.t("update_success")
