@@ -15,6 +15,4 @@ $(function () {
     getProjectPeople();
     $("#options").change(function () {
         getProjectPeople();
-        //测试
-    });
 })
