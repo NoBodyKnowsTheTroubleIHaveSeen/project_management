@@ -16,3 +16,4 @@ $(function () {
     $("#options").change(function () {
         getProjectPeople();
 })
+})
