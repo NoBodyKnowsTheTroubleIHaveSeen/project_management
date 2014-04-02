@@ -15,5 +15,6 @@ $(function () {
     getProjectPeople();
     $("#options").change(function () {
         getProjectPeople();
+        b
 })
 })
