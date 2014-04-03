@@ -33,6 +33,9 @@
     <td><%= t('realte_task') %></td>
     <td><%= t('description') %></td>
     </thead>
+    <% if @list.nil? %>
+        <tr><td colspan="7"><%= t('no_plan') %></td></tr>
+    <% else %>
     <% @list.each do |value| %>
         <tr>
           <td> <%= value.name %></td>
@@ -43,5 +46,6 @@
           <td> <%= value.description %></td>
         </tr>
     <% end %>
+        <% end %>
   </table>
 </div>
