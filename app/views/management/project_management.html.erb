@@ -1,40 +1,43 @@
 <%= javascript_include_tag "project.js" %>
 <h1><%= t('project_management') %></h1>
-<div class="addProject">
-  <form action="addProject" method="post" id="addProjectForm">
-    <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>"/>
-    <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('finish_date') %>:<input type="date" name="finish_date"/><br>
-    <br>
-    <%= t('description') %>:
-    <textarea rows="5" cols="90" name="description">
-    </textarea>
-    <br>
-    <!--<input type="textarea" name="description"/>-->
-    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-
-    <div class="choosePeople">
-      <div class="leftPeople" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="headerDiv"><%= t('employ_name') %></div>
-        <div class="peopleContent">
-          <% i = 0 %>
-          <% @people.each do |value| %>
-              <div class="data" draggable="true" ondragstart="drag(event)" id="l<%= i %>" data-id="<%= value.id %>"><%= value.name %></div>
-              <% i+=1 %>
-          <% end %>
-        </div>
-      </div>
-      <div class="centerChoose">
-        --->
-      </div>
-      <div class="rightPeople" id="rightPeople" >
-        <div class="headerDiv"><%= t('project_people') %></div>
-        <div class="peopleContent" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-      </div>
-    </div>
-    <input type="submit" value="<%= t('add_project') %>">
-  </form>
+<div class="showProject">
+  <table>
+    <thead>
+    <th><%= t('project_name') %></th>
+    <th><%= t('start_date') %></th>
+    <th><%= t('finish_date') %></th>
+    <th><%= t('manager') %></th>
+    <th><%= t('description') %></th>
+    <th><%= t('finish_percentage') %></th>
+    <th><%= t('is_doned') %></th>
+    </thead>
+    <% if @projects.size==0 %>
+        <tr><td colspan="7"><%= t('no_project') %></td></tr>
+    <% else %>
+        <% @projects.each do |value| %>
+            <tr>
+              <td>
+                <a data-url="gotoUpdateProject?project_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
+              </td>
+              <td> <%= value.start_date %></td>
+              <td> <%= value.finish_date %></td>
+              <td>
+                <% person = Person.find value.manager_id %>
+                <%= person.name %></td>
+              <td> <%= value.description %></td>
+              <td> <%= value.finish_percentage %></td>
+              <td>
+                <% if value.is_doned.eql?(1) %>
+                    <%= t('doned') %>
+                <% else %>
+                    <%= t('undoned') %>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
 </div>
-<br>
-<%= render partial: 'show_project' %>
+<div >
+  <input type="button" value="<%= t('add_project') %>" class="ajaxRequest" data-url="gotoAddProject">
+</div>

@@ -1,11 +1,12 @@
 <%= javascript_include_tag 'task' %>
+<%= javascript_include_tag 'project'%>
 <%= stylesheet_link_tag 'management'%>
 <h1><%= t('task_distribute') %></h1>
 <div class="addTask">
-  <form action="addTask" method="post" id="addProjectForm">
+  <form action="addTask" method="post" id="addTaskForm" >
     <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
     <%= t('project_name') %>:
-    <select name="project_id" id="options" data-url="getProjectPeople">
+    <select name="project_id" id="project_id" data-url="getProjectPeople">
       <% @projects.each do |value| %>
           <option value="<%= value.id %>"><%= value.name %></option>
       <% end %>
@@ -13,6 +14,12 @@
     <%= t('start_date') %>:<input type="date" name="start_date"/>
     <%= t('weight') %>:<input name="weight" placeholder="<%= t('input_weight') %>"/><br>
     <br>
+    <%= t('hard_level')%>
+    <select name="hard_level" id="hard_level">
+      <option value="1"><%= t('easy') %></option>
+      <option value="2"><%= t('common') %></option>
+      <option value="3"><%= t('hard') %></option>
+    </select>
     <%= t('description') %>:
     <textarea rows="3" cols="20" name="description"></textarea>
     <br>

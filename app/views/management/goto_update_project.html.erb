@@ -1,5 +1,8 @@
 <%= javascript_include_tag "project.js" %>
-<h1><%= t('project_management') %></h1>
+<h1><%= t('update_project') %></h1>
+<div class="message">
+</div>
+<br>
 <div class="addProject">
   <form action="updateProject" method="post" id="updateProjectForm">
     <input type="hidden" value="<%= @project_id %>" name="project_id">
@@ -16,27 +19,27 @@
     <div class="choosePeople">
       <div class="leftPeople">
         <div class="headerDiv"><%= t('employ_name') %></div>
-        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)">
-        <% @others.each do |value| %>
-            <div class="data" draggable="true" ondragstart="drag(event)" id="id_flag_<%= value.id %>" data-id="<%= value.id %>"><%= value.name %></div>
-        <% end %>
-      </div>
+        <div class="peopleContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <% @others.each do |value| %>
+              <div class="data" draggable="true" ondragstart="drag(event)" id="id_flag_<%= value.id %>" data-id="<%= value.id %>"><%= value.name %></div>
+          <% end %>
+        </div>
       </div>
       <div class="centerChoose">
         --->
       </div>
       <div class="rightPeople" id="rightPeople">
         <div class="headerDiv"><%= t('project_people') %></div>
-        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)">
-        <% i = 0 %>
-        <% while i<@people.size/2 do %>
-            <div class="data" draggable="true" ondragstart="drag(event)" id="flag_<%= @people[2*i] %>" data-id="<%= @people[2*i] %>"><%= @people[2*i+1] %></div>
-            <% i+=1 %>
-        <% end %>
+        <div class="peopleContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <% i = 0 %>
+          <% while i<@people.size/2 do %>
+              <div class="data" draggable="true" ondragstart="drag(event)" id="flag_<%= @people[2*i] %>" data-id="<%= @people[2*i] %>"><%= @people[2*i+1] %></div>
+              <% i+=1 %>
+          <% end %>
         </div>
       </div>
     </div>
-    <input type="submit" value="<%= t('update_project') %>">
+    <input type="submit" value="<%= t('update') %>">
     <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
   </form>
   <form class="ajaxForm" data-url="deleteProject">

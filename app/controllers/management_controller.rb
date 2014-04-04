@@ -4,6 +4,9 @@ class ManagementController < ApplicationController
 
   def project_management
     @projects = Project.all
+  end
+
+  def goto_add_project
     @people = Person.all
   end
 
@@ -28,13 +31,10 @@ class ManagementController < ApplicationController
           person_project.save
         end
       end
-      @projects = Project.all
-      @message = I18n.t("add_success")
-      render partial: 'show_project'
+      redirect_to :action => 'project_management'
       return
     end
-    @message = I18n.t("input_error")
-    render partial: 'show_project'
+    render :text => 'error'
   end
 
   def goto_update_project
@@ -70,12 +70,10 @@ class ManagementController < ApplicationController
           person_project.destroy
         end
       end
-      @message = I18n.t("update_success")
-      render :add_project
+      redirect_to :action => 'project_management'
       return
     end
-    @message = I18n.t("input_error")
-    render :add_project
+    render :text => 'error'
   end
 
   def delete_project
@@ -83,12 +81,10 @@ class ManagementController < ApplicationController
     project.delete
     @people = Person.all
     @projects = Project.all
-    @message = I18n.t("delete_success")
     render :project_management
   end
 
   def plan
-    puts '-------------'
     puts session[:id]
     @list = Plan.find_by(people_id: session[:id])
   end
@@ -124,6 +120,31 @@ class ManagementController < ApplicationController
     @people = Person.all
   end
 
+  def add_task
+    task = Task.new
+    task.name = params[:name]
+    task.project_id = params[:project_id]
+    task.start_date = params[:start_date]
+    task.weight = params[:weight]
+    task.description = params[:description]
+    if task.valid?
+      task.save
+    end
+    idList = params[:idList]
+    idList.each do |value|
+      personTask = PersonTask.new
+      personTask.people_id= value
+      personTask.task_id= task.id
+      personTask.hard_level = params[:hard_level]
+      personTask.start_time = params[:start_date]
+      personTask.project_id= params[:project_id]
+      if personTask.valid?
+        personTask.save
+      end
+    end
+    render :text => "success!"
+  end
+
   def get_project_people
     get_peopple_by_project_id
   end
@@ -133,6 +154,7 @@ class ManagementController < ApplicationController
 
   def schedule_summary
   end
+
   private
   def get_peopple_by_project_id
     @project_id = params[:project_id]

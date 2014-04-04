@@ -41,8 +41,8 @@ body {
 .footer {
     clear: both;
     background-color: rgb(43, 70, 85);
-    height: 80px;
-    /*height: 8%;*/
+    /*height: 80px;*/
+    height: 8%;
     margin: 0 atuo;
 }
 

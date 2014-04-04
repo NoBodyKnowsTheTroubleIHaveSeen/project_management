@@ -1,5 +1,8 @@
-<span><%= @message %></span>
-<h1><%= t('project_management') %></h1>
+<%= javascript_include_tag "project" %>
+<h1><%= t('add_project') %></h1>
+<div class="message">
+</div>
+<br>
 <div class="addProject">
   <form action="addProject" method="post" id="addProjectForm">
     <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>"/>
@@ -33,7 +36,8 @@
         </div>
       </div>
     </div>
-    <input type="submit" value="<%= t('add_project') %>">
+    <input type="submit" value="<%= t('add') %>">
+    <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/project_management">
   </form>
 </div>
 <br>

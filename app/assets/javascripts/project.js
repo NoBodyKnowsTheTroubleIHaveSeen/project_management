@@ -1,9 +1,11 @@
 $(function () {
+    //页面加载时，找到左边（所有人）里已经在右边（项目）的人移除
     $("#rightPeople").find(".data").each(function () {
         var data_id = "#id_flag_" + $(this).attr("data-id");
-        $(".leftPeople").find(data_id).hide();
+        $(".leftPeople").find(data_id).remove();
     });
 })
+//获得被选中的项目人员的id
 function getIdList() {
     var array = new Array();
     var i = 0;
@@ -13,15 +15,25 @@ function getIdList() {
     });
     return array;
 }
-function getRemoveIdList(){
+//获得被移除的项目人员的id
+function getRemoveIdList() {
     var array = new Array();
     var i = 0;
-    $(".leftPeople").find("[id^=flag_]").each(function(){
+    $(".leftPeople").find("[id^=flag_]").each(function () {
         array[i] = $(this).attr("data-id");
         i++;
     })
     return array;
 }
+function showData(data){
+    if (data == "error") {
+        showMessage();
+    }
+    else {
+        $("#rightPanelDiv").empty().append(data);
+    }
+}
+//添加项目时的提交
 $("#addProjectForm").on("submit", function (event) {
     //相当于return false的效果
     event.preventDefault();
@@ -39,11 +51,10 @@ $("#addProjectForm").on("submit", function (event) {
         description: description, idList: array,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
-        $(".showProject").empty().append(data);
-        $("#result").fadeIn();
-        $("#result").fadeOut(5000);
+        showData(data);
     });
 });
+//更新项目表单是的提交
 $("#updateProjectForm").on("submit", function (event) {
     event.preventDefault();
     var $form = $(this),
@@ -57,13 +68,11 @@ $("#updateProjectForm").on("submit", function (event) {
         url = $form.attr("action");
     var array = getIdList();
     var removeIdList = getRemoveIdList();
-    var posting = $.post(url, { project_id:project_id,name: name, manager_id: manager_id,
+    var posting = $.post(url, { project_id: project_id, name: name, manager_id: manager_id,
         start_date: start_date, finish_date: finish_date,
-        description: description, idList: array,removeIdList:removeIdList,
+        description: description, idList: array, removeIdList: removeIdList,
         authenticity_token: authenticity_token });
     posting.done(function (data) {
-        $("#result").empty().append(data);
-        $("#result").fadeIn();
-        $("#result").fadeOut(5000);
+        showData(data);
     });
 });
