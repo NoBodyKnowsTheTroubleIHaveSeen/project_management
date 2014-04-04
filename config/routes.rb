@@ -1,4 +1,6 @@
 ProjectManagement::Application.routes.draw do
+  get "management/goto_update_task"
+  get "management/update_task"
   get "management/update_project"
   get "share/file_share"
   get "share/question_answer"
@@ -28,14 +30,21 @@ ProjectManagement::Application.routes.draw do
   post 'login' => 'login#login'
 
   #action controller page.
-  get  'gotoAddProject' =>'management#goto_add_project'
+  #project operation
+  get 'gotoAddProject' => 'management#goto_add_project'
   post 'addProject' => 'management#add_project'
   get 'gotoUpdateProject' => 'management#goto_update_project'
   post 'updateProject' => 'management#update_project'
   post 'deleteProject' => 'management#delete_project'
+  post 'getProjectPeople' => 'management#get_project_people'
+
+  #plan operation.
   post 'addPlan' => 'management#add_plan'
-  post 'getProjectPeople'=>'management#get_project_people'
-  post 'addTask' =>'management#add_task'
+  #task operation.
+  post 'addTask' => 'management#add_task'
+  get 'gotoAddTask' => 'management#goto_add_task'
+  get 'gotoUpdateTask' => 'management#goto_update_task'
+  post 'updateTask' => 'management#update_task'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

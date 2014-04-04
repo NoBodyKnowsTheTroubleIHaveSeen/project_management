@@ -1,10 +1,3 @@
-$(function () {
-    //页面加载时，找到左边（所有人）里已经在右边（项目）的人移除
-    $("#rightPeople").find(".data").each(function () {
-        var data_id = "#id_flag_" + $(this).attr("data-id");
-        $(".leftPeople").find(data_id).remove();
-    });
-})
 //获得被选中的项目人员的id
 function getIdList() {
     var array = new Array();

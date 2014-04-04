@@ -84,6 +84,11 @@ class ManagementController < ApplicationController
     render :project_management
   end
 
+  #获得项目人员
+  def get_project_people
+    get_peopple_by_project_id
+  end
+
   def plan
     puts session[:id]
     @list = Plan.find_by(people_id: session[:id])
@@ -116,8 +121,11 @@ class ManagementController < ApplicationController
   end
 
   def task_distribute
+    @tasks = Task.all
+  end
+
+  def goto_add_task
     @projects = Project.all
-    @people = Person.all
   end
 
   def add_task
@@ -127,6 +135,7 @@ class ManagementController < ApplicationController
     task.start_date = params[:start_date]
     task.weight = params[:weight]
     task.description = params[:description]
+    task.hard_level = params[:hard_level]
     if task.valid?
       task.save
     end
@@ -135,19 +144,17 @@ class ManagementController < ApplicationController
       personTask = PersonTask.new
       personTask.people_id= value
       personTask.task_id= task.id
-      personTask.hard_level = params[:hard_level]
       personTask.start_time = params[:start_date]
       personTask.project_id= params[:project_id]
       if personTask.valid?
         personTask.save
+        redirect_to :action => :task_distribute
+        return
       end
     end
-    render :text => "success!"
+    render :text => 'error'
   end
 
-  def get_project_people
-    get_peopple_by_project_id
-  end
 
   def schedule_submit
   end
@@ -156,6 +163,7 @@ class ManagementController < ApplicationController
   end
 
   private
+  #通过项目id获得项目人员
   def get_peopple_by_project_id
     @project_id = params[:project_id]
     @project = Project.find @project_id

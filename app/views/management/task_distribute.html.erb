@@ -2,46 +2,38 @@
 <%= javascript_include_tag 'project'%>
 <%= stylesheet_link_tag 'management'%>
 <h1><%= t('task_distribute') %></h1>
-<div class="addTask">
-  <form action="addTask" method="post" id="addTaskForm" >
-    <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
-    <%= t('project_name') %>:
-    <select name="project_id" id="project_id" data-url="getProjectPeople">
-      <% @projects.each do |value| %>
-          <option value="<%= value.id %>"><%= value.name %></option>
-      <% end %>
-    </select>
-    <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('weight') %>:<input name="weight" placeholder="<%= t('input_weight') %>"/><br>
-    <br>
-    <%= t('hard_level')%>
-    <select name="hard_level" id="hard_level">
-      <option value="1"><%= t('easy') %></option>
-      <option value="2"><%= t('common') %></option>
-      <option value="3"><%= t('hard') %></option>
-    </select>
-    <%= t('description') %>:
-    <textarea rows="3" cols="20" name="description"></textarea>
-    <br>
-    <br>
-    <br>
-    <%= t('add_people') %>:
-    <br>
-    <div class="choosePeople">
-      <div class="leftPeople">
-        <div class="headerDiv"><%= t('project_people') %></div>
-        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      </div>
-      <div class="centerChoose">
-        --->
-      </div>
-      <div class="rightPeople" id="rightPeople">
-        <div class="headerDiv"><%= t('task_people') %></div>
-        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      </div>
-    </div>
-    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-    <input type="submit" value="<%= t('add task') %>">
-  </form>
-  <div id="result" class="hide message"></div>
+<div class="showTask">
+  <table>
+    <thead>
+    <td><%= t('task_name') %></td>
+    <td><%= t('project_name') %></td>
+    <td><%= t('hard_level') %></td>
+    <td><%= t('project_weight') %></td>
+    <td><%= t('finish_percentage') %></td>
+    <td><%= t('start_date') %></td>
+    <td><%= t('finish_date') %></td>
+    <td><%= t('description') %></td>
+    </thead>
+    <% if @tasks.nil? %>
+        <tr><td colspan="7"><%= t('no_task') %></td></tr>
+    <% else %>
+        <% @tasks.each do |value| %>
+            <tr>
+              <td>
+                <a data-url="gotoUpdateTask?task_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
+              </td>
+              <td> <%= get_project_name value.project_id %></td>
+              <td> <%= formate_hard_level value.hard_level %></td>
+              <td> <%= value.weight %>%</td>
+              <td> <%= value.percentage %>%</td>
+              <td> <%= value.start_date %></td>
+              <td> <%= value.end_date %></td>
+              <td> <%= value.description %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
+<div >
+  <input type="button" value="<%= t('add_task') %>" class="ajaxRequest" data-url="gotoAddTask">
 </div>
