@@ -213,11 +213,17 @@
     <option name="ENVIRONMENT" value="development" />
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/db/migrate/20140306135441_create_shares.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20140306135428_create_schedules.rb" />
+        <option value="$PROJECT_DIR$/app/models/person_task.rb" />
+        <option value="$PROJECT_DIR$/app/models/question.rb" />
+        <option value="$PROJECT_DIR$/app/models/schedule.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140308023854_create_notices.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140308024355_create_notices.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140306135451_create_tasks.rb" />
@@ -231,6 +237,8 @@
         <option value="$PROJECT_DIR$/app/views/management/add_plan.html.erb" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/plan.js" />
         <option value="$PROJECT_DIR$/app/models/plan.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/models/person.rb" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/common.js" />
@@ -239,6 +247,7 @@
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/language.js" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/login_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/management/_show_project.html.erb" />
         <option value="$PROJECT_DIR$/app/views/login/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" />
         <option value="$PROJECT_DIR$/app/views/register/index.html.erb" />
@@ -247,28 +256,20 @@
         <option value="$PROJECT_DIR$/app/controllers/register_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/person_project.rb" />
         <option value="$PROJECT_DIR$/app/models/project.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/helpers/management_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/management/get_project_people.html.erb" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/loadPage.js" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/project.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/management.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/leftMenu.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/task.js" />
         <option value="$PROJECT_DIR$/app/views/management/task_distribute.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/views/management/add_project.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/management/_show_project.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/management/project_management.html.erb" />
         <option value="$PROJECT_DIR$/app/views/management/goto_update_project.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/loadPage.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/project.js" />
-        <option value="$PROJECT_DIR$/app/views/management/goto_add_project.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/management/project_management.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/task.js" />
         <option value="$PROJECT_DIR$/app/controllers/management_controller.rb" />
         <option value="$PROJECT_DIR$/config/locales/zh.yml" />
-        <option value="$PROJECT_DIR$/app/views/management/goto_add_plan.html.erb" />
         <option value="$PROJECT_DIR$/app/views/management/plan.html.erb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -361,140 +362,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="welcome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -502,7 +369,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -510,23 +377,23 @@
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="SearchEverywhereHistory" value="&#10;'" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="76" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="208" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="102" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="316" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="105" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="326" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1005" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="431" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="79" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="100" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="104" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1004" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="998" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
+    <property name="last_opened_file_path" value="D:/Program Files/Git/bin/git.exe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -535,14 +402,13 @@
       <recent name="D:\Ruby&amp;Rails\project_management\app\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\project_management\app\assets\javascripts" />
       <recent name="D:\Ruby&amp;Rails\project_management\app\assets\images" />
       <recent name="D:\Ruby&amp;Rails\project_management\app\assets\stylesheets" />
       <recent name="D:\Ruby&amp;Rails\project_management\vendor\assets\javascripts" />
       <recent name="D:\Ruby&amp;Rails\project_management\app\views\welcome" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Development: project_management">
+  <component name="RunManager" selected="Rake.db:migrate: project_management">
     <configuration default="false" name="db:migrate:status: project_management" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="project_management" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -869,7 +735,11 @@
       <created>1396452317302</created>
       <updated>1396452317302</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="2014.4.3">
+      <created>1396515508473</created>
+      <updated>1396515508473</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -893,49 +763,49 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4768977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48679867" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31518152" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22149837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47589424" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4867807" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22239502" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27617604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24886191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27265862" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.281493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952815" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4620462" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08957655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32503888" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.57231724" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.88024884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31415242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24848942" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18353474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39657855" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4768977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48679867" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4867807" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22277227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22149837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27617604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952815" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4620462" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32503888" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31518152" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46034214" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32379517" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31415242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24886191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27265862" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18353474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08957655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5676516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -967,15 +837,61 @@
     <MESSAGE value="update at 3.120&#10;" />
     <MESSAGE value="update at 3.20&#10;" />
     <MESSAGE value="update at 4.2&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update at 4.2&#10;" />
+    <MESSAGE value="2014.4.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="2014.4.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/command">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/notice.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/person_task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/person_project.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="45" selection-end="45" vertical-scroll-proportion="0.093406595" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/schedule.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/management/add_project.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
@@ -1077,9 +993,21 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="481" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/share.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="507" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/management_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="2" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="41" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.45945945" vertical-offset="306" max-vertical-offset="1513">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/management/get_project_people.html.erb">
@@ -1092,274 +1020,148 @@
         <state line="9" column="23" selection-start="366" selection-end="366" vertical-scroll-proportion="0.27031803" vertical-offset="0" max-vertical-offset="566" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/management/task_distribute.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="1" selection-start="1249" selection-end="1336" vertical-scroll-proportion="-9.785714" vertical-offset="287" max-vertical-offset="874">
+          <folding>
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;分发任务&quot;" />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;任务名&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;请输入任务名&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;项目名&quot;" />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="do ... end" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;计划开始日期&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;百分比&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;请输入占项目的百分比&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;描述&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;添加人员&quot;" />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;项目人员&quot;" />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;接受任务的人员名单&quot;" />
+            <marker date="1396488191907" expanded="false" signature="-1:-1" placeholder="&quot;添加任务&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="20621" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/management.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="487" selection-end="487" vertical-scroll-proportion="0.52597404" vertical-offset="67" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/plan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/language.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="36" selection-start="50" selection-end="50" vertical-scroll-proportion="0.027732464" vertical-offset="0" max-vertical-offset="613">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/leftMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="34" selection-end="34" vertical-scroll-proportion="0.027732464" vertical-offset="0" max-vertical-offset="613">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="613">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.2/lib/action_view/helpers/translation_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="13" selection-start="3147" selection-end="3147" vertical-scroll-proportion="0.332" vertical-offset="903" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="12" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.46575344" vertical-offset="612" max-vertical-offset="2312">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="528" selection-end="528" vertical-scroll-proportion="0.84" vertical-offset="0" max-vertical-offset="1054">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="2" selection-start="770" selection-end="770" vertical-scroll-proportion="0.7915743" vertical-offset="51" max-vertical-offset="816">
+        <state line="14" column="23" selection-start="477" selection-end="477" vertical-scroll-proportion="-102.0" vertical-offset="0" max-vertical-offset="391">
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/task_distribute.html.erb">
+    <entry file="file://D:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/mysql2.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="345" selection-end="345" vertical-scroll-proportion="-0.89805824" vertical-offset="489" max-vertical-offset="901">
-          <folding>
-            <element signature="n#t('hard_level')#0;n#!!top" expanded="true" />
-            <element signature="n#t('easy')#0;n#!!top" expanded="true" />
-            <element signature="n#t('common')#0;n#!!top" expanded="true" />
-            <element signature="n#t('hard')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-            <element signature="n#t('task_people')#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/_show_project.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="42" selection-start="0" selection-end="1333" vertical-scroll-proportion="0.2665505" vertical-offset="0" max-vertical-offset="748">
+        <state line="1" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.06137184" vertical-offset="0" max-vertical-offset="277">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/rubymine.jar!/resources/html5-schema/web-forms2.rnc">
+    <entry file="file://$PROJECT_DIR$/bin/rails">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="612" column="40" selection-start="13869" selection-end="13869" vertical-scroll-proportion="11.156667" vertical-offset="3710" max-vertical-offset="13838">
+        <state line="3" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/welcome/_right_panel.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="613">
+        <state line="10" column="0" selection-start="286" selection-end="286" vertical-scroll-proportion="0.6439394" vertical-offset="0" max-vertical-offset="595">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/login_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="561">
-          <folding>
-            <element signature="e#551#571#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="388" selection-end="388" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/add_project.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="882" selection-end="882" vertical-scroll-proportion="-4.1538463" vertical-offset="232" max-vertical-offset="748">
-          <folding>
-            <element signature="n#t('project_management')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('input_project')#0;n#!!top" expanded="true" />
-            <element signature="n#t('start_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('finish_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-            <element signature="n#t('employ_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_people')#0;n#!!top" expanded="true" />
-            <element signature="n#t('add_project')#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/management/project_management.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="816">
-          <folding>
-            <element signature="n#t('project_management')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('start_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('finish_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('manager')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-            <element signature="n#t('finish_percentage')#0;n#!!top" expanded="true" />
-            <element signature="n#t('is_doned')#0;n#!!top" expanded="true" />
-            <element signature="e#465#480#0" expanded="true" />
-            <element signature="e#1160#1170#0" expanded="true" />
-            <element signature="e#1225#1237#0" expanded="true" />
-            <element signature="n#t('add_project')#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="52" selection-start="1090" selection-end="1104" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1530">
+        <state line="10" column="15" selection-start="505" selection-end="505" vertical-scroll-proportion="0.2819237" vertical-offset="0" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/loadPage.js">
+    <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/loadPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="27" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="986">
+        <state line="22" column="35" selection-start="798" selection-end="798" vertical-scroll-proportion="0.584375" vertical-offset="0" max-vertical-offset="799">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/project.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/management.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="23" selection-start="1738" selection-end="1738" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1428">
+        <state line="23" column="14" selection-start="487" selection-end="487" vertical-scroll-proportion="0.6368078" vertical-offset="0" max-vertical-offset="765">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/goto_add_project.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="95" selection-end="95" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="816">
-          <folding>
-            <element signature="n#t('add_project')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('input_project')#0;n#!!top" expanded="true" />
-            <element signature="n#t('start_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('finish_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-            <element signature="n#t('employ_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_people')#0;n#!!top" expanded="true" />
-            <element signature="n#t('add')#0;n#!!top" expanded="true" />
-            <element signature="n#t('go_back')#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="6" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/goto_add_plan.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="40" selection-end="69" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="476">
-          <folding>
-            <element signature="n#t('add_plan')#0;n#!!top" expanded="true" />
-            <element signature="n#t('plan_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('input_plan')#0;n#!!top" expanded="true" />
-            <element signature="n#t('start_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('finish_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('realte_task')#0;n#!!top" expanded="true" />
-            <element signature="n#t('input_task')#0;n#!!top" expanded="true" />
-            <element signature="n#t('hard_level')#0;n#!!top" expanded="true" />
-            <element signature="n#t('easy')#0;n#!!top" expanded="true" />
-            <element signature="n#t('common')#0;n#!!top" expanded="true" />
-            <element signature="n#t('hard')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/management/plan.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="240" selection-end="240" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="595">
-          <folding>
-            <element signature="n#t('work_plan')#0;n#!!top" expanded="true" />
-            <element signature="n#t('show_plan_history')#0;n#!!top" expanded="true" />
-            <element signature="n#t('plan_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('start_date')#0;n#!!top" expanded="true" />
-            <element signature="n#t('hard_level')#0;n#!!top" expanded="true" />
-            <element signature="n#t('realte_task')#0;n#!!top" expanded="true" />
-            <element signature="n#t('description')#0;n#!!top" expanded="true" />
-            <element signature="e#442#454#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/management_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="28" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="2992">
-          <folding>
-            <element signature="e#3059#3080#0" expanded="true" />
-            <element signature="e#3117#3138#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/management/goto_update_project.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="317" selection-end="317" vertical-scroll-proportion="0.2369338" vertical-offset="0" max-vertical-offset="935">
+        <state line="29" column="29" selection-start="1508" selection-end="1508" vertical-scroll-proportion="0.35157546" vertical-offset="281" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="22" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.3707165" vertical-offset="612" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="9" selection-start="280" selection-end="280" vertical-scroll-proportion="0.51965064" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="33" selection-start="1824" selection-end="1824" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/management/_show_project.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="70" selection-start="668" selection-end="668" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/management/plan.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="20" selection-start="1384" selection-end="1384" vertical-scroll-proportion="0.4079602" vertical-offset="349" max-vertical-offset="952">
           <folding>
-            <element signature="n#t('update_project')#0;n#!!top" expanded="true" />
-            <element signature="n#t('project_name')#0;n#!!top" expanded="true" />
-            <element signature="n#t('input_project')#0;n#!!top" expanded="true" />
-            <element signature="n#t('update')#0;n#!!top" expanded="true" />
-            <element signature="n#t('delete_project')#0;n#!!top" expanded="true" />
+            <element signature="e#1420#1432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="642" selection-end="642" vertical-scroll-proportion="0.576324" vertical-offset="89" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/management_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="14" selection-start="2697" selection-end="2697" vertical-scroll-proportion="-0.8237548" vertical-offset="1847" max-vertical-offset="2618">
+          <folding>
+            <element signature="e#887#908#0" expanded="true" />
+            <element signature="e#3245#3266#0" expanded="true" />
+            <element signature="e#3303#3324#0" expanded="true" />
           </folding>
         </state>
       </provider>
