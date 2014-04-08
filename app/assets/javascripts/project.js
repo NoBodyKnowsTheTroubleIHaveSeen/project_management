@@ -12,19 +12,12 @@ function getIdList() {
 function getRemoveIdList() {
     var array = new Array();
     var i = 0;
+    //在左边找到从右边移动过来的人
     $(".leftPeople").find("[id^=flag_]").each(function () {
         array[i] = $(this).attr("data-id");
         i++;
     })
     return array;
-}
-function showData(data){
-    if (data == "error") {
-        showMessage();
-    }
-    else {
-        $("#rightPanelDiv").empty().append(data);
-    }
 }
 //添加项目时的提交
 $("#addProjectForm").on("submit", function (event) {

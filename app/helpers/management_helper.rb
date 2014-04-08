@@ -17,4 +17,10 @@ module ManagementHelper
       end
     end
   end
+
+  def output_options hard_level, index
+    if hard_level==index
+      "selected = 'selected'"
+    end
+  end
 end

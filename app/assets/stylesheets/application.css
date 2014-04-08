@@ -128,3 +128,6 @@ table{
 table td {
     border: 1px solid #F00;
 }
+.readonly{
+    background-color: #efefef;
+}

@@ -1,28 +1,25 @@
 <%= javascript_include_tag 'task' %>
-<%= javascript_include_tag 'project'%>
-<%= javascript_include_tag 'getPeople'%>
+<%= javascript_include_tag 'removeDuplicatePeople' %>
+<%= javascript_include_tag 'updateTask'%>
 <%= stylesheet_link_tag 'management'%>
-<h1><%= t('add task') %></h1>
-<div class="addTask">
-  <form action="addTask" method="post" id="addTaskForm" >
-    <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
+<h1><%= t('update task') %></h1>
+<div class="updateTask">
+  <form action="updateTask" method="post" id="updateTaskForm" >
+    <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>" value="<%= @task.name%>"/>
     <%= t('project_name') %>:
-    <select name="project_id" id="project_id" data-url="getProjectPeople">
-      <% @projects.each do |value| %>
-          <option value="<%= value.id %>"><%= value.name %></option>
-      <% end %>
-    </select>
+    <input value="<%= @project_name %>" readonly="readonly" class="readonly">
+    <input type="hidden" id="project_id" data-url="getProjectPeople" value="<%= @task.project_id %>">
     <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('weight') %>:<input name="weight" placeholder="<%= t('input_weight') %>"/><br>
+    <%= t('weight') %>:<input name="weight" placeholder="<%= t('input_weight') %>" value="<%= @task.weight %>"/><br>
     <br>
     <%= t('hard_level')%>
     <select name="hard_level" id="hard_level">
-      <option value="1"><%= t('easy') %></option>
-      <option value="2"><%= t('common') %></option>
-      <option value="3"><%= t('hard') %></option>
+      <option value="1" <%= output_options @task.hard_level,1%>><%= t('easy') %></option>
+      <option value="2" <%= output_options @task.hard_level,2%>><%= t('common') %></option>
+      <option value="3" <%= output_options @task.hard_level,3%>><%= t('hard') %></option>
     </select>
     <%= t('description') %>:
-    <textarea rows="3" cols="20" name="description"></textarea>
+    <textarea rows="3" cols="20" name="description"><%= @task.description %></textarea>
     <br>
     <br>
     <br>
@@ -35,15 +32,22 @@
       </div>
       <div class="centerChoose">
         --->
+
       </div>
       <div class="rightPeople" id="rightPeople">
         <div class="headerDiv"><%= t('task_people') %></div>
-        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)">
+          <% @people.each do |value| %>
+              <div class="data" draggable="true" ondragstart="drag(event)" id="flag_<%= value.id %>" data-id="<%= value.id %>"><%= value.name %></div>
+          <% end %>
+        </div>
       </div>
     </div>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-    <input type="submit" value="<%= t('add') %>">
+    <input type="submit" value="<%= t('update') %>">
     <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/task_distribute">
+    <br>
+    <input type="button" value="<%= t("delete_task") %>">
   </form>
   <div id="result" class="hide message"></div>
 </div>

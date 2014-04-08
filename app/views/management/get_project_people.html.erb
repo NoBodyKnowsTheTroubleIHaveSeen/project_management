@@ -1,5 +1,5 @@
 <% i = 0 %>
-<% while i<@people.size/2 do %>
-    <div class="data" draggable="true" ondragstart="drag(event)" id="flag_<%= @people[2*i] %>" data-id="<%= @people[2*i] %>"><%= @people[2*i+1] %></div>
+<% while i<@project_people.size/2 do %>
+    <div class="data" draggable="true" ondragstart="drag(event)" id="id_flag_<%= @project_people[2*i] %>" data-id="<%= @project_people[2*i] %>"><%= @project_people[2*i+1] %></div>
     <% i+=1 %>
 <% end %>

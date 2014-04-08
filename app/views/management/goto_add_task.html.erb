@@ -1,9 +1,11 @@
 <%= javascript_include_tag 'task' %>
-<%= javascript_include_tag 'project'%>
-<%= javascript_include_tag 'getPeople'%>
+<%= javascript_include_tag 'project' %>
+<%= javascript_include_tag 'getProjectPeople'%>
+<%= javascript_include_tag 'addTask'%>
 <%= stylesheet_link_tag 'management'%>
 <h1><%= t('add task') %></h1>
 <div class="addTask">
+  <div id="result" class="hide message"></div>
   <form action="addTask" method="post" id="addTaskForm" >
     <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
     <%= t('project_name') %>:
@@ -45,5 +47,4 @@
     <input type="submit" value="<%= t('add') %>">
     <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/task_distribute">
   </form>
-  <div id="result" class="hide message"></div>
 </div>

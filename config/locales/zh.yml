@@ -92,3 +92,5 @@ zh:
   no_task: "当前没有任务"
   project_weight: "项目权重"
   add_task: "添加任务"
+  update task: "更新任务"
+  delete_task: "删除该任务"

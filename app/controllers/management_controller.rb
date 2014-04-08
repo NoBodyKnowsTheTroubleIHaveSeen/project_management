@@ -38,7 +38,7 @@ class ManagementController < ApplicationController
   end
 
   def goto_update_project
-    @others = Person.all
+    @people = Person.all
     get_peopple_by_project_id
   end
 
@@ -138,6 +138,9 @@ class ManagementController < ApplicationController
     task.hard_level = params[:hard_level]
     if task.valid?
       task.save
+    else
+      render :text => 'error'
+      return
     end
     idList = params[:idList]
     idList.each do |value|
@@ -148,11 +151,22 @@ class ManagementController < ApplicationController
       personTask.project_id= params[:project_id]
       if personTask.valid?
         personTask.save
-        redirect_to :action => :task_distribute
-        return
       end
     end
-    render :text => 'error'
+    redirect_to :action => :task_distribute
+    return
+  end
+
+  def goto_update_task
+    task_id = params[:task_id]
+    @task = Task.find task_id
+    project = Project.find @task.project_id
+    @project_name = project.name
+    people_id_list = PersonTask.where("task_id = ?", @task.id)
+    @people  = Array.new
+    people_id_list.each do |value|
+      @people.append Person.find value.people_id
+    end
   end
 
 
@@ -168,11 +182,11 @@ class ManagementController < ApplicationController
     @project_id = params[:project_id]
     @project = Project.find @project_id
     personProject = PersonProject.where("project_id = ?", @project_id)
-    @people = Array.new
+    @project_people = Array.new
     personProject.each do |value|
       p = Person.find value.people_id
-      @people.append p.id
-      @people.append p.name
+      @project_people.append p.id
+      @project_people.append p.name
     end
   end
 end
