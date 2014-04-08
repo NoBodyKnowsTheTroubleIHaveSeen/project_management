@@ -23,7 +23,7 @@ $(function () {
         });
         //在整个页面绑定（class为ajaxForm）表单提交时间
         $(document).on("submit", ".ajaxForm", function (event) {
-            var url = $(this).attr("data-url");
+            var url = $(this).attr("action");
             var data = $(this).serialize();
             event.preventDefault();
             var posting = $.post(url, data);

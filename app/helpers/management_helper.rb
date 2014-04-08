@@ -11,7 +11,7 @@ module ManagementHelper
       if hard_level ==2
         I18n.t 'common'
       else
-        if hard_level = 3
+        if hard_level == 3
           I18n.t 'hard'
         end
       end

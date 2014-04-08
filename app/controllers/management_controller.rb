@@ -163,10 +163,57 @@ class ManagementController < ApplicationController
     project = Project.find @task.project_id
     @project_name = project.name
     people_id_list = PersonTask.where("task_id = ?", @task.id)
-    @people  = Array.new
+    @people = Array.new
     people_id_list.each do |value|
       @people.append Person.find value.people_id
     end
+  end
+
+  def update_task
+    task = Task.find params[:task_id]
+    task.name = params[:name]
+    task.project_id = params[:project_id]
+    task.start_date = params[:start_date]
+    task.weight = params[:weight]
+    task.description = params[:description]
+    task.hard_level = params[:hard_level]
+    if task.valid?
+      task.save
+      idList = params[:idList]
+      if !idList.blank?
+        idList.each do |value|
+          person_task = PersonTask.where("task_id = ? and people_id = ?", params[:task_id],value)
+          if person_task.blank?
+            person_task = PersonTask.new
+            person_task.people_id= value
+            person_task.task_id= task.id
+            person_task.start_time = params[:start_date]
+            person_task.project_id= params[:project_id]
+            if person_task.valid?
+              person_task.save
+            end
+          end
+        end
+      end
+      removeIdList = params[:removeIdList]
+      if !removeIdList.blank?
+        removeIdList.each do |value|
+          pesron_task = PersonTask.find_by(task_id: params[:task_id], people_id: value)
+          pesron_task.destroy
+        end
+      end
+      redirect_to :action => :task_distribute
+      return
+    end
+    render :text => 'error'
+    return
+  end
+
+  def delete_task
+    task = Task.find params[:task_id]
+    task.delete
+    @tasks = Task.all
+    render :task_distribute
   end
 
 
