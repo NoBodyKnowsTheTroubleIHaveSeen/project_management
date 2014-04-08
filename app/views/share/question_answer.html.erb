@@ -1,2 +1,10 @@
-<h1>Share#question_answer</h1>
-<p>Find me in app/views/share/question_answer.html.erb</p>
+<h1><%= t('question_and_answer') %></h1>
+<%= form_for @question, url: {action: "add_question"}, html: {class: "abccc"} do |f| %>
+    
+   <%= t('title') %>: <%= f.text_field :title %>
+    <%= t('description') %> :<%= f.text_area :content, size: "60x3" %>
+    <%= f.submit I18n.t('question')%>
+<% end %>
+<% @questions.each do |value| %>
+    <a href="id=<%= value.id%>"><%= value.title %></a>
+<% end %>
