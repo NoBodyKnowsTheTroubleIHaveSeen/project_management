@@ -1,0 +1,3 @@
+<% @questions.each do |value| %>
+    <a data-url="getQuestionDetail?id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"><%= value.title %></a><br>
+<% end %>

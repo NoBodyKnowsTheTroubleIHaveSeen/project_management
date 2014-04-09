@@ -43,6 +43,11 @@ ProjectManagement::Application.routes.draw do
   get 'gotoUpdateTask' => 'management#goto_update_task'
   post 'updateTask' => 'management#update_task'
   post 'deleteTask' => 'management#delete_task'
+
+
+  post 'addQuestion' => 'share#add_question'
+  get 'getQuestion' => 'share#get_questions'
+  get 'getQuestionDetail' =>'share#get_question_detail'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

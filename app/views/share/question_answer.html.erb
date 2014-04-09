@@ -1,10 +1,12 @@
+<%= javascript_include_tag :questionAnswer%>
 <h1><%= t('question_and_answer') %></h1>
-<%= form_for @question, url: {action: "add_question"}, html: {class: "abccc"} do |f| %>
-    
-   <%= t('title') %>: <%= f.text_field :title %>
+<%= form_for @question, url: {action: "add_question"}, html: {id: "addQuestion", class: "abccc"} do |f| %>
+    <%= f.hidden_field :people_id, :value => session[:people_id] %>
+    <%= f.hidden_field :create_date, :value => Time.now %>
+    <%= t('title') %>: <%= f.text_field :title %>
     <%= t('description') %> :<%= f.text_area :content, size: "60x3" %>
-    <%= f.submit I18n.t('question')%>
+    <%= f.submit I18n.t('question') %>
 <% end %>
-<% @questions.each do |value| %>
-    <a href="id=<%= value.id%>"><%= value.title %></a>
-<% end %>
+<div id="questions">
+  <%= render :partial => 'questions' %>
+</div>

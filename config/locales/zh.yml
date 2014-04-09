@@ -94,3 +94,5 @@ zh:
   add_task: "添加任务"
   update task: "更新任务"
   delete_task: "删除该任务"
+  title: "标题"
+  question: "提问"
