@@ -106,3 +106,4 @@ zh:
   delete_question: "删除该问题"
   more_question: "更多问题"
   title_or_content_could_not_be_nil: "标题或内容不能为空"
+  file_list: "文件列表"

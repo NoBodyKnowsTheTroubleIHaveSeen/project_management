@@ -1,2 +1,10 @@
-<h1>Share#file_share</h1>
-<p>Find me in app/views/share/file_share.html.erb</p>
+<h1><%= t('file_share') %></h1>
+<%= form_tag({action: :upload}, multipart: true, id: "upload") do %>
+    <%= file_field_tag 'picture' %>
+    <%= submit_tag t('submit') %>
+<% end %>
+<%= t('file_list') %><br>
+<% @shares.each do |value| %>
+    <%= link_to value.name, 'download?file_name='+value.name %>
+    <br>
+<% end %>

@@ -44,6 +44,9 @@ ProjectManagement::Application.routes.draw do
   post 'updateTask' => 'management#update_task'
   post 'deleteTask' => 'management#delete_task'
 
+  #share operation.
+  post 'upload' =>'share#upload'
+  get 'download' =>'share#download'
 
   post 'addQuestion' => 'share#add_question'
   get 'getQuestion' => 'share#get_questions'
