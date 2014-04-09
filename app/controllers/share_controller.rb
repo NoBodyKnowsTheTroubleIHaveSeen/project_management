@@ -6,7 +6,7 @@ class ShareController < ApplicationController
   end
 
   def upload
-    file = params[:picture]
+    file = params[:file]
     file_path = Rails.root.join('public', 'uploads', file.original_filename)
     File.open(file_path, 'wb') do |f|
       f.write(file.read)
@@ -16,16 +16,16 @@ class ShareController < ApplicationController
     share.name = file.original_filename
     share.path = file_path
     share.save
-    render :text => "success!"
+    redirect_to :action => :file_share
   end
 
   def download
     file_name = params[:file_name]
-    public_path = Rails.public_path
-    puts  Rails.public_path.to_s+"/uploads/"+file_name
-    puts File.exist? public_path.to_s+"/uploads/"+file_name
-    #puts File.exist? "D:/workspace/project_management//public/uploads/Learn 数据库.wps"
-    send_file "public/uploads/"+file_name, :disposition => 'attachment'
+    if File.exist? public_path.to_s+"/uploads/"+file_name
+      send_file "public/uploads/"+file_name, :disposition => 'attachment'
+    else
+      render :text => t('file_is_not_exist')
+    end
   end
 
   def question_answer
