@@ -8,11 +8,18 @@
   <%= render :partial => 'share/answers' %>
 </div>
 <div id="answer">
-  <%= form_for @answer, url: {action: "add_answer"}, html: {id: "addAnswer", class: "abccc"} do |f| %>
+  <%= form_for @answer, url: {action: "add_answer"}, html: {id: "addAnswer"} do |f| %>
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
       <%= f.hidden_field :answer_date, :value => Time.now %>
       <%= f.hidden_field :question_id, :value => @question.id %>
       <%= t('answer') %>: <%= f.text_field :content %>
       <%= f.submit I18n.t('submit') %>
-  <% end %>
+      <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="share/question_answer">
+<% end %>
 </div>
+<% if session[:people_id] == @question.people_id %>
+    <%= form_tag "/deleteQuestion", id: "deleteQuestion" do %>
+        <%= hidden_field_tag(:question_id,@question.id) %>
+        <%= submit_tag(t('delete_question')) %>
+    <% end %>
+<% end %>

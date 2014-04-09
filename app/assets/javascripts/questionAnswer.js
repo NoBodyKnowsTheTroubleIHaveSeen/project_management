@@ -7,7 +7,11 @@ $("#addQuestion").on("submit",function(){
     event.preventDefault();
     var posting = $.post(url, data);
     posting.done(function (data) {
-        $("#questions").empty().append(data);
+        if (data == "error") {
+            showMessage();
+        }else{
+            $("#questions").empty().append(data);
+        }
     });
 })
 $("#addAnswer").on("submit",function(){
@@ -17,5 +21,14 @@ $("#addAnswer").on("submit",function(){
     var posting = $.post(url, data);
     posting.done(function (data) {
         $("#answers").empty().append(data);
+    });
+})
+$("#deleteQuestion").on("submit",function(){
+    var url = $(this).attr("action");
+    var data = $(this).serialize();
+    event.preventDefault();
+    var posting = $.post(url, data);
+    posting.done(function (data) {
+        $("#rightPanelDiv").empty().append(data);
     });
 })

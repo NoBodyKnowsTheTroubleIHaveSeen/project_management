@@ -1,6 +1,7 @@
 <%= javascript_include_tag :questionAnswer%>
 <h1><%= t('question_and_answer') %></h1>
-<%= form_for @question, url: {action: "add_question"}, html: {id: "addQuestion", class: "abccc"} do |f| %>
+<div class="message"></div>
+<%= form_for @question, url: {action: "add_question"}, html: {id: "addQuestion"} do |f| %>
     <%= f.hidden_field :people_id, :value => session[:people_id] %>
     <%= f.hidden_field :create_date, :value => Time.now %>
     <%= t('title') %>: <%= f.text_field :title %>
@@ -10,3 +11,4 @@
 <div id="questions">
   <%= render :partial => 'questions' %>
 </div>
+<a data-url="moreQuestion" class="ajaxRequest" href="javascript:void(0)"><%= t('more_question') %></a><br>

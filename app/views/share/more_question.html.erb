@@ -1,0 +1,5 @@
+<h1><%= t('question_and_answer') %></h1>
+<div id="questions">
+  <%= render :partial => 'questions' %>
+</div>
+<input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="share/question_answer">

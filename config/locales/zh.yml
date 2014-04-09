@@ -103,3 +103,6 @@ zh:
   answer_date: "回答时间"
   answer_people: "回答人"
   answer_content: "回复内容"
+  delete_question: "删除该问题"
+  more_question: "更多问题"
+  title_or_content_could_not_be_nil: "标题或内容不能为空"

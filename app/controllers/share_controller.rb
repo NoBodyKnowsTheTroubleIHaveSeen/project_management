@@ -11,8 +11,13 @@ class ShareController < ApplicationController
 
   def add_question
     question = Question.create question_param
-    question.save
-    redirect_to getQuestion_url
+    if question.valid?
+      question.save
+      redirect_to :action => :get_questions
+    else
+      render :text => 'error'
+    end
+
   end
 
   def get_questions
@@ -25,14 +30,25 @@ class ShareController < ApplicationController
     @question = Question.find id
     person = Person.find @question.people_id
     @name = person.name
-    @answers = Answer.where(question_id:@question.id).order('id desc')
+    @answers = Answer.where(question_id: @question.id).order('id desc')
     @answer = Answer.new
+  end
+
+  def delete_question
+    question_id = params[:question_id]
+    question = Question.find question_id
+    question.destroy
+    redirect_to :action => :question_answer
+  end
+
+  def more_question
+    @questions = Question.all.order('id desc')
   end
 
   def add_answer
     answer = Answer.create answer_param
     answer.save
-    @answers =  Answer.where(question_id:params[:answer][:question_id]).order('id desc')
+    @answers = Answer.where(question_id: params[:answer][:question_id]).order('id desc')
 
   end
 
