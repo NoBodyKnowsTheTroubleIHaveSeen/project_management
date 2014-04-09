@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404085531) do
+ActiveRecord::Schema.define(version: 20140409024906) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
     t.string  "content",     null: false
     t.date    "answer_date", null: false
+    t.integer "question_id"
   end
 
   add_index "answers", ["people_id"], name: "fk1", using: :btree

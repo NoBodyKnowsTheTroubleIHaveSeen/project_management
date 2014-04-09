@@ -1,1 +1,18 @@
+<%= javascript_include_tag :questionAnswer %>
 <h1><%= t('question_and_answer') %></h1>
+<%= t('title') %>:<%= @question.title %>&nbsp;&nbsp;&nbsp;
+<%= t('create_date') %>:<%= @question.create_date %>&nbsp;&nbsp;&nbsp;
+<%= t('create_person') %>:<%= @name %><br>
+<%= t('question_description') %>:<%= @question.content %><br>
+<div id="answers">
+  <%= render :partial => 'share/answers' %>
+</div>
+<div id="answer">
+  <%= form_for @answer, url: {action: "add_answer"}, html: {id: "addAnswer", class: "abccc"} do |f| %>
+      <%= f.hidden_field :people_id, :value => session[:people_id] %>
+      <%= f.hidden_field :answer_date, :value => Time.now %>
+      <%= f.hidden_field :question_id, :value => @question.id %>
+      <%= t('answer') %>: <%= f.text_field :content %>
+      <%= f.submit I18n.t('submit') %>
+  <% end %>
+</div>

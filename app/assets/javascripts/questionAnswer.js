@@ -10,3 +10,12 @@ $("#addQuestion").on("submit",function(){
         $("#questions").empty().append(data);
     });
 })
+$("#addAnswer").on("submit",function(){
+    var url = $(this).attr("action");
+    var data = $(this).serialize();
+    event.preventDefault();
+    var posting = $.post(url, data);
+    posting.done(function (data) {
+        $("#answers").empty().append(data);
+    });
+})
