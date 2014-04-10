@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409024906) do
+ActiveRecord::Schema.define(version: 20140410064009) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140409024906) do
   end
 
   add_index "answers", ["people_id"], name: "fk1", using: :btree
+  add_index "answers", ["question_id"], name: "question_id", using: :btree
 
   create_table "notices", force: true do |t|
     t.date     "date",       null: false
@@ -112,9 +113,10 @@ ActiveRecord::Schema.define(version: 20140409024906) do
   add_index "schedules", ["task_id"], name: "fk11", using: :btree
 
   create_table "shares", force: true do |t|
-    t.integer "people_id",           null: false
-    t.string  "name",      limit: 0, null: false
-    t.string  "path",                null: false
+    t.integer "people_id",   null: false
+    t.string  "name",        null: false
+    t.string  "path",        null: false
+    t.date    "upload_date", null: false
   end
 
   add_index "shares", ["people_id"], name: "fk13", using: :btree

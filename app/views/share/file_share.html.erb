@@ -1,10 +1,37 @@
+<!--<%= javascript_include_tag 'jquery-1.11.0' %>-->
+<!--<%= javascript_include_tag :ajaxfileupload %>-->
+<!--<%= javascript_include_tag :uploadFile %>-->
 <h1><%= t('file_share') %></h1>
+<div class="message">
+  <%= flash[:notice] %>
+</div>
 <%= form_tag({action: :upload}, multipart: true, id: "upload") do %>
-    <%= file_field_tag 'picture' %>
+    <%= file_field_tag 'file' %>
     <%= submit_tag t('submit') %>
 <% end %>
 <%= t('file_list') %><br>
-<% @shares.each do |value| %>
-    <%= link_to value.name, 'download?file_name='+value.name %>
-    <br>
-<% end %>
+<tbody>
+<table>
+  <thead>
+  <tr>
+    <th><%= t('file_name') %></th>
+    <th><%= t('upload_date') %></th>
+    <th><%= t('upload_person') %></th>
+  </tr>
+  </thead>
+  <% if @shares.blank? %>
+      <tr>
+        <td colspan="3">
+          <%= t('no_file') %>
+        </td>
+      </tr>
+  <% else %>
+      <% @shares.each do |value| %>
+          <tr>
+            <td> <%= link_to value.name, 'download?file_name='+value.name %></td>
+            <td> <%= value.upload_date %></td>
+            <td> <%= get_people_name value.people_id %></td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

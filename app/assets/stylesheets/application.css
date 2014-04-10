@@ -118,6 +118,7 @@ body {
     color: red;
     font: Consolas;
     font-size: 18px;
+    display: none;
 }
 div{
     margin: 0 auto;

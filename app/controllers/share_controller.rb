@@ -7,7 +7,13 @@ class ShareController < ApplicationController
 
   def upload
     file = params[:file]
-    file_path = Rails.root.join('public', 'uploads', file.original_filename)
+    file_name = file.original_filename
+    if File.exist? "public/uploads/"+file_name
+      flash[:notice] = I18n.t('file_has_exist')
+      redirect_to :action => :file_share
+      return
+    end
+    file_path = Rails.root.join('public', 'uploads', file_name)
     File.open(file_path, 'wb') do |f|
       f.write(file.read)
     end
@@ -15,13 +21,14 @@ class ShareController < ApplicationController
     share.people_id = session[:people_id]
     share.name = file.original_filename
     share.path = file_path
+    share.upload_date= Time.now
     share.save
     redirect_to :action => :file_share
   end
 
   def download
     file_name = params[:file_name]
-    if File.exist? public_path.to_s+"/uploads/"+file_name
+    if File.exist? "public/uploads/"+file_name
       send_file "public/uploads/"+file_name, :disposition => 'attachment'
     else
       render :text => t('file_is_not_exist')
