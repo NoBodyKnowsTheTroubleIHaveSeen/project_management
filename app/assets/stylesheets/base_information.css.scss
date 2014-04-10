@@ -1,3 +1,11 @@
 // Place all the styles related to the base_information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.absolutePositon{
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  left: 43%;
+  background-color: rgb(77, 167, 167);
+  z-index: 9;
+}

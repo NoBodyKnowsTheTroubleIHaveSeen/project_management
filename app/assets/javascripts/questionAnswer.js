@@ -21,6 +21,8 @@ $("#addAnswer").on("submit",function(){
     var posting = $.post(url, data);
     posting.done(function (data) {
         $("#answers").empty().append(data);
+        $("#answer_content").val("");
+
     });
 })
 $("#deleteQuestion").on("submit",function(){

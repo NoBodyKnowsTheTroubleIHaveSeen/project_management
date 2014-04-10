@@ -40,7 +40,7 @@ class RegisterController < ApplicationController
       person.save
       session[:username] = username
       p = Person.find_by_name username
-      session[:id] = p.id
+      session[:people_id] = p.id
       render :text => 'success'
     else
       render :text => I18n.t('please_check_no_department_id_and_email')

@@ -26,6 +26,12 @@ ProjectManagement::Application.routes.draw do
   get 'login' => 'login#index'
   post 'login' => 'login#login'
 
+  post 'addNotice' => 'base_information#add_notice'
+
+
+
+
+
   #action controller page.
   #project operation
   get 'gotoAddProject' => 'management#goto_add_project'

@@ -6,7 +6,9 @@
   <%= flash[:notice] %>
 </div>
 <%= form_tag({action: :upload}, multipart: true, id: "upload") do %>
-    <%= file_field_tag 'file' %>
+    <%= file_field_tag 'title' %>
+    <%= file_field_tag 'content' %>
+    <%= file_field_tag 'title' %>
     <%= submit_tag t('submit') %>
 <% end %>
 <%= t('file_list') %><br>

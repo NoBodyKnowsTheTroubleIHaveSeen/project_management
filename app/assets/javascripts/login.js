@@ -13,10 +13,12 @@ $(function () {
         posting.done(function (data) {
             if("success"==data){
                 window.location = "../"
+            }else
+            {
+                $("#message").empty().append(data);
+                $("#message").fadeIn();
+                $("#message").fadeOut(3000);
             }
-            $("#message").empty().append(data);
-            $("#message").fadeIn();
-            $("#message").fadeOut(3000);
         });
     })
 })

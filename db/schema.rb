@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410064009) do
+ActiveRecord::Schema.define(version: 20140410073454) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20140410064009) do
   end
 
   add_index "answers", ["people_id"], name: "fk1", using: :btree
-  add_index "answers", ["question_id"], name: "question_id", using: :btree
 
   create_table "notices", force: true do |t|
     t.date     "date",       null: false
@@ -34,11 +33,12 @@ ActiveRecord::Schema.define(version: 20140410064009) do
 
   create_table "people", force: true do |t|
     t.integer "no"
-    t.string  "name",                     null: false
-    t.string  "gender",        limit: 10, null: false
+    t.string  "name",                                 null: false
+    t.string  "gender",        limit: 10,             null: false
     t.integer "department_id"
-    t.string  "password",                 null: false
-    t.string  "email",                    null: false
+    t.string  "password",                             null: false
+    t.string  "email",                                null: false
+    t.integer "priviliege",               default: 0, null: false
   end
 
   create_table "person_projects", force: true do |t|
@@ -78,13 +78,13 @@ ActiveRecord::Schema.define(version: 20140410064009) do
   add_index "plans", ["task_id"], name: "fk7", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string  "name",                           null: false
+    t.string  "name",                                       null: false
     t.string  "description",       limit: 1000
-    t.date    "start_date",                     null: false
+    t.date    "start_date",                                 null: false
     t.date    "finish_date"
     t.integer "finish_percentage", limit: 1
-    t.integer "manager_id",                     null: false
-    t.integer "is_doned",          limit: 1
+    t.integer "manager_id",                                 null: false
+    t.integer "is_doned",          limit: 1,    default: 0, null: false
   end
 
   add_index "projects", ["manager_id"], name: "fk8", using: :btree
@@ -122,12 +122,12 @@ ActiveRecord::Schema.define(version: 20140410064009) do
   add_index "shares", ["people_id"], name: "fk13", using: :btree
 
   create_table "tasks", force: true do |t|
-    t.integer "project_id",                           null: false
-    t.string  "name",                                 null: false
-    t.string  "description", limit: 1000
-    t.integer "percentage",  limit: 1,    default: 0, null: false
-    t.integer "weight",      limit: 1,                null: false
-    t.date    "start_date",                           null: false
+    t.integer "project_id",                             null: false
+    t.string  "name",                                   null: false
+    t.string  "description", limit: 1000, default: "0"
+    t.integer "percentage",  limit: 1,    default: 0,   null: false
+    t.integer "weight",      limit: 1,                  null: false
+    t.date    "start_date",                             null: false
     t.date    "end_date"
     t.integer "hard_level"
   end

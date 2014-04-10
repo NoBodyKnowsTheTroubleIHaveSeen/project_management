@@ -1,8 +1,24 @@
-<h1><%= t(:notice)%></h1>
+<%= javascript_include_tag :baseInformation %>
+<h1><%= t(:notice) %></h1>
+<% if @has_privilege %>
+    <input type="button" id="addNoticeButton" value="<%= t('add_notice') %>">
+    <div id="addNoticeDiv" class="hide absolutePositon">
+      <%= form_tag({action: :add_notice}, id: "addNotice") do %>
+          <%= t('title') %>: <%= text_field_tag 'title' %>
+          <br>
+          <%= t('content') %>:  <%= text_area_tag 'content' %>
+          <br>
+          <%= submit_tag t('submit') %>
+          <%= button_tag t('back') ,id:"backButton"%>
+      <% end %>
+    </div>
+<% end %>
 <body>
-    <% @notices.each do|value|%>
-        <%= value.title%></br>
-        <%= value.content%>
-    <% end%>
-
+<div id="notices">
+<% @notices.each do |value| %>
+    <%= value.title %><br>
+    <%= value.content %><br>
+      ------------------------<br>
+<% end %>
+</div>
 </body>

@@ -8,7 +8,8 @@ class WelcomeController < ApplicationController
   end
 
   def logout
-    session[:username] = nil
+    #session[:username] = nil
+    session.clear
     redirect_to :action => 'index', controller: 'login'
   end
 end
