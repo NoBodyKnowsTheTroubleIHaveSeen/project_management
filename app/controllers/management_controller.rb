@@ -31,6 +31,12 @@ class ManagementController < ApplicationController
           person_project.save
         end
       end
+      manager = PersonProject.new
+      manager.project_id = id
+      manager.role = 15
+      manager.role_name = 'manager'
+      manager.people_id = session[:people_id]
+      manager.save
       redirect_to :action => 'project_management'
       return
     end
@@ -182,7 +188,7 @@ class ManagementController < ApplicationController
       idList = params[:idList]
       if !idList.blank?
         idList.each do |value|
-          person_task = PersonTask.where("task_id = ? and people_id = ?", params[:task_id],value)
+          person_task = PersonTask.where("task_id = ? and people_id = ?", params[:task_id], value)
           if person_task.blank?
             person_task = PersonTask.new
             person_task.people_id= value

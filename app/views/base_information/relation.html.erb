@@ -1,2 +1,35 @@
-<h1>BaseInformation#relation</h1>
-<p>Find me in app/views/base_information/relation.html.erb</p>
+<h1><%= t(:relation) %></h1>
+
+<% if !@project_name.blank? %>
+    <% i = 0 %>
+    <% @project_name.each do |value| %>
+        <%= value %>
+        <br>
+        |&nbsp;|&nbsp;|<br>
+        \|/<br>
+        <%= t('manager') %>:
+        <% if @my_name == @project_manager[i] %>
+            <span style="color: red"><%= @project_manager[i] %></span>
+        <% else %>
+            <%= @project_manager[i] %>
+        <% end %>
+        <br>
+        |&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;
+        <br>
+        <% if !@people[i].blank? %>
+            <%= t('developer') %>:
+            <% @people[i].each do |value| %>
+                <% if @my_name == value %>
+                    <span style="color: red"><%= value %>&nbsp;&nbsp;&nbsp;
+</span>
+                <% else %>
+                    <%= value %>&nbsp;&nbsp;&nbsp;
+                <% end %>
+            <% end %>
+        <% end %>
+        <br>
+        ------------------------------
+        <br>
+        <% i+=1 %>
+    <% end %>
+<% end %>

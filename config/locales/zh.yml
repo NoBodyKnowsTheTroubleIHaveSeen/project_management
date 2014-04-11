@@ -50,6 +50,7 @@ zh:
   input_project: "请输入项目名"
   show_project: "已有项目"
   manager: "项目负责人"
+  developer: "开发人员"
   finish_percentage: "完成百分比"
   is_doned: "是否已完成"
   doned: "是"
