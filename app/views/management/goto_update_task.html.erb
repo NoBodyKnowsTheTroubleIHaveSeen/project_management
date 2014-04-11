@@ -4,6 +4,7 @@
 <%= javascript_include_tag 'updateTask'%>
 <%= stylesheet_link_tag 'management'%>
 <h1><%= t('update task') %></h1>
+<div id="result" class="hide message"></div>
 <div class="updateTask">
   <form action="updateTask" method="post" id="updateTaskForm">
     <input value="<%= @task.id %>" name="task_id" type="hidden">
@@ -53,5 +54,4 @@
     <input value="<%= @task.id %>" name="task_id" type="hidden">
     <input type="submit" value="<%= t('delete_task') %>">
   </form>
-  <div id="result" class="hide message"></div>
 </div>

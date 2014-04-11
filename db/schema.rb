@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20140410073454) do
 
   create_table "people", force: true do |t|
     t.integer "no"
-    t.string  "name",                                 null: false
-    t.string  "gender",        limit: 10,             null: false
+    t.string  "name",                     null: false
+    t.string  "gender",        limit: 10, null: false
     t.integer "department_id"
-    t.string  "password",                             null: false
-    t.string  "email",                                null: false
-    t.integer "priviliege",               default: 0, null: false
+    t.string  "password",                 null: false
+    t.string  "email",                    null: false
+    t.integer "priviliege",               null: false
   end
 
   create_table "person_projects", force: true do |t|
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 20140410073454) do
   add_index "person_projects", ["project_id"], name: "fk3", using: :btree
 
   create_table "person_tasks", force: true do |t|
-    t.integer "people_id",                         null: false
-    t.integer "project_id",                        null: false
-    t.integer "task_id",                           null: false
-    t.date    "start_time",                        null: false
+    t.integer "people_id",             null: false
+    t.integer "project_id",            null: false
+    t.integer "task_id",               null: false
+    t.date    "start_time",            null: false
     t.date    "finish_time"
-    t.integer "is_doned",    limit: 1, default: 0, null: false
+    t.integer "is_doned",    limit: 1, null: false
   end
 
   add_index "person_tasks", ["people_id"], name: "fk4", using: :btree
@@ -78,13 +78,13 @@ ActiveRecord::Schema.define(version: 20140410073454) do
   add_index "plans", ["task_id"], name: "fk7", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string  "name",                                       null: false
+    t.string  "name",                           null: false
     t.string  "description",       limit: 1000
-    t.date    "start_date",                                 null: false
+    t.date    "start_date",                     null: false
     t.date    "finish_date"
     t.integer "finish_percentage", limit: 1
-    t.integer "manager_id",                                 null: false
-    t.integer "is_doned",          limit: 1,    default: 0, null: false
+    t.integer "manager_id",                     null: false
+    t.integer "is_doned",          limit: 1,    null: false
   end
 
   add_index "projects", ["manager_id"], name: "fk8", using: :btree
@@ -122,12 +122,12 @@ ActiveRecord::Schema.define(version: 20140410073454) do
   add_index "shares", ["people_id"], name: "fk13", using: :btree
 
   create_table "tasks", force: true do |t|
-    t.integer "project_id",                             null: false
-    t.string  "name",                                   null: false
-    t.string  "description", limit: 1000, default: "0"
-    t.integer "percentage",  limit: 1,    default: 0,   null: false
-    t.integer "weight",      limit: 1,                  null: false
-    t.date    "start_date",                             null: false
+    t.integer "project_id",               null: false
+    t.string  "name",                     null: false
+    t.string  "description", limit: 1000
+    t.integer "percentage",  limit: 1,    null: false
+    t.integer "weight",      limit: 1,    null: false
+    t.date    "start_date",               null: false
     t.date    "end_date"
     t.integer "hard_level"
   end

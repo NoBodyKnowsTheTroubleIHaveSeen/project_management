@@ -17,10 +17,12 @@
     <% else %>
     <% @list.each do |value| %>
         <tr>
-          <td> <%= value.name %></td>
+          <td>
+            <a data-url="gotoUpdatePlan?plan_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
+          </td>
           <td> <%= value.start_date %></td>
           <td> <%= value.finish_date %></td>
-          <td> <%= value.hard_level %></td>
+          <td> <%= formate_hard_level value.hard_level %></td>
           <td> <%= get_task_name value.task_id %></td>
           <td> <%= value.description %></td>
         </tr>

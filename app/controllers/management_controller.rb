@@ -101,8 +101,8 @@ class ManagementController < ApplicationController
 
   def goto_add_plan
     @plan = Plan.new
-    @people_id = session[:people_id]
     @create_date = Time.now
+    @people_id = session[:people_id]
     @task_ids = PersonTask.where(people_id: @people_id).select(:task_id).distinct
     @task_names = Array.new
     @task_names.append(I18n.t("none"))
@@ -114,9 +114,8 @@ class ManagementController < ApplicationController
     end
   end
 
-
   def add_plan
-    plan = Plan.new add_plan_param
+    plan = Plan.new plan_param
     if plan.valid?
       plan.save
       redirect_to :action => :plan
@@ -126,6 +125,22 @@ class ManagementController < ApplicationController
       puts a
     end
     render :text => "error"
+  end
+
+  def goto_update_plan
+    @plan = Plan.find params[:plan_id]
+    get_task_name_and_id
+  end
+
+  def update_plan
+    plan = Plan.find params[:plan][:id]
+    plan.update_attributes plan_param
+    redirect_to :action => :plan
+  end
+  def delete_plan
+    plan = Plan.find params[:plan][:id]
+    plan.destroy
+    redirect_to :action => :plan
   end
 
   def task_distribute
@@ -245,7 +260,19 @@ class ManagementController < ApplicationController
     end
   end
 
-  def add_plan_param
+  def plan_param
     params.require(:plan).permit!
+  end
+
+  def get_task_name_and_id
+    @task_ids = PersonTask.where(people_id: session[:people_id]).select(:task_id).distinct
+    @task_names = Array.new
+    @task_names.append(I18n.t("none"))
+    if !@task_ids.blank?
+      @task_ids.each do |value|
+        task = Task.find value.task_id
+        @task_names.append(task.name)
+      end
+    end
   end
 end

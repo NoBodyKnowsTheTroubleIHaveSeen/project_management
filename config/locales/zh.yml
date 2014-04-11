@@ -26,6 +26,7 @@ zh:
   upload: "上传"
   notice: "公告通知"
   plan:  "工作计划"
+  update_plan: "修改计划"
   plan_name: "计划名"
   description: "描述"
   hard_level: "难度"
@@ -119,3 +120,4 @@ zh:
   publish_person: "发布人"
   publish_date: "发布日期"
   none: "无"
+  delete_plan: "删除计划"

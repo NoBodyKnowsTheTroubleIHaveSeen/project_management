@@ -28,7 +28,6 @@ Things you may want to cover:
   {project: is_doned==>0}
   {tasks: percentage==>0}
   {person_tasks:is_doned==>0}
-  {share name==>(length)255}
 
 
 Please feel free to use a different markup language if you do not plan to run

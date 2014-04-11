@@ -29,9 +29,6 @@ ProjectManagement::Application.routes.draw do
   post 'addNotice' => 'base_information#add_notice'
 
 
-
-
-
   #action controller page.
   #project operation
   get 'gotoAddProject' => 'management#goto_add_project'
@@ -42,10 +39,11 @@ ProjectManagement::Application.routes.draw do
   post 'getProjectPeople' => 'management#get_project_people'
 
   #plan operation.
-  post 'addPlan' => 'management#add_plan'
   get 'gotoAddPlan' => 'management#goto_add_plan'
-
-
+  post 'addPlan' => 'management#add_plan'
+  get 'gotoUpdatePlan' => 'management#goto_update_plan'
+  post 'updatePlan' => 'management#update_plan'
+  post 'deletePlan' => 'management#delete_plan'
 
 
   #task operation.
@@ -56,8 +54,8 @@ ProjectManagement::Application.routes.draw do
   post 'deleteTask' => 'management#delete_task'
 
   #share operation.
-  post 'upload' =>'share#upload'
-  get 'download' =>'share#download'
+  post 'upload' => 'share#upload'
+  get 'download' => 'share#download'
 
   post 'addQuestion' => 'share#add_question'
   get 'getQuestion' => 'share#get_questions'
