@@ -28,7 +28,7 @@ $(function () {
             event.preventDefault();
             var posting = $.post(url, data);
             posting.done(function (data) {
-                $("#rightPanelDiv").empty().append(data);
+                showData(data);
             });
         });
     }

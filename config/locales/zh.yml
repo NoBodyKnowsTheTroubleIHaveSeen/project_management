@@ -116,3 +116,5 @@ zh:
   no_file: "未上传任何文件"
   content: "内容"
   add_notice: "添加公告"
+  publish_person: "发布人"
+  publish_date: "发布日期"

@@ -20,7 +20,7 @@ class BaseInformationController < ApplicationController
       notice.save
       redirect_to :action => :notice
     else
-      render :text => "caca"
+      render :text => "error"
     end
   end
 
