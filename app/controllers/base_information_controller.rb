@@ -20,7 +20,7 @@ class BaseInformationController < ApplicationController
       notice.save
       redirect_to :action => :notice
     else
-      render :text => "error"
+      render :text => ""
     end
   end
 
@@ -28,16 +28,16 @@ class BaseInformationController < ApplicationController
     #获得会话人的编号
     people_id = session[:people_id]
     @my_name = Person.find(people_id).name
-    #找到该人所参与的项目
-    person_project = PersonProject.where(people_id: people_id)
+    #找到该人所参与的项目id
+    project_ids = PersonProject.where(people_id: people_id).select(:project_id).distinct
     @project_name = Array.new
     @project_manager = Array.new
     @people = Array.new
     i = 0
-    #该人参与了某些项目
-    if !person_project.blank?
+    #参与的项目不为空
+    if !project_ids.blank?
      #遍历其参与的项目
-      person_project.each do |value|
+      project_ids.each do |value|
         #根据项目id找到项目名字，管理人员名字
         project = Project.find value.project_id
         manager = Person.find project.manager_id

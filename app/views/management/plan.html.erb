@@ -1,18 +1,18 @@
 <%= javascript_include_tag "plan.js" %>
 <h1><%= t('work_plan') %></h1>
 <div class="showPlan">
-  <%= t('show_plan_history') %>
-  <br>
   <table>
     <thead>
-    <td><%= t('plan_name') %></td>
-    <td><%= t('start_date') %></td>
-    <td><%= t('finish_date') %></td>
-    <td><%= t('hard_level') %></td>
-    <td><%= t('realte_task') %></td>
-    <td><%= t('description') %></td>
+    <tr>
+    <th><%= t('plan_name') %></th>
+    <th><%= t('start_date') %></th>
+    <th><%= t('finish_date') %></th>
+    <th><%= t('hard_level') %></th>
+    <th><%= t('realte_task') %></th>
+    <th><%= t('description') %></th>
+    </tr>
     </thead>
-    <% if @list.nil? %>
+    <% if @list.blank? %>
         <tr><td colspan="7"><%= t('no_plan') %></td></tr>
     <% else %>
     <% @list.each do |value| %>
@@ -21,10 +21,11 @@
           <td> <%= value.start_date %></td>
           <td> <%= value.finish_date %></td>
           <td> <%= value.hard_level %></td>
-          <td> <%= value.task_id %></td>
+          <td> <%= get_task_name value.task_id %></td>
           <td> <%= value.description %></td>
         </tr>
     <% end %>
         <% end %>
   </table>
+  <input type="button" value="<%= t('add_plan') %>" class="ajaxRequest" data-url="gotoAddPlan">
 </div>

@@ -96,34 +96,36 @@ class ManagementController < ApplicationController
   end
 
   def plan
-    puts session[:id]
-    @list = Plan.find_by(people_id: session[:id])
+    @list = Plan.where(people_id: session[:people_id])
+  end
+
+  def goto_add_plan
+    @plan = Plan.new
+    @people_id = session[:people_id]
+    @create_date = Time.now
+    @task_ids = PersonTask.where(people_id: @people_id).select(:task_id).distinct
+    @task_names = Array.new
+    @task_names.append(I18n.t("none"))
+    if !@task_ids.blank?
+      @task_ids.each do |value|
+        task = Task.find value.task_id
+        @task_names.append(task.name)
+      end
+    end
   end
 
 
   def add_plan
-    plan = Plan.new
-    plan.name = params[:name]
-    plan.start_date = params[:start_date]
-    plan.description = params[:description]
-    plan.hard_level = params[:hard_level]
-    plan.people_id = session[:id]
-    time = Time.now
-    date = Date.new(time.year, time.month, time.day)
-    plan.create_date = date
-    puts params[:name]
-    puts params[:start_date]
-    puts params[:description]
-    puts params[:hard_level]
-    puts session[:people_id]
-    puts session[:username]
-    puts date
+    plan = Plan.new add_plan_param
     if plan.valid?
       plan.save
-      @message = I18n.t("add_success")
+      redirect_to :action => :plan
       return
     end
-    @message = I18n.t("input_error")
+    plan.errors.each do |a|
+      puts a
+    end
+    render :text => "error"
   end
 
   def task_distribute
@@ -234,12 +236,16 @@ class ManagementController < ApplicationController
   def get_peopple_by_project_id
     @project_id = params[:project_id]
     @project = Project.find @project_id
-    personProject = PersonProject.where("project_id = ?", @project_id)
+    personProject = PersonProject.where("project_id = ?", @project_id).select(:people_id).distinct
     @project_people = Array.new
     personProject.each do |value|
       p = Person.find value.people_id
       @project_people.append p.id
       @project_people.append p.name
     end
+  end
+
+  def add_plan_param
+    params.require(:plan).permit!
   end
 end

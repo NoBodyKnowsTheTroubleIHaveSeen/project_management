@@ -3,17 +3,19 @@
 <div class="showTask">
   <table>
     <thead>
-    <td><%= t('task_name') %></td>
-    <td><%= t('project_name') %></td>
-    <td><%= t('hard_level') %></td>
-    <td><%= t('project_weight') %></td>
-    <td><%= t('finish_percentage') %></td>
-    <td><%= t('start_date') %></td>
-    <td><%= t('finish_date') %></td>
-    <td><%= t('description') %></td>
+    <tr>
+    <th><%= t('task_name') %></th>
+    <th><%= t('project_name') %></th>
+    <th><%= t('hard_level') %></th>
+    <th><%= t('project_weight') %></th>
+    <th><%= t('finish_percentage') %></th>
+    <th><%= t('start_date') %></th>
+    <th><%= t('finish_date') %></th>
+    <th><%= t('description') %></th>
+    </tr>
     </thead>
-    <% if @tasks.nil? %>
-        <tr><td colspan="7"><%= t('no_task') %></td></tr>
+    <% if @tasks.blank? %>
+        <tr><td colspan="8"><%= t('no_task') %></td></tr>
     <% else %>
         <% @tasks.each do |value| %>
             <tr>

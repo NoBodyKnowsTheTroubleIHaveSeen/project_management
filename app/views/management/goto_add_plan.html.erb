@@ -1,23 +1,36 @@
 <%= javascript_include_tag "plan.js" %>
 <h1><%= t('add_plan') %></h1>
+<div class="message"></div>
 <div class="addPlan">
-  <form action="addPlan" method="post" id="addPlanForm">
-    <%= t('plan_name') %>:<input name="name" placeholder="<%= t('input_plan') %>"/>
-    <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('finish_date') %>:<input type="date" name="finish_date"/><br>
-    <%= t('realte_task') %>:<input name="task_id" placeholder="<%= t('input_task') %>"/>
-    <%= t('hard_level') %>:
-    <select name="hard_level">
-      <option value="1"><%= t('easy') %></option>
-      <option value="2"><%= t('common') %></option>
-      <option value="3"><%= t('hard') %></option>
-    </select><br>
-    <%= t('description') %>:
-    <textarea rows="3" cols="20" name="description">
-    </textarea>
-    <!--<input type="textarea" name="description"/>-->
-    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-    <input type="submit" value="<%= t('add plan') %>">
-  </form>
-  <div id="result" class="hide message"></div>
+  <%= form_for @plan, url: {action: "add_plan"}, html: {id: "addPlanForm", class: "ajaxForm"} do |f| %>
+      <%= f.hidden_field :people_id, :value => @people_id %>
+      <%= f.hidden_field :create_date, :value => @create_date %>
+      <%= t('plan_name') %>:
+      <%= f.text_field :name, placeholder: t('input_plan') %>
+      <%= t('start_date') %>:
+      <input type="date" name="plan[start_date]"/>
+      <%= t('finish_date') %>:
+      <input type="date" name="plan[finish_date]"/><br>
+      <%= t('realte_task') %>:
+      <select name="plan[task_id]">
+        <option value="0"><%= @task_names[0] %></option>
+        <% i = 0 %>
+        <%= @task_ids.each do |value| %>
+            <option value="<%= value.task_id %>"><%= @task_names[i+1] %></option>
+            <% i+=1 %>
+        <% end %>
+      </select>
+      <%= t('hard_level') %>:
+      <select name="plan[hard_level]">
+        <option value="1"><%= t('easy') %></option>
+        <option value="2"><%= t('common') %></option>
+        <option value="3"><%= t('hard') %></option>
+      </select><br>
+      <%= t('description') %>:
+      <textarea rows="3" cols="20" name="plan[description]">
+      </textarea>
+      <br>
+      <input type="submit" value="<%= t('add') %>">
+      <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/plan">
+  <% end %>
 </div>

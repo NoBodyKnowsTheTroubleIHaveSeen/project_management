@@ -43,6 +43,11 @@ ProjectManagement::Application.routes.draw do
 
   #plan operation.
   post 'addPlan' => 'management#add_plan'
+  get 'gotoAddPlan' => 'management#goto_add_plan'
+
+
+
+
   #task operation.
   post 'addTask' => 'management#add_task'
   get 'gotoAddTask' => 'management#goto_add_task'
