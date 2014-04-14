@@ -96,7 +96,7 @@ class ManagementController < ApplicationController
 
   def delete_project
     project = Project.find params[:project_id]
-    project.delete
+    project.destroy
     redirect_to :action => :project_management
   end
 
@@ -264,7 +264,7 @@ class ManagementController < ApplicationController
 
   def delete_task
     task = Task.find params[:task_id]
-    task.delete
+    task.destroy
     @tasks = Task.all
     render :task_distribute
   end
