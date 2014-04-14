@@ -36,7 +36,7 @@ ProjectManagement::Application.routes.draw do
   get 'gotoUpdateProject' => 'management#goto_update_project'
   post 'updateProject' => 'management#update_project'
   post 'deleteProject' => 'management#delete_project'
-  post 'getProjectPeople' => 'management#get_project_people'
+  get 'getProjectPeople' => 'management#get_project_people'
 
   #plan operation.
   get 'gotoAddPlan' => 'management#goto_add_plan'

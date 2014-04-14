@@ -217,7 +217,8 @@ class ManagementController < ApplicationController
     people_id_list.each do |value|
       @people.append Person.find value.people_id
     end
-    if !session[:is_manager]
+    has_priviliege = project.manager_id == session[:people_id]
+    if !has_priviliege
       render :show_task
     end
   end
@@ -307,6 +308,6 @@ class ManagementController < ApplicationController
   end
 
   def get_project_ids_by_people_id people_id
-    PersonTask.where(people_id: people_id).select(:project_id).distinct
+    PersonProject.where(people_id: people_id).select(:project_id).distinct
   end
 end
