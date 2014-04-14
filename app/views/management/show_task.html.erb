@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'management' %>
+<h1><%= t('show task') %></h1>
+<div class="updateTask">
+  <%= t('task_name') %>:<input readonly class="readonly" value="<%= @task.name %>"/>
+  <%= t('project_name') %>:
+  <input value="<%= @project_name %>" readonly class="readonly">
+  <%= t('start_date') %>:<input type="date" value="<%= @task.start_date %>" readonly class="readonly"/>
+  <%= t('weight') %>:
+  <input readonly class="readonly" value="<%= @task.weight %>"/>
+  <br>
+  <br>
+  <%= t('hard_level') %>:<%= formate_hard_level @task.hard_level %>
+  <br>
+  <%= t('description') %>:
+  <textarea rows="3" cols="20" readonly class="readonly"><%= @task.description %></textarea>
+  <br>
+  <br>
+
+  <div class="headerDiv"><%= t('task_people') %></div>
+  <div class="peopleContent">
+    <div class="people">
+      <% @people.each do |value| %>
+          <div><%= value.name %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/task_distribute">

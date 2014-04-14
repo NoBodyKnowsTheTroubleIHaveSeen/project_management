@@ -15,9 +15,7 @@
     <%= t('description') %>:
     <textarea rows="5" cols="90" name="description"><%= @project.description %></textarea>
     <br>
-    <!--<input type="textarea" name="description"/>-->
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-
     <div class="choosePeople">
       <div class="leftPeople">
         <div class="headerDiv"><%= t('employ_name') %></div>

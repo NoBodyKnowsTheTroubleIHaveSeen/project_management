@@ -11,7 +11,9 @@
     <th><%= t('is_doned') %></th>
     </thead>
     <% if @projects.size==0 %>
-        <tr><td colspan="7"><%= t('no_project') %></td></tr>
+        <tr>
+          <td colspan="7"><%= t('no_project') %></td>
+        </tr>
     <% else %>
         <% @projects.each do |value| %>
             <tr>
@@ -37,6 +39,8 @@
     <% end %>
   </table>
 </div>
-<div >
-  <input type="button" value="<%= t('add_project') %>" class="ajaxRequest" data-url="gotoAddProject">
+<div>
+  <% if @has_priviliege %>
+      <input type="button" value="<%= t('add_project') %>" class="ajaxRequest" data-url="gotoAddProject">
+  <% end %>
 </div>

@@ -16,6 +16,7 @@ class LoginController < ApplicationController
           session[:username] = username
           id = user.id
           session[:people_id] = id
+          session[:is_manager] = user.priviliege == 10 ? true : false
           redirect_to :action => 'index', controller: 'welcome'
           return
         end

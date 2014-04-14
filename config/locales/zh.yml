@@ -49,7 +49,7 @@ zh:
   update_project: "更新项目信息"
   project_name: "项目名"
   input_project: "请输入项目名"
-  show_project: "已有项目"
+  show_project: "查看项目信息"
   manager: "项目负责人"
   developer: "开发人员"
   finish_percentage: "完成百分比"
@@ -123,3 +123,4 @@ zh:
   delete_plan: "删除计划"
   schedule_submit: "进度提交"
   role: "角色"
+  show task: "查看任务"

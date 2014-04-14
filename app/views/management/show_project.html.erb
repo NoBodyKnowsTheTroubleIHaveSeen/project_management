@@ -1,0 +1,21 @@
+<h1><%= t('show_project') %></h1>
+<div class="showProject">
+  <%= t('project_name') %>:<input readonly class="readonly" name="name" value="<%= @project.name %>"/>
+  <%= t('start_date') %>:<input readonly class="readonly" type="date" value="<%= @project.start_date %>"/>
+  <%= t('finish_date') %>:<input readonly class="readonly" type="date" value="<%= @project.finish_date %>"/><br>
+  <br>
+  <%= t('description') %>:
+  <textarea rows="5" cols="90" readonly class="readonly"><%= @project.description %></textarea>
+  <br>
+  <div class="headerDiv "><%= t('project_people') %></div>
+  <div class="peopleContent">
+    <div class="people">
+      <% i = 0 %>
+      <% while i<@project_people.size/2 do %>
+          <div class="data"><%= @project_people[2*i+1] %></div>
+          <% i+=1 %>
+      <% end %>
+    </div>
+  </div>
+  <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
+</div>

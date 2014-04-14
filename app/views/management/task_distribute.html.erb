@@ -1,21 +1,23 @@
-<%= stylesheet_link_tag 'management'%>
+<%= stylesheet_link_tag 'management' %>
 <h1><%= t('task_distribute') %></h1>
 <div class="showTask">
   <table>
     <thead>
     <tr>
-    <th><%= t('task_name') %></th>
-    <th><%= t('project_name') %></th>
-    <th><%= t('hard_level') %></th>
-    <th><%= t('project_weight') %></th>
-    <th><%= t('finish_percentage') %></th>
-    <th><%= t('start_date') %></th>
-    <th><%= t('finish_date') %></th>
-    <th><%= t('description') %></th>
+      <th><%= t('task_name') %></th>
+      <th><%= t('project_name') %></th>
+      <th><%= t('hard_level') %></th>
+      <th><%= t('project_weight') %></th>
+      <th><%= t('finish_percentage') %></th>
+      <th><%= t('start_date') %></th>
+      <th><%= t('finish_date') %></th>
+      <th><%= t('description') %></th>
     </tr>
     </thead>
     <% if @tasks.blank? %>
-        <tr><td colspan="8"><%= t('no_task') %></td></tr>
+        <tr>
+          <td colspan="8"><%= t('no_task') %></td>
+        </tr>
     <% else %>
         <% @tasks.each do |value| %>
             <tr>
@@ -34,6 +36,8 @@
     <% end %>
   </table>
 </div>
-<div >
-  <input type="button" value="<%= t('add_task') %>" class="ajaxRequest" data-url="gotoAddTask">
+<div>
+  <% if @has_priviliege %>
+      <input type="button" value="<%= t('add_task') %>" class="ajaxRequest" data-url="gotoAddTask">
+  <% end %>
 </div>

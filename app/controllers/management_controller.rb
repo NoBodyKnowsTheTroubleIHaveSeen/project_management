@@ -12,6 +12,7 @@ class ManagementController < ApplicationController
         @projects.append Project.find value.project_id
       end
     end
+    @has_priviliege = session[:is_manager]
   end
 
   def goto_add_project
@@ -54,6 +55,9 @@ class ManagementController < ApplicationController
   def goto_update_project
     @people = Person.all
     get_peopple_by_project_id
+    if !session[:is_manager]
+      render :show_project
+    end
   end
 
   def update_project
@@ -93,7 +97,7 @@ class ManagementController < ApplicationController
   def delete_project
     project = Project.find params[:project_id]
     project.delete
-    redirect_to :action =>  :project_management
+    redirect_to :action => :project_management
   end
 
   #获得项目人员
@@ -152,6 +156,7 @@ class ManagementController < ApplicationController
 
   def task_distribute
     @tasks = Task.all
+    @has_priviliege = session[:is_manager]
   end
 
   #添加任务
@@ -198,6 +203,9 @@ class ManagementController < ApplicationController
     @people = Array.new
     people_id_list.each do |value|
       @people.append Person.find value.people_id
+    end
+    if !session[:is_manager]
+      render :show_task
     end
   end
 

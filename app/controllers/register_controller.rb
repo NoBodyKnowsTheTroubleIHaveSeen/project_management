@@ -43,6 +43,7 @@ class RegisterController < ApplicationController
       session[:username] = username
       p = Person.find_by_name username
       session[:people_id] = p.id
+      session[:is_manager] = p.priviliege == 10 ? true : false
       render :text => 'success'
     else
       render :text => I18n.t('please_check_no_department_id_and_email')
