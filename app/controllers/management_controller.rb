@@ -155,7 +155,20 @@ class ManagementController < ApplicationController
   end
 
   def task_distribute
-    @tasks = Task.all
+    #获得该人参与的所有项目Id
+    project_ids = get_project_ids_by_people_id session[:people_id]
+    @tasks = Array.new
+    if !project_ids.blank?
+      project_ids.each do |value|
+        #遍历，找到项目相关的所有任务
+        tasks = Task.where(project_id: value.project_id)
+        if !tasks.blank?
+          tasks.each do |value|
+            @tasks.append value
+          end
+        end
+      end
+    end
     @has_priviliege = session[:is_manager]
   end
 
@@ -291,5 +304,9 @@ class ManagementController < ApplicationController
         @task_names.append(task.name)
       end
     end
+  end
+
+  def get_project_ids_by_people_id people_id
+    PersonTask.where(people_id: people_id).select(:project_id).distinct
   end
 end
