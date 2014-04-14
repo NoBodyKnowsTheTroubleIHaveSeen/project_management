@@ -2,8 +2,16 @@ class ManagementController < ApplicationController
   require 'date'
   layout false
 
+  #项目管理
   def project_management
-    @projects = Project.all
+    #根据登陆的员工id找到其对应的项目
+    personProject = PersonProject.where(people_id: session[:people_id]).select(:project_id).distinct
+    @projects = Array.new
+    if !personProject.blank?
+      personProject.each do |value|
+        @projects.append Project.find value.project_id
+      end
+    end
   end
 
   def goto_add_project
@@ -85,9 +93,7 @@ class ManagementController < ApplicationController
   def delete_project
     project = Project.find params[:project_id]
     project.delete
-    @people = Person.all
-    @projects = Project.all
-    render :project_management
+    redirect_to :action =>  :project_management
   end
 
   #获得项目人员
@@ -137,6 +143,7 @@ class ManagementController < ApplicationController
     plan.update_attributes plan_param
     redirect_to :action => :plan
   end
+
   def delete_plan
     plan = Plan.find params[:plan][:id]
     plan.destroy
@@ -147,8 +154,10 @@ class ManagementController < ApplicationController
     @tasks = Task.all
   end
 
+  #添加任务
   def goto_add_task
-    @projects = Project.all
+    #用户只能给自己的项目添加任务
+    @projects = Project.where(manager_id: session[:people_id])
   end
 
   def add_task

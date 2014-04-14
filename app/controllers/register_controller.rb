@@ -29,6 +29,7 @@ class RegisterController < ApplicationController
     no = params[:no]
     departmentId = params[:departmentId]
     email = params[:email]
+    priviliege = params[:priviliege]
     person = Person.new
     person.name = username
     person.password = password
@@ -36,6 +37,7 @@ class RegisterController < ApplicationController
     person.no = no
     person.department_id = departmentId
     person.email = email
+    person.priviliege = priviliege
     if person.valid?
       person.save
       session[:username] = username
