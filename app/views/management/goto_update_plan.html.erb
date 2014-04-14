@@ -12,10 +12,10 @@
       <input type="date" name="plan[finish_date]" value="<%= @plan.finish_date %>"/><br>
       <%= t('realte_task') %>:
       <select name="plan[task_id]">
-        <option value="0"><%= @task_names[0] %></option>
+        <option value="0"><%= t('none') %></option>
         <% i = 0 %>
         <%= @task_ids.each do |value| %>
-            <option value="<%= value.task_id %>" <%= output_options value.task_id,@plan.task_id%>><%= @task_names[i+1] %></option>
+            <option value="<%= value.task_id %>" <%= output_options value.task_id,@plan.task_id%>><%= @task_names[i] %></option>
             <% i+=1 %>
         <% end %>
       </select>

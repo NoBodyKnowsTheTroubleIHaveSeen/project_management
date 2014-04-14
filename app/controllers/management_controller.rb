@@ -106,22 +106,13 @@ class ManagementController < ApplicationController
   end
 
   def plan
-    @list = Plan.where(people_id: session[:people_id])
+    get_plans
   end
 
   def goto_add_plan
     @plan = Plan.new
     @create_date = Time.now
-    @people_id = session[:people_id]
-    @task_ids = PersonTask.where(people_id: @people_id).select(:task_id).distinct
-    @task_names = Array.new
-    @task_names.append(I18n.t("none"))
-    if !@task_ids.blank?
-      @task_ids.each do |value|
-        task = Task.find value.task_id
-        @task_names.append(task.name)
-      end
-    end
+    get_task_name_and_id
   end
 
   def add_plan
@@ -217,6 +208,7 @@ class ManagementController < ApplicationController
     people_id_list.each do |value|
       @people.append Person.find value.people_id
     end
+    #判断是否有该分发任务的权利
     has_priviliege = project.manager_id == session[:people_id]
     if !has_priviliege
       render :show_task
@@ -272,6 +264,13 @@ class ManagementController < ApplicationController
 
 
   def schedule_submit
+    @schedule = Schedule.new
+    get_task_name_and_id
+    get_plans
+  end
+
+  def add_schedule
+
   end
 
   def schedule_summary
@@ -295,10 +294,13 @@ class ManagementController < ApplicationController
     params.require(:plan).permit!
   end
 
+  def get_plans
+    @plans = Plan.where(people_id: session[:people_id])
+  end
+
   def get_task_name_and_id
     @task_ids = PersonTask.where(people_id: session[:people_id]).select(:task_id).distinct
     @task_names = Array.new
-    @task_names.append(I18n.t("none"))
     if !@task_ids.blank?
       @task_ids.each do |value|
         task = Task.find value.task_id

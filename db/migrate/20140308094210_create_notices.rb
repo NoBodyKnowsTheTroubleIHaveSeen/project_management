@@ -5,7 +5,6 @@ class CreateNotices < ActiveRecord::Migration
       t.integer :people_id,null:false
       t.string :title,null:false
       t.string :content,null:false
-
       t.timestamps
     end
   end

@@ -12,10 +12,10 @@
     <th><%= t('description') %></th>
     </tr>
     </thead>
-    <% if @list.blank? %>
+    <% if @plans.blank? %>
         <tr><td colspan="7"><%= t('no_plan') %></td></tr>
     <% else %>
-    <% @list.each do |value| %>
+    <% @plans.each do |value| %>
         <tr>
           <td>
             <a data-url="gotoUpdatePlan?plan_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
