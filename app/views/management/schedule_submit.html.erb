@@ -5,13 +5,14 @@
 <div class="scheduleSubmit">
   <%= form_for @schedule, url: {action: :add_schedule}, html: {class: "ajaxForm"} do |f| %>
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
-      <%= f.hidden_field :date, :value => Time.now %>
+      <%= t("date") %>:
+      <input type="date" value="<%= Time.new.strftime("%Y-%m-%d") %>" name="schedule[date]" readonly>
       <%= t('realte_task') %>:
       <select name="schedule[task_id]">
         <option value="0"><%= t("none") %></option>
         <% i = 0 %>
         <% @task_ids.each do |value| %>
-            <option value="<%= value.task_id %>"><%= @task_names[i] %></option>
+            <option value="<%= value %>"><%= @task_names[i] %></option>
             <% i+=1 %>
         <% end %>
       </select>
@@ -26,7 +27,7 @@
         <% end %>
       </select>
       <%= f.radio_button(:plan_is_done, "0") %>
-      <%= label_tag(:plan_is_done_0, t("is_not_done")) %>
+      <%= label_tag(:plan_is_done_0, t("undone")) %>
       <%= f.radio_button(:plan_is_done, "1") %>
       <%= label_tag(:plan_is_done_1, t("done")) %>
       <br>

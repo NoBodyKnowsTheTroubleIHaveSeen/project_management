@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string "description", limit: 1000
       t.date "start_date", null: false
       t.date "finish_date"
-      t.integer "finish_percentage", limit: 1
+      t.integer "finish_percentage", default: 0, limit: 1
       t.integer "manager_id", null: false
       t.integer "is_done", limit: 1, default: 0, null: false
     end

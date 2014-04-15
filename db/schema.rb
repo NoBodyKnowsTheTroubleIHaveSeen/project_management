@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415025151) do
+ActiveRecord::Schema.define(version: 20140415064604) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -52,27 +52,25 @@ ActiveRecord::Schema.define(version: 20140415025151) do
   add_index "person_projects", ["project_id"], name: "fk3", using: :btree
 
   create_table "person_tasks", force: true do |t|
-    t.integer "people_id",                         null: false
-    t.integer "project_id",                        null: false
-    t.integer "task_id",                           null: false
-    t.date    "start_time",                        null: false
-    t.date    "finish_time"
-    t.integer "is_done",    limit: 1, default: 0, null: false
+    t.integer "people_id",  null: false
+    t.integer "project_id", null: false
+    t.integer "task_id",    null: false
+    t.date    "start_time", null: false
   end
 
   add_index "person_tasks", ["people_id"], name: "fk4", using: :btree
   add_index "person_tasks", ["project_id"], name: "fk5", using: :btree
 
   create_table "plans", force: true do |t|
-    t.integer "people_id",             null: false
+    t.integer "people_id",                         null: false
     t.integer "task_id"
     t.string  "name"
     t.string  "description"
-    t.integer "hard_level",  limit: 1, null: false
-    t.date    "create_date",           null: false
+    t.integer "hard_level",  limit: 1,             null: false
+    t.date    "create_date",                       null: false
     t.date    "start_date"
     t.date    "finish_date"
-    t.integer "is_done"
+    t.integer "is_done",               default: 0
   end
 
   add_index "plans", ["people_id"], name: "fk6", using: :btree
@@ -83,9 +81,9 @@ ActiveRecord::Schema.define(version: 20140415025151) do
     t.string  "description",       limit: 1000
     t.date    "start_date",                                 null: false
     t.date    "finish_date"
-    t.integer "finish_percentage", limit: 1
+    t.integer "finish_percentage", limit: 1,    default: 0
     t.integer "manager_id",                                 null: false
-    t.integer "is_done",          limit: 1,    default: 0, null: false
+    t.integer "is_done",           limit: 1,    default: 0, null: false
   end
 
   add_index "projects", ["manager_id"], name: "fk8", using: :btree

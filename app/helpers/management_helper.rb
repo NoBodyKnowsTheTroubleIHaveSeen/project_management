@@ -4,7 +4,7 @@ module ManagementHelper
     project.name
   end
 
-  def formate_hard_level hard_level
+  def format_hard_level hard_level
     if hard_level==1
       I18n.t 'easy'
     else
@@ -21,6 +21,25 @@ module ManagementHelper
   def output_options hard_level, index
     if hard_level==index
       "selected = 'selected'"
+    end
+  end
+
+  def format_is_done is_done
+    if is_done==0
+      t("undone")
+    else
+      if is_done ==1
+        t("done")
+      end
+    end
+  end
+  def format_is_done_by_percentage percentage
+    if percentage==100
+      t("done")
+    else
+      if is_done <100
+        t("undone")
+      end
     end
   end
 end

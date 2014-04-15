@@ -12,6 +12,7 @@
       <th><%= t('start_date') %></th>
       <th><%= t('finish_date') %></th>
       <th><%= t('description') %></th>
+      <th><%= t('is_done') %></th>
     </tr>
     </thead>
     <% if @tasks.blank? %>
@@ -25,12 +26,13 @@
                 <a data-url="gotoUpdateTask?task_id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"> <%= value.name %></a>
               </td>
               <td> <%= get_project_name value.project_id %></td>
-              <td> <%= formate_hard_level value.hard_level %></td>
+              <td> <%= format_hard_level value.hard_level %></td>
               <td> <%= value.weight %>%</td>
               <td> <%= value.percentage %>%</td>
               <td> <%= value.start_date %></td>
               <td> <%= value.end_date %></td>
               <td> <%= value.description %></td>
+              <td> <%=  format_is_done_by_percentage value.percentage %></td>
             </tr>
         <% end %>
     <% end %>

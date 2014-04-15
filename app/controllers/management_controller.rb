@@ -265,24 +265,56 @@ class ManagementController < ApplicationController
 
   def schedule_submit
     @schedule = Schedule.new
-    get_task_name_and_id
-    get_plans
+    all_task_ids = PersonTask.where(people_id: session[:people_id]).select(:task_id).distinct
+    @task_ids = Array.new
+    @task_names = Array.new
+    if !all_task_ids.blank?
+      all_task_ids.each do |value|
+        task = Task.find value.task_id
+        if task.percentage != 100
+          @task_ids.append value.task_id
+          @task_names.append(task.name)
+        end
+      end
+    end
+    @plans = Plan.where(people_id: session[:people_id], is_done: 0)
   end
 
   def add_schedule
     schedule = Schedule.create schedule_param
     schedule.save
     shcedule_param = params[:schedule]
+    puts schedule_param[:plan_id] !="0"
+    if !schedule_param[:plan_id].blank?&&schedule_param[:plan_id]!="0"
+      plan_id = schedule_param[:plan_id]
+      plan_is_done = schedule_param[:plan_is_done]
+      plan = Plan.find plan_id
+      plan.is_done = plan_is_done
+      plan.finish_date = Time.now
+      plan.save
+    end
     task_id = schedule_param[:task_id]
-    complete_percentage = schedule_param[:complete_percentage]
-    plan_id = schedule_param[:plan_id]
-    plan_is_done = schedule_param[:plan_is_done]
-    Task.find task_id
-    puts task_id
-    puts complete_percentage
-    puts plan_id
-    puts plan_is_done
-    render :text => "ss"
+    if !task_id.blank?&&task_id!="0"
+      task = Task.find task_id
+      complete_percentage = schedule_param[:complete_percentage].to_i
+      old_percentage = task.percentage.to_i
+      project_add_percentage = (complete_percentage-old_percentage)*task.weight/100
+      project = Project.find task.project_id
+      project_old_percentage = project.finish_percentage
+      finish_percentage = project_old_percentage+project_add_percentage
+      project.finish_percentage = finish_percentage
+      if finish_percentage == 100
+        project.is_done = 1
+        project.finish_date = Time.now
+      end
+      task.percentage = complete_percentage
+      if complete_percentage == 100
+        task.end_date = Time.now
+      end
+      task.save
+      project.save
+    end
+    redirect_to :action => :schedule_submit
   end
 
   def schedule_summary

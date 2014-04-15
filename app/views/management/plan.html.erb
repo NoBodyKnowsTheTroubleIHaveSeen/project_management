@@ -10,6 +10,7 @@
     <th><%= t('hard_level') %></th>
     <th><%= t('realte_task') %></th>
     <th><%= t('description') %></th>
+    <th><%= t('is_done') %></th>
     </tr>
     </thead>
     <% if @plans.blank? %>
@@ -22,9 +23,10 @@
           </td>
           <td> <%= value.start_date %></td>
           <td> <%= value.finish_date %></td>
-          <td> <%= formate_hard_level value.hard_level %></td>
+          <td> <%= format_hard_level value.hard_level %></td>
           <td> <%= get_task_name value.task_id %></td>
           <td> <%= value.description %></td>
+          <td> <%= format_is_done value.is_done %></td>
         </tr>
     <% end %>
         <% end %>

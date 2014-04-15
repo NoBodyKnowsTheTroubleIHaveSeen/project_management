@@ -9,7 +9,7 @@
   <input readonly class="readonly" value="<%= @task.weight %>"/>
   <br>
   <br>
-  <%= t('hard_level') %>:<%= formate_hard_level @task.hard_level %>
+  <%= t('hard_level') %>:<%= format_hard_level @task.hard_level %>
   <br>
   <%= t('description') %>:
   <textarea rows="3" cols="20" readonly class="readonly"><%= @task.description %></textarea>

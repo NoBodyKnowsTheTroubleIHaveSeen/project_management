@@ -50,7 +50,7 @@ function showMessage() {
     $(".message").fadeIn();
     $(".message").fadeOut(3000);
 }
-function showData(data){
+function showData(data) {
     if (data == "error") {
         showMessage();
     }

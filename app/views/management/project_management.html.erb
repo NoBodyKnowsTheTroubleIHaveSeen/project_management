@@ -28,11 +28,7 @@
               <td> <%= value.description %></td>
               <td> <%= value.finish_percentage %></td>
               <td>
-                <% if value.is_done.eql?(1) %>
-                    <%= t('done') %>
-                <% else %>
-                    <%= t('undone') %>
-                <% end %>
+                <%= format_is_done value.is_done %>
               </td>
             </tr>
         <% end %>
