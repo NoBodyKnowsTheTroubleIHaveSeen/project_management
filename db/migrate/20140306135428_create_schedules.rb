@@ -5,7 +5,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.integer "task_id"
       t.integer "plan_id"
       t.date    "date"
-      t.integer "complete_percentage", null: false
+      t.integer "complete_percentage"
       t.string  "description"
       t.string  "content",             null: false
     end

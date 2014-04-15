@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.date "finish_date"
       t.integer "finish_percentage", limit: 1
       t.integer "manager_id", null: false
-      t.integer "is_doned", limit: 1, default: 0, null: false
+      t.integer "is_done", limit: 1, default: 0, null: false
     end
 
     add_index "projects", ["manager_id"], name: "fk8", using: :btree

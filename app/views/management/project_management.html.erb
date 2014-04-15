@@ -8,7 +8,7 @@
     <th><%= t('manager') %></th>
     <th><%= t('description') %></th>
     <th><%= t('finish_percentage') %></th>
-    <th><%= t('is_doned') %></th>
+    <th><%= t('is_done') %></th>
     </thead>
     <% if @projects.size==0 %>
         <tr>
@@ -28,10 +28,10 @@
               <td> <%= value.description %></td>
               <td> <%= value.finish_percentage %></td>
               <td>
-                <% if value.is_doned.eql?(1) %>
-                    <%= t('doned') %>
+                <% if value.is_done.eql?(1) %>
+                    <%= t('done') %>
                 <% else %>
-                    <%= t('undoned') %>
+                    <%= t('undone') %>
                 <% end %>
               </td>
             </tr>

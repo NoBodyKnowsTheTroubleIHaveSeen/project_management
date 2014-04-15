@@ -1,4 +1,3 @@
-<%= javascript_include_tag "schedule_submit" %>
 <h1><%= t('schedule_submit') %></h1>
 <div class="message">
 </div>
@@ -8,10 +7,10 @@
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
       <%= f.hidden_field :date, :value => Time.now %>
       <%= t('realte_task') %>:
-      <select name="task_id">
+      <select name="schedule[task_id]">
         <option value="0"><%= t("none") %></option>
         <% i = 0 %>
-        <%= @task_ids.each do |value| %>
+        <% @task_ids.each do |value| %>
             <option value="<%= value.task_id %>"><%= @task_names[i] %></option>
             <% i+=1 %>
         <% end %>
@@ -20,16 +19,16 @@
       <%= f.text_field :complete_percentage, placeholder: t('input_percentage') %>
       <br>
       <%= t('realte_plan') %>:
-      <select name="plan_id">
+      <select name="schedule[plan_id]">
         <option value="0"><%= t("none") %></option>
-        <%= @plans.each do |value| %>
+        <% @plans.each do |value| %>
             <option value="<%= value.id %>"><%= value.name %></option>
         <% end %>
       </select>
-      <%= radio_button_tag(:plan_is_doned, "0") %>
-      <%= label_tag(:plan_is_doned_0, t("is_not_doned")) %>
-      <%= radio_button_tag(:plan_is_doned, "1") %>
-      <%= label_tag(:plan_is_doned_1, t("doned")) %>
+      <%= f.radio_button(:plan_is_done, "0") %>
+      <%= label_tag(:plan_is_done_0, t("is_not_done")) %>
+      <%= f.radio_button(:plan_is_done, "1") %>
+      <%= label_tag(:plan_is_done_1, t("done")) %>
       <br>
       <%= t('description') %> :<%= f.text_field :description %>
       <br>

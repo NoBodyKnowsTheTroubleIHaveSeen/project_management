@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414094358) do
+ActiveRecord::Schema.define(version: 20140415025151) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140414094358) do
     t.integer "task_id",                           null: false
     t.date    "start_time",                        null: false
     t.date    "finish_time"
-    t.integer "is_doned",    limit: 1, default: 0, null: false
+    t.integer "is_done",    limit: 1, default: 0, null: false
   end
 
   add_index "person_tasks", ["people_id"], name: "fk4", using: :btree
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140414094358) do
     t.date    "create_date",           null: false
     t.date    "start_date"
     t.date    "finish_date"
+    t.integer "is_done"
   end
 
   add_index "plans", ["people_id"], name: "fk6", using: :btree
@@ -84,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140414094358) do
     t.date    "finish_date"
     t.integer "finish_percentage", limit: 1
     t.integer "manager_id",                                 null: false
-    t.integer "is_doned",          limit: 1,    default: 0, null: false
+    t.integer "is_done",          limit: 1,    default: 0, null: false
   end
 
   add_index "projects", ["manager_id"], name: "fk8", using: :btree
@@ -103,10 +104,10 @@ ActiveRecord::Schema.define(version: 20140414094358) do
     t.integer "task_id"
     t.integer "plan_id"
     t.date    "date"
-    t.integer "complete_percentage", null: false
+    t.integer "complete_percentage"
     t.string  "description"
     t.string  "content",             null: false
-    t.integer "plan_is_doned"
+    t.integer "plan_is_done"
   end
 
   add_index "schedules", ["people_id"], name: "fk10", using: :btree

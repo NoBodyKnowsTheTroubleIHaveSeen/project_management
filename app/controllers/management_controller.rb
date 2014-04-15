@@ -270,7 +270,19 @@ class ManagementController < ApplicationController
   end
 
   def add_schedule
-
+    schedule = Schedule.create schedule_param
+    schedule.save
+    shcedule_param = params[:schedule]
+    task_id = schedule_param[:task_id]
+    complete_percentage = schedule_param[:complete_percentage]
+    plan_id = schedule_param[:plan_id]
+    plan_is_done = schedule_param[:plan_is_done]
+    Task.find task_id
+    puts task_id
+    puts complete_percentage
+    puts plan_id
+    puts plan_is_done
+    render :text => "ss"
   end
 
   def schedule_summary
@@ -311,5 +323,9 @@ class ManagementController < ApplicationController
 
   def get_project_ids_by_people_id people_id
     PersonProject.where(people_id: people_id).select(:project_id).distinct
+  end
+
+  def schedule_param
+    params.require(:schedule).permit!
   end
 end

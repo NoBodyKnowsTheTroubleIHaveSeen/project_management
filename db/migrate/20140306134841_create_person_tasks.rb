@@ -7,7 +7,7 @@ class CreatePersonTasks < ActiveRecord::Migration
       t.integer "hard_level", limit: 1, null: false
       t.date "start_time", null: false
       t.date "finish_time"
-      t.integer "is_doned", limit: 1, default: 0, null: false
+      t.integer "is_done", limit: 1, default: 0, null: false
     end
 
     add_index "person_tasks", ["people_id"], name: "fk4", using: :btree
