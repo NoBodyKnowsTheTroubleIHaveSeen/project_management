@@ -8,7 +8,7 @@ class ShareController < ApplicationController
   def upload
     file = params[:file]
     file_name = file.original_filename
-    if File.exist? "public/uploads/"+file_name
+    if File.exist? "public/uploads/#{file_name}"
       flash[:notice] = I18n.t('file_has_exist')
       redirect_to :action => :file_share
       return
@@ -28,8 +28,8 @@ class ShareController < ApplicationController
 
   def download
     file_name = params[:file_name]
-    if File.exist? "public/uploads/"+file_name
-      send_file "public/uploads/"+file_name, :disposition => 'attachment'
+    if File.exist?  "public/uploads/#{file_name}"
+      send_file  "public/uploads/#{file_name}", :disposition => 'attachment'
     else
       render :text => t('file_is_not_exist')
     end

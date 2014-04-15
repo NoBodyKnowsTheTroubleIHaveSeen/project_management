@@ -43,7 +43,7 @@ zh:
   update_success: "更新成功！"
   input_plan: "请输入计划名"
   input_task: "请输入任务名"
-  show_plan_history: "查看历史计划"
+  show_plan: "查看计划"
   project_management: "项目管理"
   input_manager_id: "请输入管理人员id"
   add_project: "添加项目"
@@ -127,3 +127,4 @@ zh:
   show task: "查看任务"
   input_percentage: "输入完成百分比"
   date: "日期"
+  show_schedule: "查看进度"

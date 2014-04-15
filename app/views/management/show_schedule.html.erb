@@ -1,0 +1,20 @@
+<h1><%= t('show_schedule') %></h1>
+<div class="show_shcedule">
+  <%= t("date") %>:
+  <input type="date" value="<%= @schedule.date %>" name="schedule[date]" readonly>
+  <%= t('realte_task') %>:
+  <input readonly value="<%= get_task_name @schedule.task_id %>">
+  <%= t("finish_percentage") %>:
+  <input readonly value="<%= @schedule.complete_percentage %>">
+  <br>
+  <%= t('realte_plan') %>:
+  <input readonly value="<%= get_plan_name @schedule.plan_id %>">
+  <%= t('is_done') %>:
+  <input readonly value="<%= format_is_done @schedule.plan_is_done %>">
+  <br>
+  <%= t('description') %> : <input readonly value="  <%= @schedule.description %>">
+  <br>
+  <%= t('content') %>: <textarea readonly><%= @schedule.content %></textarea>
+  <br>
+  <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
+</div>

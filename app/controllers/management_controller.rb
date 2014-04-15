@@ -4,14 +4,7 @@ class ManagementController < ApplicationController
 
   #项目管理
   def project_management
-    #根据登陆的员工id找到其对应的项目
-    personProject = PersonProject.where(people_id: session[:people_id]).select(:project_id).distinct
-    @projects = Array.new
-    if !personProject.blank?
-      personProject.each do |value|
-        @projects.append Project.find value.project_id
-      end
-    end
+    get_projects
     @has_priviliege = session[:is_manager]
   end
 
@@ -146,20 +139,7 @@ class ManagementController < ApplicationController
   end
 
   def task_distribute
-    #获得该人参与的所有项目Id
-    project_ids = get_project_ids_by_people_id session[:people_id]
-    @tasks = Array.new
-    if !project_ids.blank?
-      project_ids.each do |value|
-        #遍历，找到项目相关的所有任务
-        tasks = Task.where(project_id: value.project_id)
-        if !tasks.blank?
-          tasks.each do |value|
-            @tasks.append value
-          end
-        end
-      end
-    end
+    get_tasks
     @has_priviliege = session[:is_manager]
   end
 
@@ -282,7 +262,12 @@ class ManagementController < ApplicationController
 
   def add_schedule
     schedule = Schedule.create schedule_param
-    schedule.save
+    if schedule.valid?
+      schedule.save
+    else
+      render :text => "error"
+      return
+    end
     shcedule_param = params[:schedule]
     puts schedule_param[:plan_id] !="0"
     if !schedule_param[:plan_id].blank?&&schedule_param[:plan_id]!="0"
@@ -317,10 +302,33 @@ class ManagementController < ApplicationController
     redirect_to :action => :schedule_submit
   end
 
+  def goto_show_schedule
+    get_schedules
+  end
+
+  def show_schedule
+    id = params[:id]
+    @schedule = Schedule.find id
+  end
+
   def schedule_summary
+    get_projects
+    get_plans
+    get_tasks
   end
 
   private
+  def get_projects
+    #根据登陆的员工id找到其对应的项目
+    personProject = PersonProject.where(people_id: session[:people_id]).select(:project_id).distinct
+    @projects = Array.new
+    if !personProject.blank?
+      personProject.each do |value|
+        @projects.append Project.find value.project_id
+      end
+    end
+  end
+
   #通过项目id获得项目人员
   def get_peopple_by_project_id
     @project_id = params[:project_id]
@@ -353,11 +361,32 @@ class ManagementController < ApplicationController
     end
   end
 
+  def get_tasks
+    #获得该人参与的所有项目Id
+    project_ids = get_project_ids_by_people_id session[:people_id]
+    @tasks = Array.new
+    if !project_ids.blank?
+      project_ids.each do |value|
+        #遍历，找到项目相关的所有任务
+        tasks = Task.where(project_id: value.project_id)
+        if !tasks.blank?
+          tasks.each do |value|
+            @tasks.append value
+          end
+        end
+      end
+    end
+  end
+
   def get_project_ids_by_people_id people_id
     PersonProject.where(people_id: people_id).select(:project_id).distinct
   end
 
   def schedule_param
     params.require(:schedule).permit!
+  end
+
+  def get_schedules
+    @schedules = Schedule.where(people_id: session[:people_id])
   end
 end

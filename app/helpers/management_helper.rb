@@ -42,4 +42,21 @@ module ManagementHelper
       end
     end
   end
+
+  def get_task_name task_id
+    if task_id!=0
+      task = Task.find task_id
+      task.name
+    else
+      I18n.t("none")
+    end
+  end
+  def get_plan_name plan_id
+    if plan_id!=0
+      plan = Plan.find plan_id
+      plan.name
+    else
+      I18n.t("none")
+    end
+  end
 end
