@@ -57,6 +57,7 @@ ProjectManagement::Application.routes.draw do
   post 'addSchedule' => 'management#add_schedule'
   get 'gotoShowSchedule' => 'management#goto_show_schedule'
   get 'showSchedule' => 'management#show_schedule'
+  post 'deleteSchedule' =>'management#delete_schedule'
 
   #share operation.
   post 'upload' => 'share#upload'

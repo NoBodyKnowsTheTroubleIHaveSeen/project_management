@@ -37,7 +37,7 @@ module ManagementHelper
     if percentage==100
       t("done")
     else
-      if is_done <100
+      if percentage <100
         t("undone")
       end
     end

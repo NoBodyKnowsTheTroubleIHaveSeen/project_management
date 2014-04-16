@@ -16,5 +16,9 @@
   <br>
   <%= t('content') %>: <textarea readonly><%= @schedule.content %></textarea>
   <br>
-  <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
+  <%= form_tag({action: :delete_schedule}, class: "ajaxForm") do  %>
+      <input type="submit" value="<%= t("delete") %>">
+      <%= hidden_field_tag :id,@schedule.id %>
+      <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
+<% end %>
 </div>

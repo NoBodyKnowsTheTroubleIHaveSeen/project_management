@@ -299,7 +299,7 @@ class ManagementController < ApplicationController
       task.save
       project.save
     end
-    redirect_to :action => :schedule_submit
+    redirect_to :action => :show_schedule, :id =>schedule.id
   end
 
   def goto_show_schedule
@@ -307,8 +307,13 @@ class ManagementController < ApplicationController
   end
 
   def show_schedule
-    id = params[:id]
-    @schedule = Schedule.find id
+    get_schedule_by_params
+  end
+
+  def delete_schedule
+    get_schedule_by_params
+    @schedule.destroy
+    redirect_to :action => :goto_show_schedule
   end
 
   def schedule_summary
@@ -388,5 +393,10 @@ class ManagementController < ApplicationController
 
   def get_schedules
     @schedules = Schedule.where(people_id: session[:people_id])
+  end
+
+  def get_schedule_by_params
+    id = params[:id]
+    @schedule = Schedule.find id
   end
 end
