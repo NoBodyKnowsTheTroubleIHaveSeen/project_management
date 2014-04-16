@@ -1,0 +1,6 @@
+[Application]
+Name=JMicron Flash Media Controller Driver
+Version=1.0.55.0
+Company=JMicron Technology Corp.
+[ResponseResult]
+ResultCode=0

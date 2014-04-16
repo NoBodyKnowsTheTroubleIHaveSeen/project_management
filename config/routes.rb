@@ -61,6 +61,7 @@ ProjectManagement::Application.routes.draw do
   #share operation.
   post 'upload' => 'share#upload'
   get 'download' => 'share#download'
+  post 'deleteFile' => 'share#delete_file'
 
   post 'addQuestion' => 'share#add_question'
   get 'getQuestion' => 'share#get_questions'

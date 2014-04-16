@@ -1,0 +1,64 @@
+[ResponseResult]
+ResultCode=0
+[Install Progress]
+ Confirm Realtek Driver 
+ Check Operation System Version 
+ OS Information [WINMAJOR Number] = 6
+ OS Information [WINMAJOR String] = 6.1
+ OS Information [SYSINFO.nWinMajor] = 6
+ OS Information [SYSINFO.nWinMinor] = 1
+ OS Information [IsWin2000] = 0
+ OS Information [IsWinXP] = 0
+ OS Information [IsWin2003] = 0
+ OS Information [IsVista] = 0
+ OS Information [IsWin2008] = 0
+ OS Information [IsWin7] = 1
+ OS Information [IsWin2008R2x64] = 0
+ OS Information [IsMCE] = 1
+ OS Information [IsServer] = 0
+ OS Information [Service Pack] = 0
+ OS Information [x64] = 0
+ Rtlupd [GetRtlupdForPackage] = 3
+ Rtlupd version [D:\DICMS\d971e7ca-5d36-41af-abc9-b657c860ffd0\Driver\2504a6e5-23f7-414d-b787-ae8f1f0e31cd\Vista\RtlUpd.exe] = 2.8.0.1
+ Rtkupd version [D:\DICMS\d971e7ca-5d36-41af-abc9-b657c860ffd0\Driver\2504a6e5-23f7-414d-b787-ae8f1f0e31cd\HDMI\Vista\RtkUpd.exe] = 2.8.0.1
+ Current use Rtlupd version [D:\DICMS\d971e7ca-5d36-41af-abc9-b657c860ffd0\Driver\2504a6e5-23f7-414d-b787-ae8f1f0e31cd\Vista\RtlUpd.exe] = 2.8.0.1
+ Default Path [RtkAudioDir] = C:\Program Files\Realtek\Audio
+ Default Path [RtkAudioDir x64] = C:\Program Files\Realtek\Audio
+ Default Path [RtlTempDir] = C:\Program Files\Realtek\Audio\Drivers
+ Default Path [RtkHDADrvDir] = C:\Program Files\Realtek\Audio\Drivers\Vista
+ Default Path [RtkHDMIDrvDir] = C:\Program Files\Realtek\Audio\Drivers\HDMI\Vista
+ Default Path [RtlPFHDADir] = C:\Program Files\Realtek\Audio\HDA
+ Default Registry key [Installer Base Key] = SOFTWARE\Realtek\Audio\Installer
+ Current driver version = 6.0.1.6053 
+ 
+ Realtek HD Audio Driver Vista Directory Exist .
+  HDMI -> Realtek HD Audio HDMI Driver HDMI\Vista Directory Exist .
+ Lenovo LED Control Application Exist 
+ Realtek HD Audio OSD Service Exist 
+ Status - ProgramFiles_Installing
+ delete C:\Program Files\Realtek\Audio\Drivers\Vista
+ Copy Realtek HD Audio Driver from Vista Directory
+  HDMI -> Delete C:\Program Files\Realtek\Audio\Drivers\HDMI\Vista
+  HDMI -> Copy Realtek HD Audio HDMI Driver from HDMI\Vista Directory
+ Run RtlUpd.exe : C:\Program Files\Realtek\Audio\Drivers\RtlUpd.exe --- > -s -cb -nrg2709 (TRUE)
+ Status - ProgramFiles_Installed
+  HDMI -> Check Realtek HD Audio HDMI Driver (HDMI\Vista) installation capability .
+  HDMI -> Got HD Audio Device -> HDAUDIO\FUNC_01&VEN_1002&DEV_AA01&SUBSYS_00AA0100
+  HDMI -> Got HD Audio Device -> HDAUDIO\FUNC_01&VEN_10EC&DEV_0269&SUBSYS_17AA212A
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+  HDMI -> Got HD Audio Device -> 
+ Install Realtek HD Audio Audio Driver 
+ Run RtlUpd.exe : C:\Program Files\Realtek\Audio\Drivers\RtlUpd.exe --- > -u -s -fi -nrg2709 (TRUE)
+ -->Realtek HD Audio - SetupAPI result LAAW_PARAMETERS.nLaunchResult = -4
+ Run RtlUpd.exe : C:\Program Files\Realtek\Audio\Drivers\RtlUpd.exe --- > -h -s -fi -nrg2709 (TRUE)
+ -->Realtek HD Audio HDMI - SetupAPI result LAAW_PARAMETERS.nLaunchResult = -4
+ Register C:\Windows\system32\RtkAPO.dll in Vista system .
+ Status - OnFirstUIAfter
+ Installer - OnEnd

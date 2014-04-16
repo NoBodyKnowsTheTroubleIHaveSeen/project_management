@@ -3,10 +3,20 @@
   <%= flash[:notice] %>
 </div>
 <%= form_tag({action: :upload}, multipart: true, id: "upload") do %>
-    <%= file_field_tag 'file' %>
-    <%= submit_tag t('submit') %>
+    <div class="content">
+      <div class="file_content">
+        <input type="text" class="file_text" id="file_text">
+        <input type="button" class="file_button" value="浏 览">
+        <input type="file" name="file" id="file" class="file" onchange="document.getElementById('file_text').value=this.value">
+      </div>
+      <div class="file_submit">
+        <%= submit_tag t('submit') %>
+      </div>
+    </div>
 <% end %>
-<%= t('file_list') %><br>
+<br>
+<br>
+<h2><%= t('file_list') %></h2>
 <tbody>
 <table>
   <thead>
@@ -14,21 +24,35 @@
     <th><%= t('file_name') %></th>
     <th><%= t('upload_date') %></th>
     <th><%= t('upload_person') %></th>
+    <th><%= t('operate') %></th>
   </tr>
   </thead>
   <% if @shares.blank? %>
       <tr>
-        <td colspan="3">
+        <td colspan="4">
           <%= t('no_file') %>
         </td>
       </tr>
   <% else %>
+      <% i=0 %>
       <% @shares.each do |value| %>
           <tr>
             <td> <%= link_to value.name, "download?file_name=#{value.name}" %></td>
             <td> <%= value.upload_date %></td>
             <td> <%= get_people_name value.people_id %></td>
+            <% if @can_delete[i] == true %>
+                <td>
+                  <%= form_tag({action: :delete_file}, class: "ajaxForm") do  %>
+                      <input type="submit" value="<%= t("delete") %>">
+                      <%= hidden_field_tag :id,value.id %>
+                      <%= hidden_field_tag :file_name,value.name %>
+                  <% end %>
+                </td>
+            <% else %>
+                <td></td>
+            <% end %>
           </tr>
+          <% i+=1 %>
       <% end %>
   <% end %>
 </table>

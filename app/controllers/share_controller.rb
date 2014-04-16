@@ -3,6 +3,16 @@ class ShareController < ApplicationController
 
   def file_share
     @shares = Share.all
+    if !@shares.blank?
+      @can_delete = Array.new
+      @shares.each do |value|
+        if value.people_id==session[:people_id]
+          @can_delete.append true
+        else
+          @can_delete.append false
+        end
+      end
+    end
   end
 
   def upload
@@ -33,6 +43,15 @@ class ShareController < ApplicationController
     else
       render :text => t('file_is_not_exist')
     end
+  end
+  def delete_file
+    id = params[:id]
+    file_name = params[:file_name]
+    share = Share.find id
+    share.destroy
+    file_path = "public/uploads/#{file_name}"
+    File.delete(file_path) if File.exist?(file_path)
+    redirect_to :action => :file_share
   end
 
   def question_answer

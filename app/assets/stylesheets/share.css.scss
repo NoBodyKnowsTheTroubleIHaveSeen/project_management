@@ -1,3 +1,40 @@
 // Place all the styles related to the share controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content{
+  width:384px;
+
+}
+.file_content {
+  float:left;
+  position: relative;
+  width: 284px;
+}
+
+.file_text {
+  width: 195px;
+  height: 24px;
+  line-height: 24px;
+  padding: 2px;
+  border: 1px solid #aaa;
+}
+
+.file_button {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #aaa;
+}
+
+.file {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 30px;
+  line-height: 30px;
+  opacity: 0;
+}
+.file_submit{
+  float: right;
+  width: 100px;
+}

@@ -41,7 +41,6 @@ body {
 .footer {
     clear: both;
     background-color: rgb(43, 70, 85);
-    /*height: 80px;*/
     height: 8%;
     margin: 0 atuo;
 }
@@ -63,36 +62,53 @@ body {
     color: burlywood;
 }
 
-.time, a{
+/*time为显示的时间*/
+.time, a {
     color: black;
 }
+
 .hide {
     display: none;
 }
 
+div {
+    margin: 0 auto;
+}
+
+.readonly {
+    background-color: #efefef;
+}
+
+/*所有class为message的，它的内容为返回的信息*/
 .message {
     color: red;
     font: Consolas;
     font-size: 18px;
     display: none;
 }
-div{
-    margin: 0 auto;
+
+.data {
+    background-color:rgba(167, 180, 162, 0.89);
+    color: #ffffff;
+    border-bottom: 2px solid black;
 }
-.readonly{
-    background-color: #efefef;
-}
-input{
+
+/*iniput，主要为type = text*/
+input {
     border: 2px solid #CCC;
     height: 30px;
     padding: 2px 15px;
+    transition: border 0.1s linear;
+    border-radius: 4px;
 }
-input:focus{
-    border: 2px solid #F6933C;
+
+input:focus {
+    border: 2px solid #f78c2c;
     text-shadow: none;
 }
 
-input[type="button"],input[type="submit"]{
+/*按钮,submit*/
+input[type="button"], input[type="submit"] {
     border-width: 0;
     cursor: pointer;
     font-weight: bold;
@@ -112,34 +128,71 @@ input[type="button"],input[type="submit"]{
     -webkit-animation-duration: 4s;
 }
 
-@-webkit-keyframes greenPulse {
-    from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-    to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+input[type="button"]:hover, input[type="submit"]:hover {
+    color: #400300;
 }
 
+/*按钮动画效果*/
+@-webkit-keyframes greenPulse {
+    from {
+        background-color: #749a02;
+        -webkit-box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #91bd09;
+        -webkit-box-shadow: 0 0 18px #91bd09;
+    }
+    to {
+        background-color: #749a02;
+        -webkit-box-shadow: 0 0 9px #333;
+    }
+}
+
+/*表格*/
 table {
-    overflow:hidden;
-    border:1px solid #d3d3d3;
-    background:#fefefe;
-    width:90%;
-    margin:5% auto 0;
-    -webkit-border-radius:5px; /* Saf3-4 */
-    border-radius:5px;
+    overflow: hidden;
+    border: 1px solid #d3d3d3;
+    background: #fefefe;
+    width: 90%;
+    margin: 0 auto;
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px;
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-th, td {padding:5px 5px; text-align:center; }
+th, td {
+    padding: 5px 5px;
+    text-align: center;
+}
 
-th { text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
+th {
+    text-shadow: 1px 1px 1px #fff;
+    background: #e8eaeb;
+}
 
-td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;width: 80px}
+td {
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    width: 80px
+}
 
-tr.odd-row td {background:#f6f6f6;}
+tr.odd-row td {
+    background: #f6f6f6;
+}
 
-td.first, th.first {text-align:left}
+td.first, th.first {
+    text-align: left
+}
 
-td.last {border-right:none;}
+td.last {
+    border-right: none;
+}
 
-.widthTh{width: 180px;}
-.narrowTh{width: 40px;}
+.widthTh {
+    width: 180px;
+}
+
+.narrowTh {
+    width: 40px;
+}
+
