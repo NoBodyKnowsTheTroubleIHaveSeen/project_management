@@ -24,6 +24,13 @@ class BaseInformationController < ApplicationController
     end
   end
 
+  def delete_notice
+    id = params[:id]
+    notice = Notice.find id
+    notice.destroy
+    redirect_to :action => :notice
+  end
+
   def relation
     #获得会话人的编号
     people_id = session[:people_id]

@@ -27,6 +27,7 @@ ProjectManagement::Application.routes.draw do
   post 'login' => 'login#login'
 
   post 'addNotice' => 'base_information#add_notice'
+  post 'deleteNotice' => 'base_information#delete_notice'
 
 
   #action controller page.

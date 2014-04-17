@@ -9,7 +9,7 @@ class ManagementController < ApplicationController
   end
 
   def goto_add_project
-    @people = Person.all
+    @people = Person.where.not(priviliege: 15)
   end
 
   def add_project

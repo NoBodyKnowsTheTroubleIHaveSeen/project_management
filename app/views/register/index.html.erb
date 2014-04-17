@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "register" %>
 <h1><%= t(:register) %></h1>
+<div id="message"></div>
 <form action="register" method="post" id="registerForm">
   <%= t('username') %>
   <input name="username" type="text"/><br/>
@@ -25,5 +26,4 @@
   <input type="reset" value="<%= t('reset') %>">
   <input type="submit" value="<%= t('submit') %>"/>
 </form>
-<div id="message"></div>
 <input type="button" class="closeButton">

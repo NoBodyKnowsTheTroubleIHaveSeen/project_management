@@ -26,7 +26,7 @@
                 <% person = Person.find value.manager_id %>
                 <%= person.name %></td>
               <td> <%= value.description %></td>
-              <td> <%= value.finish_percentage %></td>
+              <td> <%= value.finish_percentage %>%</td>
               <td>
                 <%= format_is_done value.is_done %>
               </td>
