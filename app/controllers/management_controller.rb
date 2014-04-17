@@ -339,6 +339,12 @@ class ManagementController < ApplicationController
   end
 
   def advice_for_schedule
+    schedule_id = params[:schedule_id]
+    schedule = Schedule.find schedule_id
+    schedule.advice= params[:advice]
+    schedule.save
+    render :text => "success"
+    #redirect_to :action => :show_schedule, :id => schedule_id
   end
 
 

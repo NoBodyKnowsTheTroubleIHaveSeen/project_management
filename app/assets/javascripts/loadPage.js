@@ -45,14 +45,17 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("Text");
     ev.target.appendChild(document.getElementById(data));
 }
-function showMessage() {
-    $(".message").html("输入有误，请检查后重新提交！");
+function showMessage(message) {
+    $(".message").html(message);
     $(".message").fadeIn();
     $(".message").fadeOut(3000);
 }
 function showData(data) {
     if (data == "error") {
-        showMessage();
+        showMessage("输入有误，请检查后重新提交！");
+    }
+    else if (data=="success"){
+        showMessage("添加成功！")
     }
     else {
         $("#rightPanelDiv").empty().append(data);

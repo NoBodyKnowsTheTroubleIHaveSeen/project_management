@@ -1,10 +1,11 @@
 <div class="goto_show_shcedule">
   <% if !@schedules.blank? %>
       <% @schedules.each do |value| %>
-          <a data-url="showSchedule?id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"><%= value.date %></a>
+          <a data-url="showSchedule?id=<%= value.id %>" class="ajaxRequest"
+             href="javascript:void(0)"><%= Person.find(value.people_id).name %>&&<%= t("date")%>:<%= value.date %></a>
       <% end %>
   <% else %>
-  <div class="red"><%= t("no_schedule") %></div>
+      <div class="red"><%= t("no_schedule") %></div>
   <% end %>
   <br>
   <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">

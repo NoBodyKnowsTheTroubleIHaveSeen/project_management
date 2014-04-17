@@ -8,7 +8,7 @@ $("#addQuestion").on("submit",function(){
     var posting = $.post(url, data);
     posting.done(function (data) {
         if (data == "error") {
-            showMessage();
+            showMessage("输入有误，请检查后重新提交！");
         }else{
             $("#questions").empty().append(data);
         }

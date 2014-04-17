@@ -70,7 +70,7 @@ module ManagementHelper
 
   def output_submit_tag has_advice_privilege
     if has_advice_privilege
-      hide = hidden_field_tag :id, @schedule.id
+      hide = hidden_field_tag :schedule_id, @schedule.id
       submit = submit_tag I18n.t("add_advice")
       result = hide+submit
     end
