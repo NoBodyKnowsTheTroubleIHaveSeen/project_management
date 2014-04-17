@@ -33,6 +33,7 @@ module ManagementHelper
       end
     end
   end
+
   def format_is_done_by_percentage percentage
     if percentage==100
       t("done")
@@ -51,12 +52,27 @@ module ManagementHelper
       I18n.t("none")
     end
   end
+
   def get_plan_name plan_id
     if plan_id!=0
       plan = Plan.find plan_id
       plan.name
     else
       I18n.t("none")
+    end
+  end
+
+  def output_readonly has_advice_privilege
+    if !has_advice_privilege
+      "readonly"
+    end
+  end
+
+  def output_submit_tag has_advice_privilege
+    if has_advice_privilege
+      hide = hidden_field_tag :id, @schedule.id
+      submit = submit_tag I18n.t("add_advice")
+      result = hide+submit
     end
   end
 end

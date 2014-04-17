@@ -1,10 +1,18 @@
 <h1><%= t('show_schedule') %></h1>
-<div class="show_shcedule">
-  <% if !@schedules.blank? %>
-      <% @schedules.each do |value| %>
-          <a data-url="showSchedule?id=<%= value.id %>" class="ajaxRequest" href="javascript:void(0)"><%= value.date %></a>
+<% if @has_priviliege&&!@projects.blank? %>
+    <div class="showProjectSchedule">
+      <%= form_tag({action: :goto_schedule_control}, class: "ajaxForm") do %>
+          <%= t("my_manager_project") %>:
+          <select name="project_id">
+            <% @projects.each do |value| %>
+                <option value="<%= value.id %>"><%= value.name %></option>
+            <% end %>
+            <%= submit_tag t("view") %>
+          </select>
       <% end %>
-  <% end %>
-  <br>
-  <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
-</div>
+    </div>
+    ----------------------------
+<% end %>
+<br>
+<h2><%= t("my_schedule") %>:</h2>
+<%= render :partial => 'goto_show_schedule' %>

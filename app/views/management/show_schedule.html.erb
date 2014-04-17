@@ -16,9 +16,16 @@
   <br>
   <%= t('content') %>: <textarea readonly><%= @schedule.content %></textarea>
   <br>
-  <%= form_tag({action: :delete_schedule}, class: "ajaxForm") do  %>
-      <input type="submit" value="<%= t("delete") %>">
-      <%= hidden_field_tag :id,@schedule.id %>
-      <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
-<% end %>
+  <%= form_tag({action: :advice_for_schedule}, class: "ajaxForm") do %>
+      <%= t('advice') %>:
+      <textarea <%= output_readonly @has_advice_privilege %> name="advice"><%= @schedule.advice %></textarea>
+      <%= output_submit_tag @has_advice_privilege %>
+  <% end %>
+  <% if @has_delete_privilege %>
+      <%= form_tag({action: :delete_schedule}, class: "ajaxForm") do %>
+          <input type="submit" value="<%= t("delete") %>">
+          <%= hidden_field_tag :id, @schedule.id %>
+      <% end %>
+  <% end %>
+  <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/schedule_submit">
 </div>

@@ -299,15 +299,21 @@ class ManagementController < ApplicationController
       task.save
       project.save
     end
-    redirect_to :action => :show_schedule, :id =>schedule.id
+    redirect_to :action => :show_schedule, :id => schedule.id
   end
 
   def goto_show_schedule
     get_schedules
+    @has_priviliege = session[:is_manager]
+    if @has_priviliege
+      manager_get_projects
+    end
   end
 
   def show_schedule
     get_schedule_by_params
+    @has_delete_privilege = session[:people_id] == params[:id]
+    @has_advice_privilege = session[:is_manager]
   end
 
   def delete_schedule
@@ -315,6 +321,26 @@ class ManagementController < ApplicationController
     @schedule.destroy
     redirect_to :action => :goto_show_schedule
   end
+
+  def goto_schedule_control
+    project_id = params[:project_id]
+    tasks = Task.where(project_id: project_id)
+    @schedules = Array.new
+    if !tasks.blank?
+      tasks.each do |value|
+        tempSchedules = Schedule.where(task_id: value.id)
+        if !tempSchedules.blank?
+          tempSchedules.each do |value|
+            @schedules.append value
+          end
+        end
+      end
+    end
+  end
+
+  def advice_for_schedule
+  end
+
 
   def schedule_summary
     get_projects
@@ -393,6 +419,10 @@ class ManagementController < ApplicationController
 
   def get_schedules
     @schedules = Schedule.where(people_id: session[:people_id])
+  end
+
+  def manager_get_projects
+    @projects = Project.where(manager_id: session[:people_id])
   end
 
   def get_schedule_by_params

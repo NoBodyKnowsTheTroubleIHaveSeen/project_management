@@ -128,3 +128,8 @@ zh:
   show_schedule: "查看进度"
   operate: "操作"
   delete: "删除"
+  my_manager_project: "我管理的项目"
+  view: "查看"
+  my_schedule: "我的进度"
+  no_schedule: "暂时没有相关进度消息！"
+  add_advice: "添加建议"

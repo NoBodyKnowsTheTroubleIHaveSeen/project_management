@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415064604) do
+ActiveRecord::Schema.define(version: 20140417090456) do
 
   create_table "answers", force: true do |t|
     t.integer "people_id",   null: false
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140415064604) do
     t.string  "description"
     t.string  "content",             null: false
     t.integer "plan_is_done"
+    t.integer "advice"
   end
 
   add_index "schedules", ["people_id"], name: "fk10", using: :btree
