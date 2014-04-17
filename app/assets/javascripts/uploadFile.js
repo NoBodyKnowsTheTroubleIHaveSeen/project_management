@@ -1,4 +1,10 @@
 $(document).on("submit", "#upload", function (event) {
+    if($("#file").val()==""){
+        $(".message").html("请选择文件！");
+        $(".message").fadeIn();
+        $(".message").fadeOut(3000);
+        return false;
+    }
     event.preventDefault();
     ajaxFileUpload();
 });
@@ -14,7 +20,7 @@ function ajaxFileUpload() {
             data: {authenticity_token: authenticity_token},
             success: function (data, status) {
                 $("#rightPanelDiv").empty().append(data);
-                if(null != $(".message").text()){
+                if (null != $(".message").text()) {
                     $(".message").fadeIn();
                     $(".message").fadeOut(3000);
                 }

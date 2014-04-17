@@ -17,7 +17,7 @@ class RegisterController < ApplicationController
     end
     password = params[:password]
     if password==''
-      render :text => I18n.t('password_can_be_null')
+      render :text => I18n.t('password_can_not_be_null')
       return
     end
     rePassword = params[:repassword]

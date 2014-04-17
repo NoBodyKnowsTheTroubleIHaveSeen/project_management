@@ -1,11 +1,8 @@
-<h1><%= t('progress_summary') %></h1>
+<h1><%= t('schedule_summary') %></h1>
 <div class="showSummary">
   <div class="showProject">
     <%= t("show_project") %>
     <div>
-
-
-
       <% if !@projects.blank? %>
           <% @projects.each do |value| %>
               <%= value.name %>
