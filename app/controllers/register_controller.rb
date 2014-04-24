@@ -16,7 +16,7 @@ class RegisterController < ApplicationController
       return
     end
     password = params[:password]
-    if password==''
+    if password==''||password.length<=8||password.length>=16
       render :text => I18n.t('password_can_not_be_null')
       return
     end
@@ -26,8 +26,21 @@ class RegisterController < ApplicationController
       return
     end
     gender = params[:gender]
+
     no = params[:no]
+    begin
+      Integer(no)
+    rescue
+      render :text => I18n.t('no_should_be_a_number')
+      return
+    end
     departmentId = params[:departmentId]
+    begin
+      Integer(no)
+    rescue
+      render :text => I18n.t('department_id_should_be_a_number')
+      return
+    end
     email = params[:email]
     priviliege = params[:priviliege]
     person = Person.new
@@ -46,8 +59,7 @@ class RegisterController < ApplicationController
       session[:is_manager] = p.priviliege == 10 ? true : false
       render :text => 'success'
     else
-      render :text => I18n.t('please_check_no_department_id_and_email')
-      #redirect_to :action => 'index'
+      render :text => I18n.t('please_check_email')
     end
   end
 end
