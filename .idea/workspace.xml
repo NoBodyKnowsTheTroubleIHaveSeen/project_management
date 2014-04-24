@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ff3fd80-47ee-42c2-9bbd-2d6cc8fadeb3" name="Default" comment="update at 3.20&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ACER.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ACER.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UselessTempFile" afterPath="$PROJECT_DIR$/UselessTempFile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login/index.html.erb" afterPath="$PROJECT_DIR$/app/views/login/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/language.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/language.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project_management.iml" afterPath="$PROJECT_DIR$/.idea/project_management.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/test__project_management.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/test__project_management.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="project_management.iws" />
@@ -27,7 +26,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/project_management@Production__project_management.coverage" NAME="Production: project_management Coverage Results" MODIFIED="1391309405886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
     <SUITE FILE_PATH="coverage/project_management@db_create__project_management.coverage" NAME="db:create: project_management Coverage Results" MODIFIED="1394110639465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
-    <SUITE FILE_PATH="coverage/project_management@Development__project_management.coverage" NAME="Development: project_management Coverage Results" MODIFIED="1398352503203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
+    <SUITE FILE_PATH="coverage/project_management@Development__project_management.coverage" NAME="Development: project_management Coverage Results" MODIFIED="1398360914522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
     <SUITE FILE_PATH="coverage/project_management@actions_controller.coverage" NAME="actions_controller Coverage Results" MODIFIED="1391230672159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controllers" MODULE_NAME="project_management" />
     <SUITE FILE_PATH="coverage/project_management@db_migrate_status__project_management.coverage" NAME="db:migrate:status: project_management Coverage Results" MODIFIED="1394109202010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
     <SUITE FILE_PATH="coverage/project_management@db_migrate__project_management.coverage" NAME="db:migrate: project_management Coverage Results" MODIFIED="1398332012729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_management" />
@@ -47,7 +46,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/login/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="63" selection-start="721" selection-end="722" vertical-scroll-proportion="-1.4727273" vertical-offset="375" max-vertical-offset="798">
+            <state line="18" column="85" selection-start="670" selection-end="670" vertical-scroll-proportion="-4.309091" vertical-offset="105" max-vertical-offset="741">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="32" selection-start="867" selection-end="867" vertical-scroll-proportion="0.6241497" vertical-offset="260" max-vertical-offset="2926">
               <folding />
             </state>
           </provider>
@@ -56,8 +64,10 @@
       <file leaf-file-name="login.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/login.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="17" selection-start="263" selection-end="263" vertical-scroll-proportion="-14.928572" vertical-offset="0" max-vertical-offset="2299">
-              <folding />
+            <state line="10" column="19" selection-start="146" selection-end="146" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="2280">
+              <folding>
+                <marker date="1398366787897" expanded="true" signature="1004:1107" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zh.yml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+      <file leaf-file-name="login_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/login_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="23" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.33333334" vertical-offset="1182" max-vertical-offset="2660">
+            <state line="24" column="40" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -130,7 +140,6 @@
         <option value="$PROJECT_DIR$/app/controllers/register_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/share/file_share.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/share.css.scss" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/views/management/schedule_summary.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/uploadFile.js" />
         <option value="$PROJECT_DIR$/app/views/management/schedule_control.html.erb" />
@@ -145,9 +154,10 @@
         <option value="$PROJECT_DIR$/app/controllers/management_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/management/_goto_show_schedule.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/register.css.scss" />
+        <option value="$PROJECT_DIR$/config/locales/zh.yml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" />
         <option value="$PROJECT_DIR$/app/views/login/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/zh.yml" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
       </list>
     </option>
   </component>
@@ -944,7 +954,11 @@
       <created>1397726026320</created>
       <updated>1397726026320</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="update at 3.20&#10;">
+      <created>1398354443765</created>
+      <updated>1398354443765</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -971,6 +985,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.88024884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28093645" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.394081" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31260228" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -980,13 +995,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952815" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56856185" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4906542" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4906542" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48753893" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47658864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.88024884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1039,7 +1053,6 @@
     <MESSAGE value="update at 3.13&#10;" />
     <MESSAGE value="update at 3.18&#10;" />
     <MESSAGE value="update at 3.120&#10;" />
-    <MESSAGE value="update at 3.20&#10;" />
     <MESSAGE value="update at 4.2&#10;" />
     <MESSAGE value="2014.4.3" />
     <MESSAGE value="update at 4.4&#10;" />
@@ -1052,7 +1065,8 @@
     <MESSAGE value="2014.4.15&#10;" />
     <MESSAGE value="2014.4.16&#10;" />
     <MESSAGE value="2014.4.17&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="2014.4.17&#10;" />
+    <MESSAGE value="update at 3.20&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update at 3.20&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,13 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="11" selection-start="4496" selection-end="4496" vertical-scroll-proportion="-5.111111" vertical-offset="2242" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/management/schedule_summary.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="41" selection-start="205" selection-end="205" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1003" />
@@ -1296,16 +1303,9 @@
         <state line="44" column="2" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.49333334" vertical-offset="688" max-vertical-offset="1102" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="63" selection-start="721" selection-end="722" vertical-scroll-proportion="-1.4727273" vertical-offset="375" max-vertical-offset="798">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/login.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="263" selection-end="263" vertical-scroll-proportion="-14.928572" vertical-offset="0" max-vertical-offset="2299">
+        <state line="67" column="23" selection-start="1341" selection-end="1341" vertical-scroll-proportion="1.0272108" vertical-offset="669" max-vertical-offset="2660">
           <folding />
         </state>
       </provider>
@@ -1319,14 +1319,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/login_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="40" selection-start="640" selection-end="640" vertical-scroll-proportion="0.33333334" vertical-offset="365" max-vertical-offset="646">
+        <state line="24" column="40" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/login.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="23" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.33333334" vertical-offset="1182" max-vertical-offset="2660">
+        <state line="10" column="19" selection-start="146" selection-end="146" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="2280">
+          <folding>
+            <marker date="1398366787897" expanded="true" signature="1004:1107" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="85" selection-start="670" selection-end="670" vertical-scroll-proportion="-4.309091" vertical-offset="105" max-vertical-offset="741">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="32" selection-start="867" selection-end="867" vertical-scroll-proportion="0.6241497" vertical-offset="260" max-vertical-offset="2926">
           <folding />
         </state>
       </provider>

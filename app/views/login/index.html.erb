@@ -1,4 +1,4 @@
-<head xmlns="http://www.w3.org/1999/html">
+<head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <link rel="Shortcut Icon" href="assets/web.ico">
   <title>login-page</title>
   <%= javascript_include_tag "jquery-1.11.0" %>
@@ -9,28 +9,25 @@
 
 <body>
 
-<div class="title">
-  <h1><%= t(:login) %></h1>
-
-</div>
-
 <div class="loginDiv">
   <% if flash[:notice] %>
       <%= flash[:notice] %>
   <% end %>
-
+  <h2><%= t(:login) %></h2><br>
   <form method="post" action="login">
     <input type="text" placeholder=<%= t('username') %>  name="username" /><br>
-    <input type="password" placeholder=<%= t('password') %> name="password" /></br>
+    <input type="password" placeholder=<%= t('password') %> name="password" /><br><br>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-    <%= t('language') %>:
-    <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
-    <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
-    <br>
-    <input type="reset" value="<%= t('reset') %>">
     <input type="submit" value="<%= t('login') %>"/>
   </form>
-  <input type="button" value="<%= t('no_account') %>" class="registerButton" id="close"></div>
+  <input type="button" value="<%= t('no_account') %>" class="registerButton" id="close">
+  <%= t('language') %>:
+  <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
+  <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
+  <br>
+
+</div>
+
 <div class="registerDiv">
   <%= render :template => "register/index" %>
 </div>
