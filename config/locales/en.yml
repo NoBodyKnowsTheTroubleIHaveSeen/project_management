@@ -31,7 +31,7 @@ en:
    repassword: "Repassword"
    gender: "Gender"
    register: "Register"
-   no_account: "Didn't have a count?"
+   no_account: "Sign up for free"
    number: "Number"
    projectId: "Project id"
    departmentId: "Department id"
