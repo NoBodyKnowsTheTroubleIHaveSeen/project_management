@@ -10,17 +10,19 @@
 <body>
 
 <div class="loginDiv">
-  <% if flash[:notice] %>
-      <%= flash[:notice] %>
-  <% end %>
+  <div class="message">
+    <% if flash[:notice] %>
+        <%= flash[:notice] %>
+    <% end %>
+  </div>
   <h2><%= t(:login) %></h2><br>
   <form method="post" action="login">
-    <input type="text" placeholder=<%= t('username') %>  name="username" /><br>
-    <input type="password" placeholder=<%= t('password') %> name="password" /><br><br>
+    <input type="text" placeholder=<%= t('username') %>  name="username"/><br>
+    <input type="password" placeholder=<%= t('password') %> name="password"/><br><br>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
     <input type="submit" value="<%= t('login') %>"/>
   </form>
-  <input type="button" value="<%= t('no_account') %>" class="registerButton" id="close"><br>
+  <input type="button" value="<%= t('no_account') %>" class="registerButton"><br>
   <%= t('language') %>:
   <input type="radio" name="locale" value="zh" class="language" id="chinese">中文</input>
   <input type="radio" name="locale" value="en" class="language" id="english">English</input><br>
