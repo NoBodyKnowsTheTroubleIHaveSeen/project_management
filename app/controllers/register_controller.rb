@@ -45,12 +45,13 @@ class RegisterController < ApplicationController
     priviliege = params[:priviliege]
     person = Person.new
     person.name = username
-    person.password = password
+    person.password = Digest::MD5.hexdigest(password)
     person.gender = gender
     person.no = no
     person.department_id = departmentId
     person.email = email
     person.priviliege = priviliege
+    person.valid?
     if person.valid?
       person.save
       session[:username] = username

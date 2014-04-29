@@ -12,7 +12,7 @@ class LoginController < ApplicationController
       user = Person.find_by(name: username)
       if user
         passwordFromDataBase = user.password
-        if password==passwordFromDataBase
+        if Digest::MD5.hexdigest(password)==passwordFromDataBase
           session[:username] = username
           id = user.id
           session[:people_id] = id
