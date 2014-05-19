@@ -5,13 +5,12 @@
 <br>
 <div class="addProject">
   <form action="addProject" method="post" id="addProjectForm">
-    <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>"/>
-    <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('finish_date') %>:<input type="date" name="finish_date"/><br>
-    <br>
-    <%= t('description') %>:
-    <textarea rows="5" cols="90" name="description"></textarea>
-    <br>
+    <table class="addTable">
+      <tr><td><%= t('project_name') %>:</td><td><input name="name" placeholder="<%= t('input_project') %>"/></td></tr>
+      <tr><td><%= t('start_date') %>:</td><td><input type="date" name="start_date"/></td></tr>
+      <tr><td><%= t('finish_date') %>:</td><td><input type="date" name="finish_date"/></td></tr>
+      <tr><td><%= t('description') %>:</td><td><textarea rows="5" cols="90" name="description"></textarea></td></tr>
+    </table>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
     <div class="choosePeople">
       <div class="leftPeople">
@@ -35,5 +34,6 @@
     </div>
     <input type="submit" value="<%= t('add') %>">
     <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/project_management">
+
   </form>
 </div>
