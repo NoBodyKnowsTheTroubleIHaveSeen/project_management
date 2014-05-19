@@ -2,15 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .registerDiv{
-  text-align: center;
+  padding:60px;
+  margin:80 auto;
+  padding-top: 20px;
+  display:none;
+  color:#a2a2a2;
+  background-color: #ececec;
+  box-shadow: 0px 0px 15px -2px #000000;
+  z-index: 10;
+  position:absolute;
+  left:-250;
+  top:0;
 }
+
 .closeButton{
-  background-image: url("8.jpg");
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height:40px;
+  margin-bottom: 15px;
+  width:400px;
+  background:#3498db;
+  border-style: none;
+  outline:none;
+  border-bottom: #2980b9 3px solid;
+  border-left: #2980b9 1px solid;
+  border-right: #2980b9 1px solid;
+  text-align:center;
+  color:white;
+  padding:10px;
+  font-size:12px;
+  font-weight:800;
+  color:white;
+  -webkit-transition: color .5s;
+}
+
+.closeButton:hover{
+  opacity:0.8;
+  -webkit-transition: color .5s;
+}
+
+.closeButton:active{
+  background:#2385C7;
+  border-bottom: #3498db 3px solid;
+  border-left: #2980b9 1px solid;
+  border-right: #2980b9 1px solid;
+  -webkit-transition: color .5s;
+}
+
+form{
+  text-align:center;
+}
+
+li{
+  margin-bottom: 15px;
+  list-style-type: none
 }

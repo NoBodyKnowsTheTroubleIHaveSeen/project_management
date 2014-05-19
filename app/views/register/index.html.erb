@@ -1,29 +1,29 @@
 <%= stylesheet_link_tag "register" %>
-<h1><%= t(:register) %></h1>
+<h2><%= t(:register) %></h2>
 <div id="message"></div>
 <form action="register" method="post" id="registerForm">
-  <%= t('username') %>
-  <input name="username" type="text"/><br/>
-  <%= t('password') %>
-  <input name="password" type="password"/><br/>
-  <%= t('repassword') %>
-  <input name="repassword" type="password"/><br/>
-  <%= t('gender') %>
-  <input type="radio" name="gender" value="male" checked/> <%= t('male') %>
-  <input type="radio" name="gender" value="female"/><%= t('female') %>
-  <br/>
-  <%= t('role') %>
-  <input type="radio" name="priviliege" value="5" checked/> <%= t('developer') %>
-  <input type="radio" name="priviliege" value="10"/><%= t('manager') %>
-  <br/>
-  <%= t(:number) %>
-  <input type="text" name="no"/><br/>
-  <%= t(:departmentId) %>
-  <input type="text" name="departmentId"/><br/>
-  <%= t('email') %>
-  <input type="text" name="email"/><br/>
+  <input name="username" placeholder=<%= t('username') %> type="text"/><br/>
+  <input name="password" placeholder=<%= t('password') %> type="password"/><br/>
+  <input name="repassword" placeholder=<%= t('repassword') %> type="password"/><br/>
+  <table>
+    <tr>
+      <td><%= t('gender') %></td>
+      <td><input type="radio" name="gender" value="male" checked/> <%= t('male') %></td>
+      <td><input type="radio" name="gender" value="female"/><%= t('female') %></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td><%= t('position') %></td>
+      <td><input type="radio" name="priviliege" value="5" checked/> <%= t('developer') %></td>
+      <td><input type="radio" name="priviliege" value="10"/><%= t('manager') %></td>
+    </tr>
+    <tr><td></td></tr>    <tr><td></td></tr>
+  </table>
+  <input type="text" placeholder=<%= t('number') %> name="no"/><br/>
+  <input type="text" placeholder=<%= t('departmentId') %> name="departmentId"/><br/>
+  <input type="text" placeholder=<%= t('email') %> name="email"/><br/>
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-  <input type="reset" value="<%= t('reset') %>">
-  <input type="submit" value="<%= t('submit') %>"/>
+  <input type="reset" value="<%= t('reset') %>"/><br/>
+  <input type="submit" value="<%= t('submit') %>"/><br/>
+  <input type="button" class="closeButton" value="<%= t('return_to_login') %>"/>
 </form>
-<input type="button" class="closeButton">

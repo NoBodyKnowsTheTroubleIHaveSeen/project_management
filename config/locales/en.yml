@@ -149,3 +149,6 @@ en:
    delete: "Delete"
    no_should_be_a_number: "no should be a number."
    department_id_should_be_a_number: "Department id should be a number."
+   return_to_login: "Return to Login"
+   email: "Email"
+   position: "Position"
