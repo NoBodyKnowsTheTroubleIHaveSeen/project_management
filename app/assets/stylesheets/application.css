@@ -247,7 +247,7 @@ td.last {
      text-decoration:none
  }
 
- h1{
+ h1,h2 {
      font-size: 150%;
      color: #7f8c8d;
      text-align:center;

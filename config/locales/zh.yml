@@ -135,6 +135,6 @@ zh:
   add_advice: "添加建议"
   no_should_be_a_number: "号码必须为数字"
   department_id_should_be_a_number: "部门号必须为数字"
-  return_to_login: "回到登陆页"
+  return_to_login: "回到登录页"
   email: "Email"
   position: "职位"
