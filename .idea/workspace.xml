@@ -85,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="25" selection-start="1464" selection-end="1470" vertical-scroll-proportion="0.33333334" vertical-offset="1337" max-vertical-offset="5016">
+            <state line="98" column="18" selection-start="1776" selection-end="1776" vertical-scroll-proportion="-19.444445" vertical-offset="1337" max-vertical-offset="5016">
               <folding />
             </state>
           </provider>
@@ -103,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="-5.428571" vertical-offset="0" max-vertical-offset="361">
+            <state line="8" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="0.26902655" vertical-offset="0" max-vertical-offset="565">
               <folding />
             </state>
           </provider>
@@ -209,9 +209,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1099,7 +1100,11 @@
       <created>1400504388764</created>
       <updated>1400504388764</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="update at 3.20&#10;">
+      <created>1400504398021</created>
+      <updated>1400504398021</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1123,7 +1128,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="0" width="1382" height="784" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.88024884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1135,7 +1140,7 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23942599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952815" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56856185" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5685358" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="357" y="263" width="652" height="199" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31308413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="345" width="1318" height="37" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4882943" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1488,13 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="-5.428571" vertical-offset="0" max-vertical-offset="361">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="13" selection-start="695" selection-end="697" vertical-scroll-proportion="-3.490909" vertical-offset="511" max-vertical-offset="1558">
@@ -1525,7 +1523,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="25" selection-start="1464" selection-end="1470" vertical-scroll-proportion="0.33333334" vertical-offset="1337" max-vertical-offset="5016">
+        <state line="98" column="18" selection-start="1776" selection-end="1776" vertical-scroll-proportion="-19.444445" vertical-offset="1337" max-vertical-offset="5016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="0.26902655" vertical-offset="0" max-vertical-offset="565">
           <folding />
         </state>
       </provider>
