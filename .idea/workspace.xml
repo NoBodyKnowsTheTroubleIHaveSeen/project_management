@@ -7,12 +7,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UselessTempFile" afterPath="$PROJECT_DIR$/UselessTempFile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/language.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/language.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/zh.yml" afterPath="$PROJECT_DIR$/config/locales/zh.yml" />
     </list>
     <ignored path="project_management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1122,7 +1119,11 @@
       <created>1400485307804</created>
       <updated>1400485307804</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="update at 3.20&#10;">
+      <created>1400488382923</created>
+      <updated>1400488382924</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
