@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ff3fd80-47ee-42c2-9bbd-2d6cc8fadeb3" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\down.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\down1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\up.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\project_management\app\assets\images\up1.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ACER.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ACER.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UselessTempFile" afterPath="$PROJECT_DIR$/UselessTempFile" />
@@ -21,7 +9,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/actions_controller.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/db_migrate__project_management.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/language.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/language.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/management.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/management.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="project_management.iws" />
@@ -1104,7 +1091,11 @@
       <created>1400488403698</created>
       <updated>1400488403698</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="update at 3.20&#10;">
+      <created>1400504379893</created>
+      <updated>1400504379893</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
