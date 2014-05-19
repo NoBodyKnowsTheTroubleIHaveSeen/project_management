@@ -35,7 +35,7 @@ en:
    number: "Number"
    projectId: "Project id"
    departmentId: "Department id"
-   system: "Project management system"
+   system: "OA system"
    welcome: "Welcome"
    passwordUnequal: "The two passwords you entered do not match."
    logout: "Logout"
