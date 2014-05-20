@@ -98,8 +98,8 @@ class ShareController < ApplicationController
   def add_answer
     answer = Answer.create answer_param
     answer.save
-    @answers = Answer.where(question_id: params[:answer][:question_id]).order('id desc')
-
+    #@answers = Answer.where(question_id: params[:answer][:question_id]).order('id desc')
+    redirect_to :action => :get_question_detail,:id=>params[:answer][:question_id]
   end
 
   private

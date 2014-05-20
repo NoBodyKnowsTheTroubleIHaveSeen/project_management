@@ -20,8 +20,8 @@ $("#addAnswer").on("submit",function(){
     event.preventDefault();
     var posting = $.post(url, data);
     posting.done(function (data) {
-        $("#answers").empty().append(data);
-        $("#answer_content").val("");
+
+        $("#rightPanelDiv").empty().append(data);
 
     });
 })
