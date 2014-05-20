@@ -1,7 +1,10 @@
 <% @answers.each do |value| %>
-    <%= t('answer_date') %>:<%= value.answer_date %>
-    <%= t('answer_people') %>:<%= get_people_name(value.people_id) %>
-    <br>
-    <%= t('answer_content') %>:<%= value.content %>
-    <br>
+    <div class="answerDiv">
+      <span class="smallSpan">
+        <%= t('answer_date') %>：<%= value.answer_date %>
+        <%= t('answer_people') %>：<%= get_people_name(value.people_id) %><br>
+        <%= t('answer_content') %>：<br>
+      </span>
+      <%= value.content %>
+    </div>
 <% end %>

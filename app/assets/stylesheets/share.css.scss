@@ -1,6 +1,3 @@
-// Place all the styles related to the share controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .content{
   width:384px;
 
@@ -37,4 +34,22 @@
 .file_submit{
   float: right;
   width: 100px;
+}
+
+.QADiv{
+  text-align: left;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-color: #3498db;
+  border-style: solid;
+}
+
+.answerDiv{
+  text-align: left;
+  margin: 5px;
+  padding: 10px;
+  border-style: dashed;
+  border-color: #3498db;
 }
