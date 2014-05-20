@@ -11,10 +11,16 @@ $(function () {
         div1.animate({left:'-250',opacity:'1'});
         parent.hideIframe();
     })
+    $("#loginForm").submit(function(){
+        formSubmit($(this));
+    })
     $("#registerForm").submit(function(){
+        formSubmit($(this));
+    })
+    function formSubmit(object){
         event.preventDefault();
-        var url = $(this).attr("action");
-        var data = $(this).serialize();
+        var url = object.attr("action");
+        var data = object.serialize();
         var posting = $.post(url, data);
         posting.done(function (data) {
             if("success"==data){
@@ -26,7 +32,7 @@ $(function () {
                 $("#message").fadeOut(3000);
             }
         });
-    })
+    }
 })
 function hideIframe(){
     $(".registerDiv").fadeOut();

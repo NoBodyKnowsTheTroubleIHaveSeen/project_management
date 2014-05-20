@@ -269,7 +269,6 @@ class ManagementController < ApplicationController
       return
     end
     shcedule_param = params[:schedule]
-    puts schedule_param[:plan_id] !="0"
     if !schedule_param[:plan_id].blank?&&schedule_param[:plan_id]!="0"
       plan_id = schedule_param[:plan_id]
       plan_is_done = schedule_param[:plan_is_done]

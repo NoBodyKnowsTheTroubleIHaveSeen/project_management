@@ -11,19 +11,17 @@ class LoginController < ApplicationController
     if username
       user = Person.find_by(name: username)
       if user
-        passwordFromDataBase = user.password
-        if Digest::MD5.hexdigest(password)==passwordFromDataBase
+        password_from_database = user.password
+        if Digest::MD5.hexdigest(password)==password_from_database
           session[:username] = username
           id = user.id
           session[:people_id] = id
           session[:is_manager] = user.priviliege == 10 ? true : false
-          redirect_to :action => 'index', controller: 'welcome'
+          render :text => "success"
           return
         end
       end
     end
-    flash[:notice] = I18n.t("login_fail")
-    render 'login/index'
-    #redirect_to :action => 'index'
+    render :text => I18n.t("login_fail")
   end
 end

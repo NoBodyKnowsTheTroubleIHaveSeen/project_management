@@ -17,13 +17,9 @@
 
 <div style="position:relative; display:inline-block;">
   <div class="loginDiv">
-    <div class="message">
-      <% if flash[:notice] %>
-          <%= flash[:notice] %>
-      <% end %>
-    </div>
     <h2><%= t(:login) %></h2><br>
-    <form method="post" action="login">
+    <div id="message"></div>
+    <form method="post" action="login" id="loginForm">
       <input type="text" placeholder=<%= t('username') %>  name="username"/><br>
       <input type="password" placeholder=<%= t('password') %> name="password"/><br><br>
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
