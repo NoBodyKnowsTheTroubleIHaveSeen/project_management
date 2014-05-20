@@ -27,17 +27,22 @@ body{
   top:0;
   text-align:left;
 }
-
+.message {
+  color: black;
+  font: Consolas;
+  font-size: 18px;
+  display: none;
+  border: 2px solid #34495e;
+  background-color: #f1E528;
+  position:fixed;;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  top: 0%;
+  text-align: center;
+}
 .registerDiv{
 }
-
-.message{
-  color: red;
-  height: 40px;
-  border: 1;
-}
-
-
 
 input[type=text], input[type=password] {
   height: 38px;
