@@ -1,10 +1,11 @@
-<%= javascript_include_tag :questionAnswer %>
 <h1><%= t('question_and_answer') %></h1>
-<%= t('title') %>:<%= @question.title %>&nbsp;&nbsp;&nbsp;
-<%= t('create_date') %>:<%= @question.create_date %>&nbsp;&nbsp;&nbsp;
-<%= t('create_person') %>:<%= @name %><br>
-<%= t('question_description') %>:<%= @question.content %><br>
-<div id="answers">
+<div class="QADiv">
+  <span><%= t('title') %>：</span><%= @question.title %><br>
+  <span class="smallSpan"><%= t('create_date') %>：<%= @question.create_date %>&nbsp;&nbsp;&nbsp;
+  <%= t('create_person') %>：<%= @name %></span><br><br>
+  <span class="span1"><%= t('question_description') %>:</span><br><%= @question.content %><br>
+</div>
+<div class="QADiv">
   <%= render :partial => 'share/answers' %>
 </div>
 <div id="answer">

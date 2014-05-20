@@ -256,3 +256,7 @@ td.last {
 h2{
     text-align:center;
 }
+
+.smallSpan{
+    font-size: 20%;
+}
