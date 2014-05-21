@@ -1,8 +1,8 @@
 <h1><%= t('question_and_answer') %></h1>
 <div class="QADiv">
-  <span><%= t('title') %>：</span><%= @question.title %><br>
-  <span class="smallSpan"><%= t('create_date') %>：<%= @question.create_date %>&nbsp;&nbsp;&nbsp;
-  <%= t('create_person') %>：<%= @name %></span><br><br>
+  <span><%= t('title') %>: </span><%= @question.title %><br>
+  <span class="smallSpan"><%= t('create_date') %>: <%= @question.create_date %>&nbsp;&nbsp;&nbsp;
+  <%= t('create_person') %>: <%= @name %></span><br><br>
   <span class="span1"><%= t('question_description') %>:</span><br><%= @question.content %><br>
 </div>
 <div class="QADiv">
@@ -13,10 +13,13 @@
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
       <%= f.hidden_field :answer_date, :value => Time.now %>
       <%= f.hidden_field :question_id, :value => @question.id %>
-      <%= t('answer') %>: <%= f.text_field :content %>
+      <div id="yourAnswerDiv">
+        <span><%= t('answer') %>:</span>
+        <%= f.text_area :content, :id=>"description" %>
+      </div><br>
       <%= f.submit I18n.t('submit') %>
       <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="share/question_answer">
-<% end %>
+  <% end %>
 </div>
 <% if session[:people_id] == @question.people_id %>
     <%= form_tag "/deleteQuestion", id: "deleteQuestion" do %>

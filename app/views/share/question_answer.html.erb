@@ -1,14 +1,20 @@
 <%= javascript_include_tag :questionAnswer%>
 <h1><%= t('question_and_answer') %></h1>
 <div class="message"></div>
-<%= form_for @question, url: {action: "add_question"}, html: {id: "addQuestion"} do |f| %>
-    <%= f.hidden_field :people_id, :value => session[:people_id] %>
-    <%= f.hidden_field :create_date, :value => Time.now %>
-    <%= t('title') %>: <%= f.text_field :title %>
-    <%= t('description') %> :<%= f.text_area :content, size: "60x3" %>
-    <%= f.submit I18n.t('question') %>
-<% end %>
+<div class="QADiv">
+  <%= form_for @question, url: {action: "add_question"}, html: {id: "addQuestion"} do |f| %>
+      <%= f.hidden_field :people_id, :value => session[:people_id] %>
+      <%= f.hidden_field :create_date, :value => Time.now %>
+      <span><%= t('title') %>: <br><%= f.text_field :title, :id=>"title" %><br>
+      <%= t('description') %>:<%= f.text_area :content, :id=>"description" %></span>
+      <div id="submitDiv">
+        <%= f.submit I18n.t('question') %>
+      </div>
+
+  <% end %>
+</div>
+
 <div id="questions">
   <%= render :partial => 'questions' %>
+    <a data-url="moreQuestion" class="ajaxRequest" href="javascript:void(0)"><br><%= t('more_question') %></a>
 </div>
-<a data-url="moreQuestion" class="ajaxRequest" href="javascript:void(0)"><%= t('more_question') %></a><br>

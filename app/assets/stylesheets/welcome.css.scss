@@ -35,27 +35,26 @@ li {
   cursor: pointer;
   height: 50px;
   line-height: 50px;
-  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 li:hover {
-  color: #ffffff;
-  -webkit-transition: color .5s;
+  transition: color .5s;
   opacity: 0.9;
 }
 
 .selected {
   background-color: #f1E528;
-  color: #ffffff;
-  -webkit-transition: color .5s;
+  transition: color .5s;
   text-shadow: 1px 1px 3px #000000;
 }
 
 .headerLi {
+  color: #ababab;
   font-size: 90%;
   font-style: italic;
   background-color: #34495e;
-  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 .emptySpan {

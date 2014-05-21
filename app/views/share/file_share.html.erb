@@ -5,13 +5,13 @@
 <%= form_tag({action: :upload}, multipart: true, id: "upload") do %>
     <div class="content">
       <div class="file_content">
-        <input type="text" class="file_text" id="file_text">
-        <input type="button" class="file_button" value="<%= t("browse") %>">
-        <input type="file" name="file" id="file" class="file" onchange="document.getElementById('file_text').value=this.value">
-      </div>
-      <div class="file_submit">
+        <div class="browse">
+          <input type="text" class="file_text" id="file_text">
+          <input type="button" class="file_button" value="<%= t("browse") %>">
+          <input type="file" name="file" id="file" class="file" onchange="document.getElementById('file_text').value=this.value">
+        </div>
+      </div><br><br><br>
         <%= submit_tag t('submit') %>
-      </div>
     </div>
 <% end %>
 <br>

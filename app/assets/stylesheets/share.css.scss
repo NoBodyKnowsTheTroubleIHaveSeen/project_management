@@ -1,6 +1,14 @@
+textarea{
+  width: 90%;
+  margin-top: 5px;
+}
+
+input[type=text]{
+  margin-top: 5px;
+}
+
 .content{
   width:384px;
-
 }
 .file_content {
   float:left;
@@ -16,12 +24,6 @@
   border: 1px solid #aaa;
 }
 
-.file_button {
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #aaa;
-}
-
 .file {
   position: absolute;
   left: 0;
@@ -30,10 +32,6 @@
   height: 30px;
   line-height: 30px;
   opacity: 0;
-}
-.file_submit{
-  float: right;
-  width: 100px;
 }
 
 .QADiv{
@@ -46,10 +44,56 @@
   border-style: solid;
 }
 
-.answerDiv{
+.answersDiv{
   text-align: left;
   margin: 5px;
   padding: 10px;
   border-style: dashed;
   border-color: #3498db;
+}
+
+#answer{
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#questions{
+  text-align: left;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-color: #3498db;
+  border-style: solid;
+}
+
+#yourAnswerDiv{
+  text-align: left;
+  padding: 20px;
+  border-color: #3498db;
+  border-style: solid;
+}
+
+#title{
+  width: 97%;
+}
+
+#description{
+  width:97%;
+}
+
+#submitDiv{
+  text-align: center;
+}
+
+.file_text{
+  position: absolute;
+  left: 0;
+  display:none;
+}
+
+.file_button{
+  position: absolute;
+  left: 0;
 }

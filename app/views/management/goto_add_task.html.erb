@@ -7,29 +7,28 @@
 <div class="addTask">
   <div id="result" class="hide message"></div>
   <form action="addTask" method="post" id="addTaskForm" >
-    <%= t('task_name') %>:<input name="name" placeholder="<%= t('input_task') %>"/>
-    <%= t('project_name') %>:
-    <select name="project_id" id="project_id" data-url="getProjectPeople">
-      <% @projects.each do |value| %>
-          <option value="<%= value.id %>"><%= value.name %></option>
-      <% end %>
-    </select>
-    <%= t('start_date') %>:<input type="date" name="start_date"/>
-    <%= t('weight') %>:<input name="weight" placeholder="<%= t('input_weight') %>"/><br>
-    <br>
-    <%= t('hard_level')%>
-    <select name="hard_level" id="hard_level">
-      <option value="1"><%= t('easy') %></option>
-      <option value="2"><%= t('common') %></option>
-      <option value="3"><%= t('hard') %></option>
-    </select>
-    <%= t('description') %>:
-    <textarea rows="3" cols="20" name="description"></textarea>
-    <br>
+    <table class="addTable">
+      <tr><td><%= t('task_name') %>:</td><td><input name="name" placeholder="<%= t('input_task') %>"/></td></tr>
+      <tr><td><%= t('project_name') %>:</td><td>
+      <select name="project_id" id="project_id" data-url="getProjectPeople">
+        <% @projects.each do |value| %>
+            <option value="<%= value.id %>"><%= value.name %></option>
+        <% end %>
+      </select></td></tr>
+      <tr><td><%= t('start_date') %>:</td><td><input type="date" name="start_date"/></td></tr>
+      <tr><td><%= t('weight') %>:</td><td><input name="weight" placeholder="<%= t('input_weight') %>"/></td></tr>
+      <tr><td><%= t('hard_level')%>:</td><td>
+      <select name="hard_level" id="hard_level">
+        <option value="1"><%= t('easy') %></option>
+        <option value="2"><%= t('common') %></option>
+        <option value="3"><%= t('hard') %></option>
+      </select></td></tr>
+      <tr><td><%= t('description') %>:</td><td><textarea rows="3" cols="20" name="description"></textarea></td></tr>
+    </table>
     <br>
     <br>
     <%= t('add_people') %>:
-    <br>
+    <br><br><br>
     <div class="choosePeople">
       <div class="leftPeople">
         <div class="headerDiv"><%= t('project_people') %></div>
@@ -43,8 +42,9 @@
         <div class="peopleContent"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
     </div>
+    <br>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-    <input type="submit" value="<%= t('add') %>">
+    <input type="submit" value="<%= t('add') %>"><br>
     <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/task_distribute">
   </form>
 </div>

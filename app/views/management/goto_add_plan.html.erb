@@ -6,17 +6,10 @@
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
       <%= f.hidden_field :create_date, :value => @create_date %>
       <table>
-        <tr>
-          <td><%= t('plan_name') %>：</td>
-          <td><%= f.text_field :name, placeholder: t('input_plan') %></td>
-        </tr>
-        <tr>
-          <td><%= t('start_date') %>：</td>
-          <td><input type="date" name="plan[start_date]"/></td>
-        </tr>
-        <%= t('finish_date') %>:
-        <input type="date" name="plan[finish_date]"/><br>
-        <%= t('realte_task') %>:
+        <tr><td><%= t('plan_name') %>:</td><td><%= f.text_field :name, placeholder: t('input_plan') %></td></tr>
+        <tr><td><%= t('start_date') %>:</td><td><input type="date" name="plan[start_date]"/></td></tr>
+        <tr><td><%= t('finish_date') %>:</td><td><input type="date" name="plan[finish_date]"/></td></tr>
+        <tr><td><%= t('realte_task') %>:</td><td>
         <select name="plan[task_id]">
           <option value="0"><%= t("none") %></option>
           <% i = 0 %>
@@ -24,19 +17,16 @@
               <option value="<%= value.task_id %>"><%= @task_names[i] %></option>
               <% i+=1 %>
           <% end %>
-        </select>
-        <%= t('hard_level') %>:
+        </select></td></tr>
+        <tr><td><%= t('hard_level') %>:</td><td>
         <select name="plan[hard_level]">
           <option value="1"><%= t('easy') %></option>
           <option value="2"><%= t('common') %></option>
           <option value="3"><%= t('hard') %></option>
-        </select><br>
-        <%= t('description') %>:
-        <textarea rows="3" cols="20" name="plan[description]"></textarea>
-        <br>
-        <input type="submit" value="<%= t('add') %>">
-        <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/plan">
-
+        </select></td></tr>
+        <tr><td><%= t('description') %>:</td><td><textarea rows="3" cols="20" name="plan[description]"></textarea></td></tr>
       </table>
+        <input type="submit" value="<%= t('add') %>"><br>
+        <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/plan">
   <% end %>
 </div>

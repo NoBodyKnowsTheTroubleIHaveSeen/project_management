@@ -8,13 +8,13 @@
 <div class="addProject">
   <form action="updateProject" method="post" id="updateProjectForm">
     <input type="hidden" value="<%= @project_id %>" name="project_id">
-    <%= t('project_name') %>:<input name="name" placeholder="<%= t('input_project') %>" value="<%= @project.name %>"/>
-    <%= t('start_date') %>:<input type="date" name="start_date" value="<%= @project.start_date %>"/>
-    <%= t('finish_date') %>:<input type="date" name="finish_date" value="<%= @project.finish_date %>"/><br>
-    <br>
-    <%= t('description') %>:
-    <textarea rows="5" cols="90" name="description"><%= @project.description %></textarea>
-    <br>
+    <table class="addTable">
+      <tr><td><%= t('project_name') %>:</td><td><input name="name" placeholder="<%= t('input_project') %>" value="<%= @project.name %>"/></td></tr>
+      <tr><td><%= t('start_date') %>:</td><td><input type="date" name="start_date" value="<%= @project.start_date %>"/></td></tr>
+      <tr><td> <%= t('finish_date') %>:</td><td><input type="date" name="finish_date" value="<%= @project.finish_date %>"/></td></tr>
+      <tr><td><%= t('description') %>:</td><td>
+      <textarea rows="5" cols="90" name="description"><%= @project.description %></textarea></td></tr>
+    </table>
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
     <div class="choosePeople">
       <div class="leftPeople">
@@ -39,12 +39,12 @@
         </div>
       </div>
     </div>
-    <input type="submit" value="<%= t('update') %>">
+    <br><input type="submit" value="<%= t('update') %>"><br>
     <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
   </form>
   <%= form_tag({action: :delete_project}, class: "ajaxForm") do %>
     <input value="<%= @project_id %>" name="project_id" type="hidden">
-    <input type="submit" value="<%= t('delete_project') %>">
+      <input type="submit" value="<%= t('delete_project') %>">
   <% end %>
   <div id="result" class="hide message"></div>
 </div>

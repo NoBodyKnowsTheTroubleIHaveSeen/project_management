@@ -1,54 +1,58 @@
 <h1><%= t('schedule_summary') %></h1>
 <div class="showSummary">
-  <div class="showProject">
-    <%= t("show_project") %>
-    <div>
-      <% if !@projects.blank? %>
-          <% @projects.each do |value| %>
-              <%= value.name %>
-              <%= value.start_date %>
-              <%= value.finish_date %>
-              <%= value.manager_id %>
-              <%= format_is_done value.is_done %>
-              <br>
-          <% end %>
-      <% end %>
+  <div class="QADiv">
+    <div class="showProject">
+      <%= t("show_project") %>
+      <div>
+        <% if !@projects.blank? %>
+            <% @projects.each do |value| %>
+                <%= value.name %>
+                <%= value.start_date %>
+                <%= value.finish_date %>
+                <%= value.manager_id %>
+                <%= format_is_done value.is_done %>
+                <br>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-  -------------------------------------
-  <div class="showPlan">
-    <%= t("show_plan") %>
-    <div>
-      <% if !@plans.blank? %>
-          <% @plans.each do |value| %>
-              <%= value.name %>
-              <%= value.start_date %>
-              <%= value.finish_date %>
-              <%= value.hard_level %>
-              <%= format_is_done value.is_done %>
-              <br>
-          <% end %>
-      <% end %>
-    </div>
-    </div>
-  </div>
-  -------------------------------------
-  <div class="showTask">
-    <%= t("show task") %>
-    <div>
-      <% if !@tasks.blank? %>
-          <% @tasks.each do |value| %>
-              <%= value.name %>
-              <%= value.start_date %>
-              <%= value.end_date %>
-              <%= value.hard_level %>
-              <%= value.percentage %>
-              <%= value.weight %>
-              <%= format_is_done_by_percentage value.percentage %>
-              <br>
-          <% end %>
-      <% end %>
+
+  <div class="QADiv">
+    <div class="showPlan">
+      <%= t("show_plan") %>
+      <div>
+        <% if !@plans.blank? %>
+            <% @plans.each do |value| %>
+                <%= value.name %>
+                <%= value.start_date %>
+                <%= value.finish_date %>
+                <%= value.hard_level %>
+                <%= format_is_done value.is_done %>
+                <br>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-  -------------------------------------
+
+  <div class="QADiv">
+    <div class="showTask">
+      <%= t("show task") %>
+      <div>
+        <% if !@tasks.blank? %>
+            <% @tasks.each do |value| %>
+                <%= value.name %>
+                <%= value.start_date %>
+                <%= value.end_date %>
+                <%= value.hard_level %>
+                <%= value.percentage %>
+                <%= value.weight %>
+                <%= format_is_done_by_percentage value.percentage %>
+                <br>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

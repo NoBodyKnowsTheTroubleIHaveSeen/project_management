@@ -4,32 +4,30 @@
 <div class="updatePlan">
   <%= form_for @plan, url: {action: "update_plan"},method:"post", html: {id: "updatePlan", class: "ajaxForm"} do |f| %>
       <%= f.hidden_field :id,value:@plan.id %>
-      <%= t('plan_name') %>:
-      <%= f.text_field :name, value: @plan.name, placeholder: t('input_plan') %>
-      <%= t('start_date') %>:
-      <input type="date" name="plan[start_date]" value="<%= @plan.start_date %>"/>
-      <%= t('finish_date') %>:
-      <input type="date" name="plan[finish_date]" value="<%= @plan.finish_date %>"/><br>
-      <%= t('realte_task') %>:
-      <select name="plan[task_id]">
-        <option value="0"><%= t('none') %></option>
-        <% i = 0 %>
-        <%= @task_ids.each do |value| %>
-            <option value="<%= value.task_id %>" <%= output_options value.task_id,@plan.task_id%>><%= @task_names[i] %></option>
-            <% i+=1 %>
-        <% end %>
-      </select>
-      <%= t('hard_level') %>:
-      <select name="plan[hard_level]">
-        <option value="1" <%= output_options @plan.hard_level, 1 %>><%= t('easy') %></option>
-        <option value="2" <%= output_options @plan.hard_level, 2 %>><%= t('common') %></option>
-        <option value="3" <%= output_options @plan.hard_level, 3 %>><%= t('hard') %></option>
-      </select><br>
-      <%= t('description') %>:
-      <textarea rows="3" cols="20" name="plan[description]"><%= @plan.description %></textarea>
-      <br>
-      <input type="submit" value="<%= t('update') %>">
-      <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/plan">
+      <table class="addTable">
+        <tr><td><%= t('plan_name') %>:</td><td><%= f.text_field :name, value: @plan.name, placeholder: t('input_plan') %></td></tr>
+        <tr><td><%= t('start_date') %>:</td><td><input type="date" name="plan[start_date]" value="<%= @plan.start_date %>"/></td></tr>
+        <tr><td><%= t('finish_date') %>:</td><td><input type="date" name="plan[finish_date]" value="<%= @plan.finish_date %>"/></td></tr>
+        <tr><td><%= t('realte_task') %>:</td><td>
+        <select name="plan[task_id]">
+          <option value="0"><%= t('none') %></option>
+          <% i = 0 %>
+          <%= @task_ids.each do |value| %>
+              <option value="<%= value.task_id %>" <%= output_options value.task_id,@plan.task_id%>><%= @task_names[i] %></option>
+              <% i+=1 %>
+          <% end %>
+        </select></td></tr>
+        <tr><td><%= t('hard_level') %>:</td><td>
+        <select name="plan[hard_level]">
+          <option value="1" <%= output_options @plan.hard_level, 1 %>><%= t('easy') %></option>
+          <option value="2" <%= output_options @plan.hard_level, 2 %>><%= t('common') %></option>
+          <option value="3" <%= output_options @plan.hard_level, 3 %>><%= t('hard') %></option>
+        </select></td></tr>
+        <tr><td><%= t('description') %>:</td><td>
+        <textarea rows="3" cols="20" name="plan[description]"><%= @plan.description %></textarea></td></tr>
+      </table>
+      <input type="submit" value="<%= t('update') %>"><br>
+      <input type="button" value="<%= t('go_back') %>" class="ajaxRequest" data-url="management/plan"><br>
   <% end %>
   <form class="ajaxForm" action="deletePlan">
     <input value="<%= @plan.id %>" name="plan[id]" type="hidden">

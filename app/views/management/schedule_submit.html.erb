@@ -5,36 +5,32 @@
 <div class="scheduleSubmit">
   <%= form_for @schedule, url: {action: :add_schedule}, html: {class: "ajaxForm"} do |f| %>
       <%= f.hidden_field :people_id, :value => session[:people_id] %>
-      <%= t("date") %>:
-      <input type="date" value="<%= Time.new.strftime("%Y-%m-%d") %>" name="schedule[date]" readonly>
-      <%= t('realte_task') %>:
-      <select name="schedule[task_id]">
-        <option value="0"><%= t("none") %></option>
-        <% i = 0 %>
-        <% @task_ids.each do |value| %>
-            <option value="<%= value %>"><%= @task_names[i] %></option>
-            <% i+=1 %>
-        <% end %>
-      </select>
-      <%= t("finish_percentage") %>:
-      <%= f.text_field :complete_percentage, placeholder: t('input_percentage') %>
-      <br>
-      <%= t('realte_plan') %>:
-      <select name="schedule[plan_id]">
-        <option value="0"><%= t("none") %></option>
-        <% @plans.each do |value| %>
-            <option value="<%= value.id %>"><%= value.name %></option>
-        <% end %>
-      </select>
-      <%= f.radio_button(:plan_is_done, "0") %>
-      <%= label_tag(:plan_is_done_0, t("undone")) %>
-      <%= f.radio_button(:plan_is_done, "1") %>
-      <%= label_tag(:plan_is_done_1, t("done")) %>
-      <br>
-      <%= t('description') %> :<%= f.text_field :description %>
-      <br>
-      <%= t('content') %>: <%= f.text_area :content, size: "60x3" %>
-      <br>
+      <table class="addTable">
+        <tr><td><%= t("date") %>:</td><td>
+        <input type="date" value="<%= Time.new.strftime("%Y-%m-%d") %>" name="schedule[date]" readonly></td></tr>
+        <tr><td><%= t('realte_task') %>:</td><td>
+        <select name="schedule[task_id]">
+          <option value="0"><%= t("none") %></option>
+          <% i = 0 %>
+          <% @task_ids.each do |value| %>
+              <option value="<%= value %>"><%= @task_names[i] %></option>
+              <% i+=1 %>
+          <% end %>
+        </select></td></tr>
+        <tr><td><%= t("finish_percentage") %>:</td><td>
+        <%= f.text_field :complete_percentage, placeholder: t('input_percentage') %></td></tr>
+        <tr><td><%= t('realte_plan') %>:</td><td>
+        <select name="schedule[plan_id]">
+          <option value="0"><%= t("none") %></option>
+          <% @plans.each do |value| %>
+              <option value="<%= value.id %>"><%= value.name %></option>
+          <% end %>
+        </select></td></tr>
+        <tr><td></td><td><%= f.radio_button(:plan_is_done, "0") %><%= label_tag(:plan_is_done_0, t("undone")) %>
+        <%= f.radio_button(:plan_is_done, "1") %><%= label_tag(:plan_is_done_1, t("done")) %></td></tr>
+        <tr><td><%= t('description') %>:</td><td><%= f.text_field :description %></td></tr>
+        <tr><td><%= t('content') %>:</td><td><%= f.text_area :content, size: "60x3" %></td></tr>
+      </table>
       <%= f.submit I18n.t('submit') %>
   <% end %>
 </div>
