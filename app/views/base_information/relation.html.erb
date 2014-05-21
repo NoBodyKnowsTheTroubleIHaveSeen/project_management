@@ -1,35 +1,20 @@
 <h1><%= t(:relation) %></h1>
-
+<%= javascript_include_tag "drawRelation" %>
 <% if !@project_name.blank? %>
     <% i = 0 %>
     <% @project_name.each do |value| %>
-        <%= value %>
-        <br>
-        |&nbsp;|&nbsp;|<br>
-        \|/<br>
-        <%= t('manager') %>:
-        <% if @my_name == @project_manager[i] %>
-            <span style="color: red"><%= @project_manager[i] %></span>
-        <% else %>
-            <%= @project_manager[i] %>
-        <% end %>
-        <br>
-        |&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;
-        <br>
-        <% if !@people[i].blank? %>
-            <%= t('developer') %>:
-            <% @people[i].each do |value| %>
-                <% if @my_name == value %>
-                    <span style="color: red"><%= value %>&nbsp;&nbsp;&nbsp;
-</span>
-                <% else %>
-                    <%= value %>&nbsp;&nbsp;&nbsp;
-                <% end %>
-            <% end %>
-        <% end %>
-        <br>
-        ------------------------------
-        <br>
-        <% i+=1 %>
+        <canvas id = <%= " canvas#{i}"%>></canvas>
+        <script>
+          $(function(){
+              var array = new Array();
+              <% if !@people[i].blank? %>
+              <% @people[i].each do |value| %>
+              array.push("<%= value %>");
+              <% end %>
+              <% end %>
+              draw("<%= value %>","<%= @project_manager[i] %>",array,"<%= "canvas#{i}"%>");
+          })
+        </script>
+        <% i += 1 %>
     <% end %>
 <% end %>
