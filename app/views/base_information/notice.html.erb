@@ -3,14 +3,12 @@
 <% if @has_privilege %>
     <input type="button" id="addNoticeButton" value="<%= t('add_notice') %>">
     <div id="addNoticeDiv" class="hide absolutePositon">
-      <h3><%= t('add') %></h3>
+      <h2><%= t('add') %></h2>
 
       <div class="message"></div>
       <%= form_tag({action: :add_notice}, id: "addNotice", class: "ajaxForm") do %>
-          <%= t('title') %>: <%= text_field_tag 'title' %>
-          <br>
-          <%= t('content') %>:  <%= text_area_tag 'content' %>
-          <br>
+          <%= text_field_tag 'title',nil,:placeholder=>t('title')%>
+          <%= text_area_tag 'content',nil, :placeholder=>t('content')%>
           <%= submit_tag t('submit') %>
           <input type="button" value="<%= t('back') %>" id="backButton">
       <% end %>
