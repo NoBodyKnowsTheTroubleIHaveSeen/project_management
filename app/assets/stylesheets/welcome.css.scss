@@ -7,7 +7,7 @@
   color: #ffffff;
   float: left;
   width: 20%;
-  background-color: #ffffff;
+  background-color: #2c3e50;
   margin-bottom: -100000px;
   padding-bottom: 100000px;
 }
@@ -35,12 +35,12 @@ li {
   cursor: pointer;
   height: 50px;
   line-height: 50px;
-  transition: color .5s;
 }
 
 li:hover {
-  transition: color .5s;
-  opacity: 0.9;
+  transition: background-color .6s;
+  background-color: #f1E528;
+  text-shadow: 1px 1px 3px #000000;
 }
 
 .selected {
@@ -55,6 +55,11 @@ li:hover {
   font-style: italic;
   background-color: #34495e;
   transition: color .5s;
+}
+
+.headerLi:hover{
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000000;
 }
 
 .emptySpan {
