@@ -15,6 +15,7 @@
     </div>
 <% end %>
 <body>
+
 <div id="notices">
   <% @notices.each do |value| %>
       <%= value.title %>--<%= t("publish_date") %>:<%= value.date %>
