@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ff3fd80-47ee-42c2-9bbd-2d6cc8fadeb3" name="Default" comment="">
+    <list default="true" id="6ff3fd80-47ee-42c2-9bbd-2d6cc8fadeb3" name="Default" comment="update at 3.20&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/base_information.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/base_information.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/base_information/notice.html.erb" afterPath="$PROJECT_DIR$/app/views/base_information/notice.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -35,19 +35,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="notice.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="notice.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/base_information/notice.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="-2.7636364" vertical-offset="171" max-vertical-offset="779">
+            <state line="35" column="0" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.78531075" vertical-offset="248" max-vertical-offset="798">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_information.css.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base_information.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/base_information.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="0.53672314" vertical-offset="0" max-vertical-offset="531">
+            <state line="13" column="1" selection-start="393" selection-end="393" vertical-scroll-proportion="-4.490909" vertical-offset="0" max-vertical-offset="437">
               <folding />
             </state>
           </provider>
@@ -984,7 +984,11 @@
       <created>1401366370078</created>
       <updated>1401366370078</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="update at 3.20&#10;">
+      <created>1401366856631</created>
+      <updated>1401366856631</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1382,6 +1386,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/base_information.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="393" selection-end="393" vertical-scroll-proportion="-4.490909" vertical-offset="0" max-vertical-offset="437">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/share.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="22" selection-start="556" selection-end="576" vertical-scroll-proportion="-11.107142" vertical-offset="506" max-vertical-offset="1976">
@@ -1391,14 +1402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/base_information/notice.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="-2.7636364" vertical-offset="171" max-vertical-offset="779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/base_information.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="0.53672314" vertical-offset="0" max-vertical-offset="531">
+        <state line="35" column="0" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.78531075" vertical-offset="248" max-vertical-offset="798">
           <folding />
         </state>
       </provider>
