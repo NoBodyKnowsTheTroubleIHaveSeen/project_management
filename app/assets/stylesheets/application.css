@@ -154,7 +154,6 @@ span {
     width: 250px;
 }
 
-/*time为显示的时间*/
 .time {
     font-size: 20%;
 }
@@ -196,7 +195,7 @@ div {
     display: none;
     background-color: #000000;
     opacity: 0.8;
-    position:fixed;;
+    position:fixed;
     width: 300px;
     left: 50%;
     margin-left: -150px;
