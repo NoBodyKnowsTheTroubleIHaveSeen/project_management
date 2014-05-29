@@ -1,8 +1,7 @@
 <h1><%= t('schedule_summary') %></h1>
 <div class="showSummary">
-  <div class="QADiv">
-    <div class="showProject">
-      <%= t("show_project") %>
+    <div id="showProject">
+      <%= t("show_project") %><br><br>
       <div>
         <% if !@projects.blank? %>
             <% @projects.each do |value| %>
@@ -16,11 +15,9 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="QADiv">
-    <div class="showPlan">
-      <%= t("show_plan") %>
+    <div id="showPlan">
+      <%= t("show_plan") %><br><br>
       <div>
         <% if !@plans.blank? %>
             <% @plans.each do |value| %>
@@ -34,11 +31,9 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="QADiv">
-    <div class="showTask">
-      <%= t("show task") %>
+    <div id="showTask">
+      <%= t("show task") %><br><br>
       <div>
         <% if !@tasks.blank? %>
             <% @tasks.each do |value| %>
@@ -54,5 +49,4 @@
         <% end %>
       </div>
     </div>
-  </div>
 </div>
