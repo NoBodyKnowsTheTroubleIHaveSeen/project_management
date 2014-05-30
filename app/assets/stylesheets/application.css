@@ -144,7 +144,7 @@ input[type="radio"]{
 }
 
 span {
-    color: #7f8c8d;
+    color: #727f80;
 }
 
 .welcome {
@@ -158,7 +158,7 @@ span {
     font-size: 20%;
 }
 
-.logout {
+.logout,.logout:visited {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -167,7 +167,7 @@ span {
     float: right;
     margin-right: 20px;
     text-align: center;
-    color: white;
+    color: #ffffff;
     background-color: #c0392b;
 }
 
@@ -212,13 +212,14 @@ div {
 
 table {
     overflow: hidden;
-    border: 0 solid #d3d3d3;
-    background: #fefefe;
+    border: 0 solid #7c7c7c;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    color: #464646;
+
 }
 
 th, td {
@@ -227,14 +228,12 @@ th, td {
 }
 
 th {
-    text-shadow: 1px 1px 1px #fff;
-    background: #e8eaeb;
+    background: #f1E528;
 }
 
 td {
-    border-top: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
-    width: 80px
+    border: 1px solid #e9e9e9;
+    width: 80px;
 }
 
 .addTable.td {
@@ -265,6 +264,7 @@ td.last {
 a, a:visited {
     text-decoration: none;
     color: #000000;
+    text-shadow: 1px 1px 2px #ffffff;;
 }
 
 a:hover{

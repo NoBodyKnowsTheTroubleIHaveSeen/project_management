@@ -18,19 +18,21 @@
 
 <div id="notices">
   <% @notices.each do |value| %>
-      <%= value.title %>--<%= t("publish_date") %>:<%= value.date %>
-      <br>
-      <%= value.content %>
-      <br>
-      <%= t("publish_person") %>:<%= get_people_name value.people_id %>
-      <br>
-      <% if @has_privilege %>
-          <%= form_tag({action: :delete_notice}, class: "ajaxForm") do %>
-              <%= hidden_field_tag :id,value.id %>
-              <%= submit_tag t('delete') %>
-          <% end %>
-      <% end %>
-      ------------------------<br>
+      <div class="notices">
+        <%= value.title %>--<%= t("publish_date") %>:<%= value.date %>
+        <br>
+        <%= value.content %>
+        <br>
+        <%= t("publish_person") %>:<%= get_people_name value.people_id %>
+        <br>
+        <% if @has_privilege %>
+            <%= form_tag({action: :delete_notice}, class: "ajaxForm") do %>
+                <%= hidden_field_tag :id,value.id %>
+                <br>
+                <%= submit_tag t('delete') %>
+            <% end %>
+        <% end %>
+      </div>
 <% end %>
 </div>
 

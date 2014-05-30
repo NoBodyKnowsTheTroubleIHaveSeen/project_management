@@ -3,17 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .absolutePositon{
   position: absolute;
+  padding:20px;
   width: 400px;
-  height: 300px;
-  left: 43%;
-  background-color: rgb(77, 167, 167);
+  left: 38%;
+  background-color: #ececec;
+  color:#a2a2a2;
+  box-shadow: 0px 0px 15px -2px #000000;
   z-index: 9;
   text-align: left;
 }
 
-#title{
-  width: 30px ;
-}}
 .notices{
   margin-left: 100px;
   margin-right: 100px;
