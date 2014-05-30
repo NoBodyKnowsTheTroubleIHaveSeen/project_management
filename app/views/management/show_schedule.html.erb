@@ -1,27 +1,51 @@
-<h1><%= t('show_schedule') %></h1>
+<h1 xmlns="http://www.w3.org/1999/html"><%= t('show_schedule') %></h1>
 <div class="message"></div>
 <div class="show_shcedule">
-  <%= t("date") %>:
-  <input type="date" value="<%= @schedule.date %>" name="schedule[date]" readonly>
-  <%= t('realte_task') %>:
-  <input readonly value="<%= get_task_name @schedule.task_id %>">
-  <%= t("finish_percentage") %>:
-  <input readonly value="<%= @schedule.complete_percentage %>">
-  <br>
-  <%= t('realte_plan') %>:
-  <input readonly value="<%= get_plan_name @schedule.plan_id %>">
-  <%= t('is_done') %>:
-  <input readonly value="<%= format_is_done @schedule.plan_is_done %>">
-  <br>
-  <%= t('description') %> : <input readonly value="  <%= @schedule.description %>">
-  <br>
-  <%= t('content') %>: <textarea readonly><%= @schedule.content %></textarea>
-  <br>
-  <%= form_tag({action: :advice_for_schedule}, class: "ajaxForm") do %>
-      <%= t('advice') %>:
-      <textarea <%= output_readonly @has_advice_privilege %> name="advice"><%= @schedule.advice %></textarea>
-      <%= output_submit_tag @has_advice_privilege %>
-  <% end %>
+  <table>
+    <tr>
+      <td><%= t("date") %>:</td>
+      <td><input type="date" value="<%= @schedule.date %>" name="schedule[date]" readonly></td>
+    </tr>
+    <tr>
+      <td><%= t('realte_task') %>:</td>
+      <td><input readonly value="<%= get_task_name @schedule.task_id %>"></td>
+    </tr>
+    <tr>
+      <td><%= t("finish_percentage") %>:</td>
+      <td><input readonly value="<%= @schedule.complete_percentage %>"></td>
+    </tr>
+    <tr>
+      <td><%= t('realte_plan') %>:</td>
+      <td><input readonly value="<%= get_plan_name @schedule.plan_id %>"></td>
+    </tr>
+    <tr>
+      <td><%= t('is_done') %>:</td>
+      <td><input readonly value="<%= format_is_done @schedule.plan_is_done %>"></td>
+    </tr>
+    <tr>
+      <td><%= t('description') %> :</td>
+      <td><input readonly value="  <%= @schedule.description %>"></td>
+    <tr>
+      <td><%= t('content') %>:
+      <td>
+        <textarea readonly><%= @schedule.content %></textarea></td>
+    </tr>
+    <%= form_tag({action: :advice_for_schedule}, class: "ajaxForm") do %>
+        <tr>
+          <td>
+            <%= t('advice') %>:
+          </td>
+
+          <td><textarea <%= output_readonly @has_advice_privilege %> name="advice"><%= @schedule.advice %></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+          <%= output_submit_tag @has_advice_privilege %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
   <% if @has_delete_privilege %>
       <%= form_tag({action: :delete_schedule}, class: "ajaxForm") do %>
           <input type="submit" value="<%= t("delete") %>">
