@@ -1,21 +1,57 @@
 <%= stylesheet_link_tag 'management' %>
 <h1><%= t('show task') %></h1>
 <div class="updateTask">
-  <%= t('task_name') %>:<input readonly class="readonly" value="<%= @task.name %>"/>
-  <%= t('project_name') %>:
-  <input value="<%= @project_name %>" readonly class="readonly">
-  <%= t('start_date') %>:<input type="date" value="<%= @task.start_date %>" readonly class="readonly"/>
-  <%= t('weight') %>:
-  <input readonly class="readonly" value="<%= @task.weight %>"/>
-  <br>
-  <br>
-  <%= t('hard_level') %>:<%= format_hard_level @task.hard_level %>
-  <br>
-  <%= t('description') %>:
-  <textarea rows="3" cols="20" readonly class="readonly"><%= @task.description %></textarea>
-  <br>
-  <br>
+  <table>
+    <tr>
+      <td>
+        <%= t('task_name') %>:
+      </td>
+      <td>
+        <input readonly class="readonly" value="<%= @task.name %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('project_name') %>:
+      </td>
+      <td>
+        <input value="<%= @project_name %>" readonly class="readonly">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('start_date') %>:
+      </td>
+      <td>
+        <input type="date" value="<%= @task.start_date %>" readonly class="readonly"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('weight') %>:
+      </td>
+      <td>
+        <input readonly class="readonly" value="<%= @task.weight %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('hard_level') %>:
+      </td>
+      <td>
+        <%= format_hard_level @task.hard_level %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('description') %>:
+      </td>
+      <td>
+        <textarea rows="3" cols="20" readonly class="readonly"><%= @task.description %></textarea>
+      </td>
+    </tr>
 
+  </table>
   <div class="headerDiv"><%= t('task_people') %></div>
   <div class="peopleContent">
     <div class="people">

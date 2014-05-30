@@ -1,12 +1,40 @@
 <h1><%= t('show_project') %></h1>
 <div class="showProject">
-  <%= t('project_name') %>:<input readonly class="readonly" name="name" value="<%= @project.name %>"/>
-  <%= t('start_date') %>:<input readonly class="readonly" type="date" value="<%= @project.start_date %>"/>
-  <%= t('finish_date') %>:<input readonly class="readonly" type="date" value="<%= @project.finish_date %>"/><br>
-  <br>
-  <%= t('description') %>:
-  <textarea rows="5" cols="90" readonly class="readonly"><%= @project.description %></textarea>
-  <br>
+  <table>
+    <tr>
+      <td>
+        <%= t('project_name') %>:
+      </td>
+      <td>
+        <input readonly class="readonly" name="name" value="<%= @project.name %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('start_date') %>:
+      </td>
+      <td>
+        <input readonly class="readonly" type="date" value="<%= @project.start_date %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t('finish_date') %>:
+      </td>
+      <td>
+        <input readonly class="readonly" type="date" value="<%= @project.finish_date %>"/><br>
+      </td>
+    </tr>
+    <tr>
+
+      <td>
+        <%= t('description') %>:
+      </td>
+      <td>
+        <textarea rows="5" cols="90" readonly class="readonly"><%= @project.description %></textarea>
+      </td>
+    </tr>
+  </table>
   <div class="headerDiv "><%= t('project_people') %></div>
   <div class="peopleContent">
     <div class="people">
@@ -17,5 +45,6 @@
       <% end %>
     </div>
   </div>
+
   <input type="button" value="<%= t('back') %>" class="ajaxRequest" data-url="management/project_management">
 </div>
